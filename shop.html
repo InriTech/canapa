@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+    <!-- title -->
+    <title>Shop</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- mean menu css -->
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Custom CSS for Hamburger Menu -->
+    <style>
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            .main-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #90EE90; /* Light green background */
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .main-menu.active {
+                display: block;
+            }
+
+            .main-menu ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+            .main-menu ul li {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .main-menu ul li a {
+                color: white; /* White text color */
+                text-decoration: none;
+                font-size: 18px;
+                display: block;
+            }
+
+            /* Hide the Home link in the mobile menu */
+            .main-menu ul li.current-list-item {
+                display: none;
+            }
+
+            .main-menu ul li .sub-menu {
+                display: none;
+                padding-left: 20px;
+            }
+
+            .main-menu ul li .sub-menu.active {
+                display: block;
+            }
+
+            .main-menu ul li .sub-menu li {
+                border-bottom: none;
+            }
+
+            .header-icons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .header-icons a {
+                color: white; /* White text color */
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <div class="top-header-area" id="sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <!-- logo -->
+                        <div class="site-logo">
+                            <a href="index.html">
+                                <img src="assets/img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <!-- logo -->
+
+                        <!-- Hamburger Menu -->
+                        <div class="hamburger-menu" onclick="toggleMenu()">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+
+                        <!-- menu start -->
+                        <nav class="main-menu">
+                            <ul>
+                                <li class="current-list-item"><a href="index.html">Home</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="shop.html">Shop</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="shop.html">Shop</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        <li><a href="single-product.html">Single Product</a></li>
+                                        <li><a href="cart.html">Cart</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="header-icons">
+                                        <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-user"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="mobile-menu"></div>
+                        <!-- menu end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Canapa Delights</p>
+                        <h1>Shop</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+    <!-- products -->
+    <div class="product-section mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-filters">
+                        <ul>
+                            <li class="active" data-filter="*">All</li>
+                            <li data-filter=".strawberry">Cookies</li>
+                            <li data-filter=".berry">Gummies</li>
+                            <li data-filter=".lemon">Vapes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row product-lists">
+                <div class="col-lg-4 col-md-6 text-center strawberry">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+                        </div>
+                        <h3>Cookies</h3>
+                        <p class="product-price"><span>Per 200g</span> R250 </p>
+                        <a href="cart.html" class="cart-btn" data-product-id="1" data-product-name="Cookies" data-product-price="250"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center berry">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
+                        </div>
+                        <h3>Gummies</h3>
+                        <p class="product-price"><span>Per 200g</span> R250 </p>
+                        <a href="cart.html" class="cart-btn" data-product-id="2" data-product-name="Gummies" data-product-price="250"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center lemon">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
+                        </div>
+                        <h3>Vapes</h3>
+                        <p class="product-price"><span>Per ml</span> R500 </p>
+                        <a href="cart.html" class="cart-btn" data-product-id="3" data-product-name="Vapes" data-product-price="500"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="single-product.html"><img src="assets/img/products/product-img-4.jpg" alt=""></a>
+                        </div>
+                        <h3>Dog Treats</h3>
+                        <p class="product-price"><span>Per 200g</span> R300 </p>
+                        <a href="cart.html" class="cart-btn" data-product-id="4" data-product-name="Dog Treats" data-product-price="300"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="single-product.html"><img src="assets/img/products/product-img-5.jpg" alt=""></a>
+                        </div>
+                        <h3>CBD Oil</h3>
+                        <p class="product-price"><span>Per ml</span> R500 </p>
+                        <a href="cart.html" class="cart-btn" data-product-id="5" data-product-name="CBD Oil" data-product-price="500"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center strawberry">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="single-product.html"><img src="assets/img/products/product-img-6.jpg" alt=""></a>
+                        </div>
+                        <h3>Pain Oil</h3>
+                        <p class="product-price"><span>Per ml</span> R400 </p>
+                        <a href="cart.html" class="cart-btn" data-product-id="6" data-product-name="Pain Oil" data-product-price="400"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="pagination-wrap">
+                        <ul>
+                            <li><a href="#">Prev</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a class="active" href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end products -->
+
+    <!-- logo carousel -->
+    <div class="logo-carousel-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="logo-carousel-inner">
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/1.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/2.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/3.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/4.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end logo carousel -->
+
+    <!-- footer -->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box about-widget">
+                        <h2 class="widget-title">About us</h2>
+                        <p>About Canapa Delight</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box get-in-touch">
+                        <h2 class="widget-title">Get in Touch</h2>
+                        <ul>
+                            <li>22 Karee Street, Southdowns Shopping Centre</li>
+                            <li>info@canapadelights.co.za</li>
+                            <li>+27 68 408 9769</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+
+    <!-- copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <p>Copyright &copy; 2025 - All Rights Reserved.<br></p>
+                </div>
+                <div class="col-lg-6 text-right col-md-12">
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end copyright -->
+
+    <!-- Floating WhatsApp Icon with Text -->
+    <a href="https://wa.me/27684089769" class="float-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
+
+    <!-- Custom CSS for Floating WhatsApp Icon with Text -->
+    <style>
+        .float-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .float-whatsapp:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        .float-whatsapp i {
+            font-size: 30px;
+            margin-right: 10px;
+        }
+
+        .whatsapp-text {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.main-menu');
+            menu.classList.toggle('active');
+        }
+
+        // JavaScript for Sub-Menu Toggle on Mobile
+        document.querySelectorAll('.main-menu ul li a').forEach(item => {
+            if (item.nextElementSibling && item.nextElementSibling.classList.contains('sub-menu')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    item.nextElementSibling.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- count down -->
+    <script src="assets/js/jquery.countdown.js"></script>
+    <!-- isotope -->
+    <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+    <!-- waypoints -->
+    <script src="assets/js/waypoints.js"></script>
+    <!-- owl carousel -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- magnific popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- mean menu -->
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!-- sticker js -->
+    <script src="assets/js/sticker.js"></script>
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Add to Cart Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Function to add item to cart
+            function addToCart(productId, productName, productPrice) {
+                const item = {
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                };
+
+                // Check if item already exists in cart
+                const existingItem = cart.find(cartItem => cartItem.id === productId);
+                if (existingItem) {
+                    existingItem.quantity += 1; // Increase quantity if item exists
+                } else {
+                    cart.push(item); // Add new item to cart
+                }
+
+                // Save cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                alert(`${productName} added to cart!`);
+            }
+
+            // Add event listeners to all "Add to Cart" buttons
+            const addToCartButtons = document.querySelectorAll('.cart-btn');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    const productId = this.getAttribute('data-product-id');
+                    const productName = this.getAttribute('data-product-name');
+                    const productPrice = parseFloat(this.getAttribute('data-product-price'));
+
+                    addToCart(productId, productName, productPrice);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+    <!-- title -->
+    <title>Check Out</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- mean menu css -->
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Custom CSS for Hamburger Menu -->
+    <style>
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            .main-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #90EE90; /* Light green background */
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .main-menu.active {
+                display: block;
+            }
+
+            .main-menu ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+            .main-menu ul li {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .main-menu ul li a {
+                color: white; /* White text color */
+                text-decoration: none;
+                font-size: 18px;
+                display: block;
+            }
+
+            /* Hide the Home link in the mobile menu */
+            .main-menu ul li.current-list-item {
+                display: none;
+            }
+
+            .main-menu ul li .sub-menu {
+                display: none;
+                padding-left: 20px;
+            }
+
+            .main-menu ul li .sub-menu.active {
+                display: block;
+            }
+
+            .main-menu ul li .sub-menu li {
+                border-bottom: none;
+            }
+
+            .header-icons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .header-icons a {
+                color: white; /* White text color */
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <div class="top-header-area" id="sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <!-- logo -->
+                        <div class="site-logo">
+                            <a href="index.html">
+                                <img src="assets/img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <!-- logo -->
+
+                        <!-- Hamburger Menu -->
+                        <div class="hamburger-menu" onclick="toggleMenu()">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+
+                        <!-- menu start -->
+                        <nav class="main-menu">
+                            <ul>
+                                <li class="current-list-item"><a href="index.html">Home</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="shop.html">Shop</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="shop.html">Shop</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        <li><a href="cart.html">Cart</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="header-icons">
+                                        <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-user"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="mobile-menu"></div>
+                        <!-- menu end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Canapa Delights</p>
+                        <h1>Check Out</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+    <!-- check out section -->
+    <div class="checkout-section mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="checkout-accordion-wrap">
+                        <div class="accordion" id="accordionExample">
+                            <!-- Billing Address -->
+                            <div class="card single-accordion">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Billing Address
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="billing-address-form">
+                                            <form id="billingForm">
+                                                <p><input type="text" id="name" placeholder="Name" required></p>
+                                                <p><input type="email" id="email" placeholder="Email" required></p>
+                                                <p><input type="text" id="address" placeholder="Address" required></p>
+                                                <p><input type="tel" id="phone" placeholder="Phone" required></p>
+                                                <p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Say Something"></textarea></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Shipping Address -->
+                            <div class="card single-accordion">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Shipping Address
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shipping-address-form">
+                                            <p>Your shipping address form is here.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Details -->
+                            <div class="card single-accordion">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Card Details
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="card-details">
+                                            <form id="paymentForm">
+                                                <p><input type="text" id="cardNumber" placeholder="Card Number" required></p>
+                                                <p><input type="text" id="expiryDate" placeholder="MM/YY" required></p>
+                                                <p><input type="text" id="cvv" placeholder="CVV" required></p>
+                                                <div class="card-icons">
+                                                    <i class="fab fa-cc-visa"></i>
+                                                    <i class="fab fa-cc-mastercard"></i>
+                                                    <i class="fab fa-cc-amex"></i>
+                                                    <i class="fab fa-cc-discover"></i>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="order-details-wrap">
+                        <table class="order-details">
+                            <thead>
+                                <tr>
+                                    <th>Your Order Details</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody class="order-details-body" id="cartItems">
+                                <!-- Cart items will be dynamically inserted here -->
+                            </tbody>
+                            <tbody class="checkout-details">
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td id="subtotal">R0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Shipping</td>
+                                    <td>R200.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td id="total">R200.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="boxed-btn" id="placeOrder">Place Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end check out section -->
+
+    <!-- footer -->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box about-widget">
+                        <h2 class="widget-title">About us</h2>
+                        <p>About Canapa Delight</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box get-in-touch">
+                        <h2 class="widget-title">Get in Touch</h2>
+                        <ul>
+                            <li>22 Karee Street, Southdowns Shopping Centre</li>
+                            <li>info@canapadelights.co.za</li>
+                            <li>+27 68 408 9769</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+
+    <!-- copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <p>Copyright &copy; 2025 - All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-right col-md-12">
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end copyright -->
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.main-menu');
+            menu.classList.toggle('active');
+        }
+
+        // JavaScript for Sub-Menu Toggle on Mobile
+        document.querySelectorAll('.main-menu ul li a').forEach(item => {
+            if (item.nextElementSibling && item.nextElementSibling.classList.contains('sub-menu')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    item.nextElementSibling.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+    <!-- Cart Integration Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+            const subtotalElement = document.getElementById('subtotal');
+            const totalElement = document.getElementById('total');
+            const shippingCost = 200; // Fixed shipping cost
+
+            let subtotal = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<tr><td colspan="2">Your cart is empty.</td></tr>';
+            } else {
+                cartItemsContainer.innerHTML = cart.map(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+
+                    return `
+                        <tr>
+                            <td>${item.name} (x${item.quantity})</td>
+                            <td>R${itemTotal.toFixed(2)}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // Update subtotal and total
+            subtotalElement.textContent = `R${subtotal.toFixed(2)}`;
+            totalElement.textContent = `R${(subtotal + shippingCost).toFixed(2)}`;
+        });
+    </script>
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- count down -->
+    <script src="assets/js/jquery.countdown.js"></script>
+    <!-- isotope -->
+    <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+    <!-- waypoints -->
+    <script src="assets/js/waypoints.js"></script>
+    <!-- owl carousel -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- magnific popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- mean menu -->
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!-- sticker js -->
+    <script src="assets/js/sticker.js"></script>
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

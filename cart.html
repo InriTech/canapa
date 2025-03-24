@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+    <!-- title -->
+    <title>Cart</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- mean menu css -->
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Custom CSS for Hamburger Menu -->
+    <style>
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            .main-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #90EE90; /* Light green background */
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .main-menu.active {
+                display: block;
+            }
+
+            .main-menu ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+            .main-menu ul li {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .main-menu ul li a {
+                color: white; /* White text color */
+                text-decoration: none;
+                font-size: 18px;
+                display: block;
+            }
+
+            /* Hide the Home link in the mobile menu */
+            .main-menu ul li.current-list-item {
+                display: none;
+            }
+
+            .main-menu ul li .sub-menu {
+                display: none;
+                padding-left: 20px;
+            }
+
+            .main-menu ul li .sub-menu.active {
+                display: block;
+            }
+
+            .main-menu ul li .sub-menu li {
+                border-bottom: none;
+            }
+
+            .header-icons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .header-icons a {
+                color: white; /* White text color */
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <div class="top-header-area" id="sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <!-- logo -->
+                        <div class="site-logo">
+                            <a href="index.html">
+                                <img src="assets/img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <!-- logo -->
+
+                        <!-- Hamburger Menu -->
+                        <div class="hamburger-menu" onclick="toggleMenu()">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+
+                        <!-- menu start -->
+                        <nav class="main-menu">
+                            <ul>
+                                <li class="current-list-item"><a href="index.html">Home</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="shop.html">Shop</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="shop.html">Shop</a></li>
+                                        <li><a href="checkout.html">Check Out</a></li>
+                                        <li><a href="single-product.html">Single Product</a></li>
+                                        <li><a href="cart.html">Cart</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="header-icons">
+                                        <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-user"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="mobile-menu"></div>
+                        <!-- menu end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Canapa Delights</p>
+                        <h1>Cart</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+    <!-- cart -->
+    <div class="cart-section mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="cart-table-wrap">
+                        <table class="cart-table">
+                            <thead class="cart-table-head">
+                                <tr class="table-head-row">
+                                    <th class="product-remove"></th>
+                                    <th class="product-image">Product Image</th>
+                                    <th class="product-name">Name</th>
+                                    <th class="product-price">Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-total">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-items">
+                                <!-- Cart items will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="total-section">
+                        <table class="total-table">
+                            <thead class="total-table-head">
+                                <tr class="table-total-row">
+                                    <th>Total</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="total-data">
+                                    <td><strong>Subtotal: </strong></td>
+                                    <td id="subtotal">R0</td>
+                                </tr>
+                                <tr class="total-data">
+                                    <td><strong>Shipping: </strong></td>
+                                    <td>Free</td>
+                                </tr>
+                                <tr class="total-data">
+                                    <td><strong>Total: </strong></td>
+                                    <td id="total">R0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="cart-buttons">
+                            <a href="cart.html" class="boxed-btn">Update Cart</a>
+                            <a href="checkout.html" class="boxed-btn black">Check Out</a>
+                        </div>
+                        <!-- Clear Cart Button -->
+                        <div class="clear-cart-button">
+                            <button class="boxed-btn red" onclick="clearCart()">Clear Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end cart -->
+
+    <!-- logo carousel -->
+    <div class="logo-carousel-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="logo-carousel-inner">
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/1.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/2.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/3.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/4.png" alt="">
+                        </div>
+                        <div class="single-logo-item">
+                            <img src="assets/img/company-logos/5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end logo carousel -->
+
+    <!-- footer -->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box about-widget">
+                        <h2 class="widget-title">About us</h2>
+                        <p>About Canapa Delight</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box get-in-touch">
+                        <h2 class="widget-title">Get in Touch</h2>
+                        <ul>
+                            <li>22 Karee Street, Southdowns Shopping Centre</li>
+                            <li>info@canapadelights.co.za</li>
+                            <li>+27 68 408 9769</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+
+    <!-- copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <p>Copyright &copy; 2025 - All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-right col-md-12">
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end copyright -->
+
+    <!-- Floating WhatsApp Icon with Text -->
+    <a href="https://wa.me/27684089769" class="float-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
+
+    <!-- Custom CSS for Floating WhatsApp Icon with Text -->
+    <style>
+        .float-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .float-whatsapp:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        .float-whatsapp i {
+            font-size: 30px;
+            margin-right: 10px;
+        }
+
+        .whatsapp-text {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.main-menu');
+            menu.classList.toggle('active');
+        }
+
+        // JavaScript for Sub-Menu Toggle on Mobile
+        document.querySelectorAll('.main-menu ul li a').forEach(item => {
+            if (item.nextElementSibling && item.nextElementSibling.classList.contains('sub-menu')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    item.nextElementSibling.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+    <!-- Cart Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const subtotalElement = document.getElementById('subtotal');
+            const totalElement = document.getElementById('total');
+
+            let subtotal = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<tr><td colspan="6">Your cart is empty.</td></tr>';
+            } else {
+                cartItemsContainer.innerHTML = cart.map(item => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+
+                    return `
+                        <tr class="table-body-row">
+                            <td class="product-remove"><a href="#" onclick="removeItem(${item.id})"><i class="far fa-window-close"></i></a></td>
+                            <td class="product-image"><img src="assets/img/products/product-img-${item.id}.jpg" alt="${item.name}"></td>
+                            <td class="product-name">${item.name}</td>
+                            <td class="product-price">R${item.price}</td>
+                            <td class="product-quantity"><input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${item.id}, this.value)"></td>
+                            <td class="product-total">R${itemTotal}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // Update subtotal and total
+            subtotalElement.textContent = `R${subtotal}`;
+            totalElement.textContent = `R${subtotal}`;
+
+            // Function to remove an item from the cart
+            window.removeItem = function(productId) {
+                const updatedCart = cart.filter(item => item.id !== productId);
+                localStorage.setItem('cart', JSON.stringify(updatedCart));
+                location.reload(); // Refresh the page to reflect changes
+            };
+
+            // Function to update item quantity
+            window.updateQuantity = function(productId, quantity) {
+                const updatedCart = cart.map(item => {
+                    if (item.id === productId) {
+                        item.quantity = parseInt(quantity, 10);
+                    }
+                    return item;
+                });
+                localStorage.setItem('cart', JSON.stringify(updatedCart));
+                location.reload(); // Refresh the page to reflect changes
+            };
+
+            // Function to clear the entire cart
+            window.clearCart = function() {
+                localStorage.removeItem('cart');
+                location.reload(); // Refresh the page to reflect changes
+            };
+        });
+    </script>
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- count down -->
+    <script src="assets/js/jquery.countdown.js"></script>
+    <!-- isotope -->
+    <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+    <!-- waypoints -->
+    <script src="assets/js/waypoints.js"></script>
+    <!-- owl carousel -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- magnific popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- mean menu -->
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!-- sticker js -->
+    <script src="assets/js/sticker.js"></script>
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
