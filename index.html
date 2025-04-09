@@ -46,6 +46,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
             width: 300px;
+            display: none; /* Hidden by default */
         }
 
         #ageVerificationPopup .ageHeading {
@@ -93,6 +94,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 9999; /* Just below the pop-up */
+            display: none; /* Hidden by default */
         }
 
         /* Hamburger Menu Styles */
@@ -228,9 +230,9 @@
                                     <ul class="sub-menu">
                                         <li><a href="shop.html">Shop</a></li>
                                         <li><a href="checkout.html">Check Out</a></li>
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                    </ul>
+                                       
+                                        
+                                  </ul>
                                 </li>
                                 <li>
                                     <div class="header-icons">
@@ -259,8 +261,8 @@
                 <div class="col-lg-9 offset-lg-2 text-center">
                     <div class="hero-text">
                         <div class="hero-text-tablecell">
-                            <p class="subtitle">Canapa Delight</p>
-                            <h1>A Taste Of Cannabis</h1>
+                            <h1 class="subtitle">Canapa Delight</h1>
+                            <p class="subtitle">A Taste Of Cannabis</p>
                             <div class="hero-btns">
                                 <a href="shop.html" class="boxed-btn">Our Collection</a>
                                 <a href="contact.html" class="bordered-btn">Contact Us</a>
@@ -333,8 +335,6 @@
                             <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
                         </div>
                         <h3>Cookies</h3>
-                        <p class="product-price"><span>Per 200g</span> R250 </p>
-                        <a href="cart.html" class="cart-btn" data-product-id="1" data-product-name="Cookies" data-product-price="250"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 
                     </div>
                 </div>
@@ -344,8 +344,6 @@
                             <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
                         </div>
                         <h3>Gummies</h3>
-                        <p class="product-price"><span>Per 200g</span> R250 </p>
-                        <a href="cart.html" class="cart-btn" data-product-id="2" data-product-name="Gummies" data-product-price="250"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
@@ -353,12 +351,15 @@
                         <div class="product-image">
                             <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
                         </div>
-                        <h3>Vape</h3>
-                        <p class="product-price"><span>Per ml</span> R500 </p>
-                        <a href="cart.html" class="cart-btn" data-product-id="3" data-product-name="Vape" data-product-price="500"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                    </div>
+                        <h3>Vapes</h3>
+                </div>
                 </div>
             </div>
+			<div style="text-align: center; padding: 20px;">
+    <a href="shop.html" class="cart-btn" data-product-id="3" data-product-name="Vape" data-product-price="500">
+        <i class="fas fa-shopping-cart"></i> Shop All our Products
+    </a>
+</div>
         </div>
     </div>
     <!-- end product section -->
@@ -476,12 +477,19 @@
             const popup = document.getElementById('ageVerificationPopup');
             const overlay = document.getElementById('overlay');
 
-            // Show pop-up and overlay on page load
-            popup.style.display = 'block';
-            overlay.style.display = 'block';
+            // Check if age has already been verified
+            const ageVerified = localStorage.getItem('ageVerified');
+
+            if (!ageVerified) {
+                // Show pop-up and overlay if not verified
+                popup.style.display = 'block';
+                overlay.style.display = 'block';
+            }
 
             // Confirm Button
             document.querySelector('.confirmButton').addEventListener('click', function() {
+                // Set flag in localStorage
+                localStorage.setItem('ageVerified', 'true');
                 popup.style.display = 'none';
                 overlay.style.display = 'none';
             });
