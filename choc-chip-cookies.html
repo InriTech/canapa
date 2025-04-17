@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choc Chip Cookies 200mg THC | Canapa Delights</title>
+    <meta name="description" content="Premium cannabis-infused chocolate chip cookies. 200mg THC per package (10x20mg servings). Vegan, gluten-free, lab-tested.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "Choc Chip Cookies",
+        "image": "assets/img/products/product-img-1.jpg",
+        "description": "Premium cannabis-infused chocolate chip cookies with 200mg THC per package",
+        "brand": {
+            "@type": "Brand",
+            "name": "Canapa Delights"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://canapadelights.co.za/products/choc-chip-cookies.html",
+            "priceCurrency": "ZAR",
+            "price": "250",
+            "availability": "http://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Canapa Delights"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header-area" id="sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <!-- Logo -->
+                        <div class="site-logo">
+                            <a href="index.html">
+                                <img src="assets/img/logo.png" alt="Canapa Delights Logo">
+                            </a>
+                        </div>
+
+                        <!-- Hamburger Menu -->
+                        <div class="hamburger-menu" onclick="toggleMenu()">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <nav class="main-menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li>
+                                    <div class="header-icons">
+                                        <a class="shopping-cart" href="cart.html">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="cart-count">0</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p><a href="index.html">Home</a> > 
+                           <a href="shop.html">Shop</a> > 
+                           <a href="shop.html?category=cookies">Cookies</a></p>
+                        <h1>Choc Chip Cookies</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="single-product mt-150 mb-150">
+        <div class="container">
+            <div class="row">
+                <!-- Product Image -->
+                <div class="col-md-5">
+                    <div class="single-product-img">
+                        <img src="assets/img/products/product-img-1.jpg" 
+                             alt="Chocolate Chip Cannabis Cookies"
+                             class="img-fluid">
+                        <div class="product-badges">
+                            <span class="thc-badge">200mg THC</span>
+                            <span class="vegan-badge">Vegan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="col-md-7">
+                    <div class="single-product-content">
+                        <h1>Choc Chip Cookies</h1>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span>4.7 (89 reviews)</span>
+                        </div>
+                        
+                        <div class="product-pricing">
+                            <span class="price">R250</span>
+                            <span class="package">/ 200g package</span>
+                        </div>
+
+                        <!-- Product Specs -->
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-cannabis"></i>
+                                <span>20mg THC per cookie</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-cookie"></i>
+                                <span>10 cookies per pack</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Vegan & Gluten-Free</span>
+                            </div>
+                        </div>
+
+                        <!-- Add to Cart Form -->
+                        <form class="add-to-cart-form" id="addToCartForm">
+                            <div class="quantity-selector">
+                                <label>Quantity:</label>
+                                <div class="qty-controls">
+                                    <button type="button" class="qty-minus">-</button>
+                                    <input type="number" name="quantity" value="1" min="1" max="10">
+                                    <button type="button" class="qty-plus">+</button>
+                                </div>
+                            </div>
+                            <button type="submit" class="cart-btn" 
+                                    data-product-id="101"
+                                    data-product-name="Choc Chip Cookies"
+                                    data-product-price="250">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart - R250
+                            </button>
+                        </form>
+
+                        <!-- Product Tabs -->
+                        <div class="product-tabs mt-4">
+                            <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description">Description</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="lab-tab" data-toggle="tab" href="#lab">Lab Results</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews">Reviews</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="productTabsContent">
+                                <!-- Description Tab -->
+                                <div class="tab-pane fade show active" id="description">
+                                    <h4>Product Details</h4>
+                                    <p>Premium dark chocolate chip cookies made with organic ingredients and precisely dosed cannabis extract. Each cookie contains 20mg of THC for consistent, predictable effects.</p>
+                                    <ul class="product-details-list">
+                                        <li>✔️ Vegan & gluten-free recipe</li>
+                                        <li>✔️ 20mg of THC per cookie (200mg total THC per packet)</li>
+                                        <li>✔️ Delicious chocolate chip flavour</li>
+                                        <li>✔️ Made in South Africa</li>
+                                    </ul>
+                                    <div class="usage-instructions">
+                                        <h5>Effects:</h5>
+                                        <ul><li>Relaxation and stress relief</li>
+<li>Mood enhancement</li> 
+<li>Potential pain reduction</li>
+<li>May aid with sleep issues</li></p>
+                                    </ul>
+									<div class="usage-instructions">
+                                        <h5>Usage Guidelines:</h5>
+                                        <p>We recommend starting with a low dose of 2.5mg to 10mg of THC. Wait at least 2 hours before taking more to assess the effects and minimise the risk of overconsumption. Gradually increase the dosage as needed, to no more than 40mg per day. </p>
+                                    </div>
+                                </div>
+
+                                
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Sharing -->
+                        <div class="social-sharing mt-4">
+                            <span>Share this product:</span>
+                            <a href="#" class="facebook-share">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="whatsapp-share">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="twitter-share">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="related-products mb-150">
+        <div class="container">
+            <h3 class="section-title">Related Products</h3>
+            <div class="row">
+                <div class="col-lg-2-4 col-md-4 col-sm-6 text-center treats">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="coconut-oat-cookies.html">
+                                <img src="assets/img/products/product-img-10.jpg" alt="Coconut Oat Cookies">
+                            </a>
+                        </div>
+                        <h3>Coconut Oat Cookies</h3>
+                        <p class="product-price"><span>200mg THC</span> R250</p>
+                        <a href="coconut-oat-cookies.html" class="cart-btn">View Product</a>
+                    </div>
+                </div>
+                <div class="col-lg-2-4 col-md-4 col-sm-6 text-center treats">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="vegan-brownies.html">
+                                <img src="assets/img/products/product-img-11.jpg" alt="Vegan Brownies">
+                            </a>
+                        </div>
+                        <h3>Vegan Brownies</h3>
+                        <p class="product-price"><span>150mg THC</span> R150</p>
+                        <a href="vegan-brownies.html" class="cart-btn">View Product</a>
+                    </div>
+                </div>
+                <div class="col-lg-2-4 col-md-4 col-sm-6 text-center treats">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="caramel-cookies.html">
+                                <img src="assets/img/products/product-img-13.jpg" alt="Caramel Cookies">
+                            </a>
+                        </div>
+                      <h3>Caramel Cookies</h3>
+                        <p class="product-price"><span>250mg THC</span> R250</p>
+                        <a href="caramel-cookies.html" class="cart-btn">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-box about-widget">
+                        <h2>About Us</h2>
+                        <p>Canapa Delights - Premium cannabis products crafted with care in South Africa.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-box get-in-touch">
+                        <h2>Contact</h2>
+                        <ul>
+                            <li>22 Karee Street, Irene</li>
+                            <li>info@canapadelights.co.za</li>
+                            <li>+27 68 408 9769</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-box social">
+                        <h2>Follow Us</h2>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>&copy; 2024 Canapa Delights. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Product Page Script -->
+    <script>
+        // Quantity Controls
+        document.querySelectorAll('.qty-plus').forEach(button => {
+            button.addEventListener('click', () => {
+                const input = button.parentNode.querySelector('input');
+                input.value = parseInt(input.value) + 1;
+            });
+        });
+
+        document.querySelectorAll('.qty-minus').forEach(button => {
+            button.addEventListener('click', () => {
+                const input = button.parentNode.querySelector('input');
+                if(parseInt(input.value) > 1) {
+                    input.value = parseInt(input.value) - 1;
+                }
+            });
+        });
+
+        // Add to Cart Functionality
+        document.getElementById('addToCartForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const quantity = parseInt(this.querySelector('input').value);
+            const product = {
+                id: this.querySelector('button').dataset.productId,
+                name: this.querySelector('button').dataset.productName,
+                price: parseFloat(this.querySelector('button').dataset.productPrice),
+                quantity: quantity,
+                image: 'assets/img/products/product-img-1.jpg'
+            };
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingIndex = cart.findIndex(item => item.id === product.id);
+            
+            if(existingIndex > -1) {
+                cart[existingIndex].quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showCartPopup(product.name, product.price * quantity);
+        });
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.querySelector('.cart-count').textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+        }
+
+        function showCartPopup(name, total) {
+            const popup = document.createElement('div');
+            popup.className = 'cart-popup';
+            popup.innerHTML = `
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <p>Added to cart:</p>
+                    <h4>${name}</h4>
+                    <p>Total: R${total.toFixed(2)}</p>
+                    <a href="cart.html" class="view-cart-btn">View Cart</a>
+                </div>
+            `;
+            document.body.appendChild(popup);
+            
+            setTimeout(() => {
+                popup.remove();
+            }, 3000);
+        }
+
+        // Initialize cart count
+        updateCartCount();
+    </script>
+</body>
+</html>
