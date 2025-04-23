@@ -12,6 +12,165 @@ Version: 1.0
 
 ----------------------------------------------------------------------------- */
 /* Cart Popup Styles */
+/* Make buttons and anchor tags with cart-btn class look identical */
+/* Center align the cart button */
+/* Center product title and price */
+/* Instead of hiding Home link */
+.hamburger-menu .bar {
+    transition: transform 0.4s, opacity 0.3s;
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+@media (max-width: 768px) {
+    .main-menu ul li.current-list-item {
+        display: block; /* Show Home link */
+        font-weight: bold; /* Differentiate visually */
+    }
+}
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            .main-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #90EE90; /* Light green background */
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .main-menu.active {
+                display: block;
+            }
+
+            .main-menu ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+
+            .main-menu ul li {
+                padding: 10px;
+                border-bottom: 1px solid #90EE90;
+            }
+
+            .main-menu ul li a {
+                color: white; /* White text color */
+                text-decoration: none;
+                font-size: 18px;
+                display: block;
+            }
+
+            /* Hide the Home link in the mobile menu */
+            .main-menu ul li.current-list-item {
+                display: none;
+            }
+
+            .main-menu ul li .sub-menu {
+                display: none;
+                padding-left: 20px;
+            }
+
+            .main-menu ul li .sub-menu.active {
+                display: block;
+            }
+
+            .main-menu ul li .sub-menu li {
+                border-bottom: none;
+            }
+
+            .header-icons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .header-icons a {
+                color: white; /* White text color */
+                font-size: 18px;
+            }
+        }
+.single-product-item h3,
+.single-product-item .product-price {
+    text-align: center;
+    width: 100%;
+    padding: 0 15px; /* Add padding if needed */
+}
+.single-product-item .cart-btn {
+    display: block;
+    margin: 10px auto 0;
+    width: max-content; /* Keeps button from stretching full width */
+}
+.cart-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #90EE90;
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.cart-btn:hover {
+    background-color: #689030;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Remove default button styles */
+button.cart-btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 
 .card {
   width: 400px;
