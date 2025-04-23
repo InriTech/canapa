@@ -3,337 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-
-    <!-- title -->
-    <title>Cart</title>
-
-    <!-- favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Canapa Delights</title>
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
-    <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-    <!-- fontawesome -->
     <link rel="stylesheet" href="assets/css/all.min.css">
-    <!-- bootstrap -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <!-- owl carousel -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <!-- magnific popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!-- animate css -->
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <!-- mean menu css -->
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-    <!-- main style -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <!-- responsive -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
-
-    <!-- Custom CSS for Hamburger Menu -->
-    <style>
-        /* Hamburger Menu Styles */
-        .hamburger-menu {
-            display: none;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .hamburger-menu .bar {
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 5px 0;
-            transition: 0.4s;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger-menu {
-                display: block;
-            }
-
-            .main-menu {
-                display: none;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background-color: #90EE90; /* Light green background */
-                width: 100%;
-                text-align: center;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-
-            .main-menu.active {
-                display: block;
-            }
-
-            .main-menu ul {
-                padding: 0;
-                margin: 0;
-                list-style: none;
-            }
-
-            .main-menu ul li {
-                padding: 10px;
-                border-bottom: 1px solid #ddd;
-            }
-
-            .main-menu ul li a {
-                color: white; /* White text color */
-                text-decoration: none;
-                font-size: 18px;
-                display: block;
-            }
-
-            /* Hide the Home link in the mobile menu */
-            .main-menu ul li.current-list-item {
-                display: none;
-            }
-
-            .main-menu ul li .sub-menu {
-                display: none;
-                padding-left: 20px;
-            }
-
-            .main-menu ul li .sub-menu.active {
-                display: block;
-            }
-
-            .main-menu ul li .sub-menu li {
-                border-bottom: none;
-            }
-
-            .header-icons {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                padding: 10px;
-            }
-
-            .header-icons a {
-                color: white; /* White text color */
-                font-size: 18px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- header -->
+    <!-- Header -->
     <div class="top-header-area" id="sticker">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-sm-12 text-center">
+                <div class="col-lg-12 text-center">
                     <div class="main-menu-wrap">
-                        <!-- logo -->
                         <div class="site-logo">
                             <a href="index.html">
-                                <img src="assets/img/logo.png" alt="">
+                                <img src="assets/img/logo.png" alt="Canapa Delights Logo">
                             </a>
                         </div>
-                        <!-- logo -->
-
-                        <!-- Hamburger Menu -->
-                        <div class="hamburger-menu" onclick="toggleMenu()">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                        </div>
-
-                        <!-- menu start -->
                         <nav class="main-menu">
                             <ul>
-                                <li class="current-list-item"><a href="index.html">Home</a></li>
+                                <li><a href="index.html">Home</a></li>
                                 <li><a href="contact.html">Contact</a></li>
-                                <li><a href="shop.html">Shop</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="shop.html">Shop</a></li>
-                                        <li><a href="checkout.html">Check Out</a></li>
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="shop.html">Shop</a></li>
                                 <li>
                                     <div class="header-icons">
-                                        <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-user"></i></a>
+                                        <a class="shopping-cart" href="cart.html">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="cart-count">0</span>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>
                         </nav>
-                        <div class="mobile-menu"></div>
-                        <!-- menu end -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end header -->
 
-    <!-- breadcrumb-section -->
+    <!-- Cart Content -->
     <div class="breadcrumb-section breadcrumb-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>Canapa Delights</p>
-                        <h1>Cart</h1>
+                        <h1>Your Cart</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end breadcrumb section -->
 
-    <!-- cart -->
     <div class="cart-section mt-150 mb-150">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="cart-table-wrap">
                         <table class="cart-table">
-                            <thead class="cart-table-head">
-                                <tr class="table-head-row">
-                                    <th class="product-remove"></th>
-                                    <th class="product-image">Product Image</th>
-                                    <th class="product-name">Name</th>
-                                    <th class="product-price">Price</th>
-                                    <th class="product-quantity">Quantity</th>
-                                    <th class="product-total">Total</th>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody id="cart-items">
-                                <!-- Cart items will be dynamically inserted here -->
+                                <!-- Cart items populated by JavaScript -->
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-12">
                     <div class="total-section">
                         <table class="total-table">
-                            <thead class="total-table-head">
-                                <tr class="table-total-row">
-                                    <th>Total</th>
-                                    <th>Price</th>
+                            <thead>
+                                <tr>
+                                    <th>Cart Summary</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="total-data">
-                                    <td><strong>Subtotal: </strong></td>
-                                    <td id="subtotal">R0</td>
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td id="cart-subtotal">R0.00</td>
                                 </tr>
-                                <tr class="total-data">
-                                    <td><strong>Shipping: </strong></td>
-                                    <td>Free</td>
+                                <tr>
+                                    <td>Shipping</td>
+                                    <td id="cart-shipping">R50.00</td>
                                 </tr>
-                                <tr class="total-data">
-                                    <td><strong>Total: </strong></td>
-                                    <td id="total">R0</td>
+                                <tr>
+                                    <td>Total</td>
+                                    <td id="cart-total">R0.00</td>
                                 </tr>
                             </tbody>
                         </table>
                         <div class="cart-buttons">
-                            <a href="cart.html" class="boxed-btn">Update Cart</a>
+                            <a href="shop.html" class="boxed-btn">Continue Shopping</a>
                             <a href="checkout.html" class="boxed-btn black">Check Out</a>
                         </div>
-                        <!-- Clear Cart Button -->
-                        <div class="clear-cart-button">
-                            <button class="boxed-btn red" onclick="clearCart()">Clear Cart</button>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end cart -->
 
-    <!-- logo carousel -->
-    <div class="logo-carousel-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="logo-carousel-inner">
-                        <div class="single-logo-item">
-                            <img src="assets/img/company-logos/1.png" alt="">
-                        </div>
-                        <div class="single-logo-item">
-                            <img src="assets/img/company-logos/2.png" alt="">
-                        </div>
-                        <div class="single-logo-item">
-                            <img src="assets/img/company-logos/3.png" alt="">
-                        </div>
-                        <div class="single-logo-item">
-                            <img src="assets/img/company-logos/4.png" alt="">
-                        </div>
-                        <div class="single-logo-item">
-                            <img src="assets/img/company-logos/5.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end logo carousel -->
-
-    <!-- footer -->
+    <!-- Footer -->
     <div class="footer-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
-                    <div class="footer-box about-widget">
-                        <h2 class="widget-title">About us</h2>
-                        <p>About Canapa Delight</p>
+                    <div class="footer-box">
+                        <h4>About Us</h4>
+                        <p>Premium Cannabis Products</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="footer-box get-in-touch">
-                        <h2 class="widget-title">Get in Touch</h2>
+                    <div class="footer-box">
+                        <h4>Contact</h4>
                         <ul>
-                            <li>22 Karee Street, Southdowns Shopping Centre</li>
-                            <li>iCanapadelight@gmail.com</li>
-                            <li>+27 71 031 4435</li>
+                            <li>22 Karee Street, Irene</li>
+                            <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com"></span></li>
+                            <li>Phone: +27 71 031 4435</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end footer -->
 
-    <!-- copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <p>Copyright &copy; 2025 - All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 text-right col-md-12">
-                    <div class="social-icons">
-                        <ul>
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end copyright -->
-
-    <!-- Floating WhatsApp Icon with Text -->
+    <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-text">Chat with us</span>
     </a>
 
-    <!-- Custom CSS for Floating WhatsApp Icon with Text -->
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Cart Functionality -->
+    <script>
+        class CartSystem {
+            constructor() {
+                this.cart = JSON.parse(localStorage.getItem('cart')) || [];
+                this.initCartDisplay();
+            }
+
+            initCartDisplay() {
+                this.renderCartItems();
+                this.setupEventListeners();
+                this.updateCartSummary();
+                this.updateHeaderCartCount();
+            }
+
+            renderCartItems() {
+                const cartItemsContainer = document.getElementById('cart-items');
+                cartItemsContainer.innerHTML = '';
+
+                this.cart.forEach((item, index) => {
+                    const cartItemHTML = `
+                        <tr>
+                            <td class="product-cell">
+                                <div class="cart-product-item">
+                                    <img src="${item.image}" alt="${item.name}">
+                                    <h4>${item.name}</h4>
+                                </div>
+                            </td>
+                            <td class="price-cell">R${item.price.toFixed(2)}</td>
+                            <td class="quantity-cell">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn minus" data-index="${index}">-</button>
+                                    <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-index="${index}">
+                                    <button class="quantity-btn plus" data-index="${index}">+</button>
+                                </div>
+                            </td>
+                            <td class="total-cell">R${(item.price * item.quantity).toFixed(2)}</td>
+                            <td class="remove-cell">
+                                <button class="remove-btn" data-index="${index}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                    cartItemsContainer.insertAdjacentHTML('beforeend', cartItemHTML);
+                });
+            }
+
+            setupEventListeners() {
+                document.querySelectorAll('.quantity-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => this.adjustQuantity(e));
+                });
+
+                document.querySelectorAll('.quantity-input').forEach(input => {
+                    input.addEventListener('change', (e) => this.changeQuantity(e));
+                });
+
+                document.querySelectorAll('.remove-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => this.removeItem(e));
+                });
+            }
+
+            adjustQuantity(e) {
+                const index = e.target.dataset.index;
+                const isPlus = e.target.classList.contains('plus');
+                
+                if(isPlus) {
+                    this.cart[index].quantity++;
+                } else {
+                    if(this.cart[index].quantity > 1) this.cart[index].quantity--;
+                }
+                
+                this.updateCart();
+            }
+
+            changeQuantity(e) {
+                const index = e.target.dataset.index;
+                const newQuantity = parseInt(e.target.value);
+                
+                if(newQuantity > 0) {
+                    this.cart[index].quantity = newQuantity;
+                    this.updateCart();
+                }
+            }
+
+            removeItem(e) {
+                const index = e.target.closest('button').dataset.index;
+                this.cart.splice(index, 1);
+                this.updateCart();
+            }
+
+            updateCart() {
+                localStorage.setItem('cart', JSON.stringify(this.cart));
+                this.renderCartItems();
+                this.updateCartSummary();
+                this.updateHeaderCartCount();
+            }
+
+            updateCartSummary() {
+                const subtotal = this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const shipping = 50;
+                const total = subtotal + shipping;
+
+                document.getElementById('cart-subtotal').textContent = `R${subtotal.toFixed(2)}`;
+                document.getElementById('cart-total').textContent = `R${total.toFixed(2)}`;
+            }
+
+            updateHeaderCartCount() {
+                const count = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.querySelector('.cart-count').textContent = count;
+            }
+        }
+
+        // Initialize cart when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new CartSystem();
+            
+            // Email Protection
+            document.querySelectorAll('.safe-email').forEach(element => {
+                const user = element.dataset.user;
+                const domain = element.dataset.domain;
+                element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+            });
+        });
+    </script>
+
     <style>
+        .cart-product-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-product-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .quantity-btn {
+            padding: 5px 10px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+        }
+
+        .total-table {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .total-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
         .float-whatsapp {
             position: fixed;
             bottom: 20px;
@@ -365,105 +369,5 @@
             font-weight: bold;
         }
     </style>
-
-    <!-- JavaScript for Hamburger Menu -->
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.main-menu');
-            menu.classList.toggle('active');
-        }
-
-        // JavaScript for Sub-Menu Toggle on Mobile
-        document.querySelectorAll('.main-menu ul li a').forEach(item => {
-            if (item.nextElementSibling && item.nextElementSibling.classList.contains('sub-menu')) {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    item.nextElementSibling.classList.toggle('active');
-                });
-            }
-        });
-    </script>
-
-    <!-- Cart Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartItemsContainer = document.getElementById('cart-items');
-            const subtotalElement = document.getElementById('subtotal');
-            const totalElement = document.getElementById('total');
-
-            let subtotal = 0;
-
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<tr><td colspan="6">Your cart is empty.</td></tr>';
-            } else {
-                cartItemsContainer.innerHTML = cart.map(item => {
-                    const itemTotal = item.price * item.quantity;
-                    subtotal += itemTotal;
-
-                    return `
-                        <tr class="table-body-row">
-                            <td class="product-remove"><a href="#" onclick="removeItem(${item.id})"><i class="far fa-window-close"></i></a></td>
-                            <td class="product-image"><img src="assets/img/products/product-img-${item.id}.jpg" alt="${item.name}"></td>
-                            <td class="product-name">${item.name}</td>
-                            <td class="product-price">R${item.price}</td>
-                            <td class="product-quantity"><input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${item.id}, this.value)"></td>
-                            <td class="product-total">R${itemTotal}</td>
-                        </tr>
-                    `;
-                }).join('');
-            }
-
-            // Update subtotal and total
-            subtotalElement.textContent = `R${subtotal}`;
-            totalElement.textContent = `R${subtotal}`;
-
-            // Function to remove an item from the cart
-            window.removeItem = function(productId) {
-                const updatedCart = cart.filter(item => item.id !== productId);
-                localStorage.setItem('cart', JSON.stringify(updatedCart));
-                location.reload(); // Refresh the page to reflect changes
-            };
-
-            // Function to update item quantity
-            window.updateQuantity = function(productId, quantity) {
-                const updatedCart = cart.map(item => {
-                    if (item.id === productId) {
-                        item.quantity = parseInt(quantity, 10);
-                    }
-                    return item;
-                });
-                localStorage.setItem('cart', JSON.stringify(updatedCart));
-                location.reload(); // Refresh the page to reflect changes
-            };
-
-            // Function to clear the entire cart
-            window.clearCart = function() {
-                localStorage.removeItem('cart');
-                location.reload(); // Refresh the page to reflect changes
-            };
-        });
-    </script>
-
-    <!-- jquery -->
-    <script src="assets/js/jquery-1.11.3.min.js"></script>
-    <!-- bootstrap -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!-- count down -->
-    <script src="assets/js/jquery.countdown.js"></script>
-    <!-- isotope -->
-    <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
-    <!-- waypoints -->
-    <script src="assets/js/waypoints.js"></script>
-    <!-- owl carousel -->
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <!-- magnific popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- mean menu -->
-    <script src="assets/js/jquery.meanmenu.min.js"></script>
-    <!-- sticker js -->
-    <script src="assets/js/sticker.js"></script>
-    <!-- main js -->
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
