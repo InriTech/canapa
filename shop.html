@@ -33,12 +33,90 @@
                         "description": "200g - 10 servings",
                         "offers": {"@type": "Offer","price": "250.00","priceCurrency": "ZAR"}
                     }
-                },
-                <!-- Add remaining products following same schema structure -->
+                }
             ]
         }
     }
     </script>
+    <style>
+        .cart-notification {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 100;
+            animation: fadeInOut 2s ease-in-out;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        .single-product-item {
+            position: relative;
+        }
+        
+        /* Mobile menu styles */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            padding: 15px;
+        }
+        
+        .hamburger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                background: white;
+                border-radius: 4px;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            
+            .main-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: white;
+                padding: 20px;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                transition: 0.3s;
+                z-index: 999;
+            }
+            
+            .main-menu.active {
+                right: 0;
+            }
+            
+            .main-menu ul {
+                flex-direction: column;
+                margin-top: 50px;
+            }
+        }
+    </style>
 </head>
 <body>
 	<!-- Hamburger Menu -->
@@ -109,669 +187,642 @@
         <div class="container">
             <div class="row product-lists g-4">
                 
-                <!-- Cookies -->
-               <!-- Cookies Products -->
-<div class="col-lg-3 col-md-4 col-sm-6 cookies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="choc-chip-cookies.html">
-                <img src="assets/img/products/product-img-1.jpg" alt="Chocolate Chip Cookies 200g">
-            </a>
-        </div>
-        <h3>Choc Chip Cookies</h3>
-        <p class="product-price"><span>200g - 10 servings</span> R250.00</p>
-        <button class="cart-btn" data-product-id="1">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <!-- Cookies Products -->
+                <div class="col-lg-3 col-md-4 col-sm-6 cookies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="choc-chip-cookies.html">
+                                <img src="assets/img/products/product-img-1.jpg" alt="Chocolate Chip Cookies 200g">
+                            </a>
+                        </div>
+                        <h3>Choc Chip Cookies</h3>
+                        <p class="product-price"><span>200g - 10 servings</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="1">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 cookies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="choc-chip-cookies1.html">
-                <img src="assets/img/products/product-img-10.jpg" alt="Coconut Oat THC Cookies">
-            </a>
-        </div>
-        <h3>Coconut Oat THC Cookies</h3>
-        <p class="product-price"><span>200g - 10 servings</span> R250.00</p>
-        <button class="cart-btn" data-product-id="2">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 cookies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="choc-chip-cookies1.html">
+                                <img src="assets/img/products/product-img-10.jpg" alt="Coconut Oat THC Cookies">
+                            </a>
+                        </div>
+                        <h3>Coconut Oat THC Cookies</h3>
+                        <p class="product-price"><span>200g - 10 servings</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="2">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 cookies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="double-choc-cookies.html">
-                <img src="assets/img/products/product-img-13.jpg" alt="Double Chocolate Cookies">
-            </a>
-        </div>
-        <h3>Chocolate Cookies</h3>
-        <p class="product-price"><span>200g - 10 servings</span> R250.00</p>
-        <button class="cart-btn" data-product-id="3">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 cookies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="double-choc-cookies.html">
+                                <img src="assets/img/products/product-img-13.jpg" alt="Double Chocolate Cookies">
+                            </a>
+                        </div>
+                        <h3>Chocolate Cookies</h3>
+                        <p class="product-price"><span>200g - 10 servings</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="3">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 cookies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="choc-chip-cookies2.html">
-                <img src="assets/img/products/product-img-11.jpg" alt="THC Cookie Bites">
-            </a>
-        </div>
-        <h3>Choc Cookie Chips</h3>
-        <p class="product-price"><span>20mg/serving - 5 pieces</span> R150.00</p>
-        <button class="cart-btn" data-product-id="4">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 cookies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="choc-chip-cookies2.html">
+                                <img src="assets/img/products/product-img-11.jpg" alt="THC Cookie Bites">
+                            </a>
+                        </div>
+                        <h3>Choc Cookie Chips</h3>
+                        <p class="product-price"><span>20mg/serving - 5 pieces</span> R150.00</p>
+                        <button class="cart-btn" data-product-id="4">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 cookies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="choc-chip-cookies1.html">
-                <img src="assets/img/products/product-img-12.jpg" alt="Mini THC Cookies">
-            </a>
-        </div>
-        <h3>Choc Cookies</h3>
-        <p class="product-price"><span>20mg/serving - 10 pieces</span> R150.00</p>
-        <button class="cart-btn" data-product-id="5">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 cookies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="choc-chip-cookies1.html">
+                                <img src="assets/img/products/product-img-12.jpg" alt="Mini THC Cookies">
+                            </a>
+                        </div>
+                        <h3>Choc Cookies</h3>
+                        <p class="product-price"><span>20mg/serving - 10 pieces</span> R150.00</p>
+                        <button class="cart-btn" data-product-id="5">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-
-                <!-- Gummie s -->
                 <!-- Gummies Products -->
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="gummies.html">
-                <img src="assets/img/products/product-img-2.jpg" alt="Yummy THC Gummies 20mg">
-            </a>
-        </div>
-        <h3>Yummy Gummies</h3>
-        <p class="product-price"><span>20mg/serving - 10 pieces</span> R250.00</p>
-        <button class="cart-btn" data-product-id="7">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="gummies.html">
+                                <img src="assets/img/products/product-img-2.jpg" alt="Yummy THC Gummies 20mg">
+                            </a>
+                        </div>
+                        <h3>Yummy Gummies</h3>
+                        <p class="product-price"><span>20mg/serving - 10 pieces</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="7">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="Gummies5.html">
+                                <img src="assets/img/products/product-img-8.jpg" alt="Sugar Free THC Gummies">
+                            </a>
+                        </div>
+                        <h3>Sugar Free THC Gummies</h3>
+                        <p class="product-price"><span>20mg/serving - 10 pieces</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="8">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="Gummies5.html">
-                <img src="assets/img/products/product-img-8.jpg" alt="Sugar Free THC Gummies">
-            </a>
-        </div>
-        <h3>Sugar Free THC Gummies</h3>
-        <p class="product-price"><span>20mg/serving - 10 pieces</span> R250.00</p>
-        <button class="cart-btn" data-product-id="8">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="sodaze2.html">
+                                <img src="assets/img/products/product-img-14.jpg" alt="Tropical THC Gummies">
+                            </a>
+                        </div>
+                        <h3>Sodaze Tropical Gummies</h3>
+                        <p class="product-price"><span>Mixed fruit flavors - 10 pieces</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="9">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="sodaze2.html">
-                <img src="assets/img/products/product-img-14.jpg" alt="Tropical THC Gummies">
-            </a>
-        </div>
-        <h3>Sodaze Tropical Gummies</h3>
-        <p class="product-price"><span>Mixed fruit flavors - 10 pieces</span> R250.00</p>
-        <button class="cart-btn" data-product-id="9">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="Gummies3.html">
+                                <img src="assets/img/products/product-img-16.jpg" alt="Sour THC Gummies">
+                            </a>
+                        </div>
+                        <h3>Sour THC Gummies</h3>
+                        <p class="product-price"><span>20mg/serving - 10 pieces</span> R100.00</p>
+                        <button class="cart-btn" data-product-id="10">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="Gummies3.html">
-                <img src="assets/img/products/product-img-16.jpg" alt="Sour THC Gummies">
-            </a>
-        </div>
-        <h3>Sour THC Gummies</h3>
-        <p class="product-price"><span>20mg/serving - 10 pieces</span> R100.00</p>
-        <button class="cart-btn" data-product-id="10">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="Gummies6.html">
+                                <img src="assets/img/products/product-img-19.jpg" alt="CBD Relax Gummies">
+                            </a>
+                        </div>
+                        <h3>Relax – Full Spectrum</h3>
+                        <p class="product-price"><span>25mg CBD/serving - 15 pieces</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="11">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="Gummies6.html">
-                <img src="assets/img/products/product-img-19.jpg" alt="CBD Relax Gummies">
-            </a>
-        </div>
-        <h3>Relax – Full Spectrum</h3>
-        <p class="product-price"><span>25mg CBD/serving - 15 pieces</span> R250.00</p>
-        <button class="cart-btn" data-product-id="11">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="sodaze3.html">
+                                <img src="assets/img/products/product-img-79.jpg" alt="Grape THC Gummies">
+                            </a>
+                        </div>
+                        <h3>Sodaze Grape Gummies</h3>
+                        <p class="product-price"><span>30mg/serving - 10 pieces</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="12">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="sodaze3.html">
-                <img src="assets/img/products/product-img-79.jpg" alt="Grape THC Gummies">
-            </a>
-        </div>
-        <h3>Sodaze Grape Gummies</h3>
-        <p class="product-price"><span>30mg/serving - 10 pieces</span> R250.00</p>
-        <button class="cart-btn" data-product-id="12">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="Gummies4.html">
+                                <img src="assets/img/products/product-img-17.jpg" alt="Mixed THC Gummies Pack">
+                            </a>
+                        </div>
+                        <h3>Mixed THC Gummies Pack</h3>
+                        <p class="product-price"><span>Assorted flavors - 15 pieces</span> R150.00</p>
+                        <button class="cart-btn" data-product-id="13">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="Gummies4.html">
-                <img src="assets/img/products/product-img-17.jpg" alt="Mixed THC Gummies Pack">
-            </a>
-        </div>
-        <h3>Mixed THC Gummies Pack</h3>
-        <p class="product-price"><span>Assorted flavors - 15 pieces</span> R150.00</p>
-        <button class="cart-btn" data-product-id="13">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="sleep-gummies.html">
+                                <img src="assets/img/products/product-img-20.jpg" alt="Sleep Aid CBD Gummies">
+                            </a>
+                        </div>
+                        <h3>Chillax– Full Spectrum</h3>
+                        <p class="product-price"><span>25mg CBD/serving - 15 pieces</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="14">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="sleep-gummies.html">
-                <img src="assets/img/products/product-img-20.jpg" alt="Sleep Aid CBD Gummies">
-            </a>
-        </div>
-        <h3>Chillax– Full Spectrum</h3>
-        <p class="product-price"><span>25mg CBD/serving - 15 pieces</span> R250.00</p>
-        <button class="cart-btn" data-product-id="14">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="sodaze1.html">
+                                <img src="assets/img/products/product-img-15.jpg" alt="Sodaze Tropical Gummies">
+                            </a>
+                        </div>
+                        <h3>Sodaze Raspberry Gummies</h3>
+                        <p class="product-price"><span>20mg THC/serving - 10 pieces</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="15">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="sodaze1.html">
-                <img src="assets/img/products/product-img-15.jpg" alt="Sodaze Tropical Gummies">
-            </a>
-        </div>
-        <h3>Sodaze Raspberry Gummies</h3>
-        <p class="product-price"><span>20mg THC/serving - 10 pieces</span> R250.00</p>
-        <button class="cart-btn" data-product-id="15">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="Gummies2.html">
+                                <img src="assets/img/products/product-img-7.jpg" alt="High Potency THC Gummies">
+                            </a>
+                        </div>
+                        <h3>Yummy Gummies</h3>
+                        <p class="product-price"><span>50mg/serving - 15 pieces</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="16">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="Gummies2.html">
-                <img src="assets/img/products/product-img-7.jpg" alt="High Potency THC Gummies">
-            </a>
-        </div>
-        <h3>Yummy Gummies</h3>
-        <p class="product-price"><span>50mg/serving - 15 pieces</span> R250.00</p>
-        <button class="cart-btn" data-product-id="16">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 gummies">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="Fudge.html">
+                                <img src="assets/img/products/product-img-18.jpg" alt="Vegan THC Gummies">
+                            </a>
+                        </div>
+                        <h3>Chocolate Fudge</h3>
+                        <p class="product-price"><span>20mg/serving </span> R250.00</p>
+                        <button class="cart-btn" data-product-id="17">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 gummies">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="Fudge.html">
-                <img src="assets/img/products/product-img-18.jpg" alt="Vegan THC Gummies">
-            </a>
-        </div>
-        <h3>Chocolate Fudge</h3>
-        <p class="product-price"><span>20mg/serving </span> R250.00</p>
-        <button class="cart-btn" data-product-id="17">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
-
-
-                <!-- Vapes -->
                 <!-- Vape Products -->
-<div class="col-lg-3 col-md-4 col-sm-6 vapes">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="Disposable vapes.html">
-                <img src="assets/img/products/product-img-3.jpg" alt="Durban Poison Sativa Vape">
-            </a>
-        </div>
-        <h3>Durban Poison Sativa</h3>
-        <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p>
-        <button class="cart-btn" data-product-id="19">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 vapes">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="Disposable vapes.html">
+                                <img src="assets/img/products/product-img-3.jpg" alt="Durban Poison Sativa Vape">
+                            </a>
+                        </div>
+                        <h3>Durban Poison Sativa</h3>
+                        <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p>
+                        <button class="cart-btn" data-product-id="19">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 vapes">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="Disposable vapes1.html">
-                <img src="assets/img/products/product-img-53.jpg" alt="Northern Lights Indica Vape">
-            </a>
-        </div>
-        <h3>Northern Lights Indica</h3>
-        <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p>
-        <button class="cart-btn" data-product-id="20">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 vapes">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="Disposable vapes1.html">
+                                <img src="assets/img/products/product-img-53.jpg" alt="Northern Lights Indica Vape">
+                            </a>
+                        </div>
+                        <h3>Northern Lights Indica</h3>
+                        <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p>
+                        <button class="cart-btn" data-product-id="20">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 vapes">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="Disposable vapes2.html">
-                <img src="assets/img/products/product-img-56.jpg" alt="Live Resin THC Vape">
-            </a>
-        </div>
-        <h3>Live Resin Vape</h3>
-        <p class="product-price"><span>1ml Premium Extract</span> R1300.00</p>
-        <button class="cart-btn" data-product-id="21">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 vapes">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="Disposable vapes2.html">
+                                <img src="assets/img/products/product-img-56.jpg" alt="Live Resin THC Vape">
+                            </a>
+                        </div>
+                        <h3>Live Resin Vape</h3>
+                        <p class="product-price"><span>1ml Premium Extract</span> R1300.00</p>
+                        <button class="cart-btn" data-product-id="21">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 vapes">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="vapecartridge2.html">
-                <img src="assets/img/products/product-img-33.jpg" alt="Gelato Hybrid Vape Cartridge">
-            </a>
-        </div>
-        <h3>Gelato Hybrid Cartridge</h3>
-        <p class="product-price"><span>0.5ml THC</span> R500.00</p>
-        <button class="cart-btn" data-product-id="22">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 vapes">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="vapecartridge2.html">
+                                <img src="assets/img/products/product-img-33.jpg" alt="Gelato Hybrid Vape Cartridge">
+                            </a>
+                        </div>
+                        <h3>Gelato Hybrid Cartridge</h3>
+                        <p class="product-price"><span>0.5ml THC</span> R500.00</p>
+                        <button class="cart-btn" data-product-id="22">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 vapes">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="vapecartridge3.html">
-                <img src="assets/img/products/product-img-38.jpg" alt="Jack Herrer Sativa Vape">
-            </a>
-        </div>
-        <h3>Jack Herrer Sativa</h3>
-        <p class="product-price"><span>0.5ml THC Cartridge</span> R500.00</p>
-        <button class="cart-btn" data-product-id="23">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 vapes">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="vapecartridge3.html">
+                                <img src="assets/img/products/product-img-38.jpg" alt="Jack Herrer Sativa Vape">
+                            </a>
+                        </div>
+                        <h3>Jack Herrer Sativa</h3>
+                        <p class="product-price"><span>0.5ml THC Cartridge</span> R500.00</p>
+                        <button class="cart-btn" data-product-id="23">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 vapes">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="vapecartridge4.html">
-                <img src="assets/img/products/product-img-45.jpg" alt="Sativa Vape Cartridge">
-            </a>
-        </div>
-        <h3>Sativa Cartridge</h3>
-        <p class="product-price"><span>1ml THC</span> R800.00</p>
-        <button class="cart-btn" data-product-id="24">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 vapes">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="vapecartridge4.html">
+                                <img src="assets/img/products/product-img-45.jpg" alt="Sativa Vape Cartridge">
+                            </a>
+                        </div>
+                        <h3>Sativa Cartridge</h3>
+                        <p class="product-price"><span>1ml THC</span> R800.00</p>
+                        <button class="cart-btn" data-product-id="24">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
+                <div class="col-lg-3 col-md-4 col-sm-6 vapes">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="vaperefill2.html">
+                                <img src="assets/img/products/product-img-73.jpg" alt="Relax CBD Vape Refill">
+                            </a>
+                        </div>
+                        <h3>Relax CBD Vape Refill</h3>
+                        <p class="product-price"><span>600mg CBD - 30ml</span> R490.00</p>
+                        <button class="cart-btn" data-product-id="26">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
+                <div class="col-lg-3 col-md-4 col-sm-6 vapes">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="paincartridge.html">
+                                <img src="assets/img/products/product-img-6.jpg" alt="Pain Relief CBD Cartridge">
+                            </a>
+                        </div>
+                        <h3>Pain CBD Cartridge</h3>
+                        <p class="product-price"><span>300mg CBD - 30ml</span> R400.00</p>
+                        <button class="cart-btn" data-product-id="27">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 vapes">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="vaperefill2.html">
-                <img src="assets/img/products/product-img-73.jpg" alt="Relax CBD Vape Refill">
-            </a>
-        </div>
-        <h3>Relax CBD Vape Refill</h3>
-        <p class="product-price"><span>600mg CBD - 30ml</span> R490.00</p>
-        <button class="cart-btn" data-product-id="26">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 vapes">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="vape-pen.html">
+                                <img src="assets/img/products/product-img-23.jpg" alt="Vape Battery Pen">
+                            </a>
+                        </div>
+                        <h3>Vape Battery Pen</h3>
+                        <p class="product-price"><span>270mAh Battery</span> R500.00</p>
+                        <button class="cart-btn" data-product-id="28">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 vapes">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="paincartridge.html">
-                <img src="assets/img/products/product-img-6.jpg" alt="Pain Relief CBD Cartridge">
-            </a>
-        </div>
-        <h3>Pain CBD Cartridge</h3>
-        <p class="product-price"><span>300mg CBD - 30ml</span> R400.00</p>
-        <button class="cart-btn" data-product-id="27">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
-
-<div class="col-lg-3 col-md-4 col-sm-6 vapes">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="vape-pen.html">
-                <img src="assets/img/products/product-img-23.jpg" alt="Vape Battery Pen">
-            </a>
-        </div>
-        <h3>Vape Battery Pen</h3>
-        <p class="product-price"><span>270mAh Battery</span> R500.00</p>
-        <button class="cart-btn" data-product-id="28">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
-
-
-                <!-- Oils -->
                 <!-- Oil Products -->
-<div class="col-lg-3 col-md-4 col-sm-6 oil">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Oils.html">
-                <img src="assets/img/products/product-img-5.jpg" alt="Full Spectrum CBD Oil 100mg">
-            </a>
-        </div>
-        <h3>Full Spectrum CBD Oil</h3>
-        <p class="product-price"><span>100mg CBD - 15ml</span> R290.00</p>
-        <button class="cart-btn" data-product-id="34">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 oil">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Oils.html">
+                                <img src="assets/img/products/product-img-5.jpg" alt="Full Spectrum CBD Oil 100mg">
+                            </a>
+                        </div>
+                        <h3>Full Spectrum CBD Oil</h3>
+                        <p class="product-price"><span>100mg CBD - 15ml</span> R290.00</p>
+                        <button class="cart-btn" data-product-id="34">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 oil">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Oils2.html">
-                <img src="assets/img/products/product-img-58.jpg" alt="Deep Sleep CBD Oil 100mg">
-            </a>
-        </div>
-        <h3>Deep Sleep CBD Oil</h3>
-        <p class="product-price"><span>100mg CBD - 15ml</span> R1200.00</p>
-        <button class="cart-btn" data-product-id="35">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 oil">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Oils2.html">
+                                <img src="assets/img/products/product-img-58.jpg" alt="Deep Sleep CBD Oil 100mg">
+                            </a>
+                        </div>
+                        <h3>Deep Sleep CBD Oil</h3>
+                        <p class="product-price"><span>100mg CBD - 15ml</span> R1200.00</p>
+                        <button class="cart-btn" data-product-id="35">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 oil">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Oils3.html">
-                <img src="assets/img/products/product-img-60.jpg" alt="Pain Relief CBD Oil 300mg">
-            </a>
-        </div>
-        <h3>Pain Relief CBD Oil</h3>
-        <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p>
-        <button class="cart-btn" data-product-id="36">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 oil">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Oils3.html">
+                                <img src="assets/img/products/product-img-60.jpg" alt="Pain Relief CBD Oil 300mg">
+                            </a>
+                        </div>
+                        <h3>Pain Relief CBD Oil</h3>
+                        <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p>
+                        <button class="cart-btn" data-product-id="36">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 oil">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Oils4.html">
-                <img src="assets/img/products/product-img-61.jpg" alt="Pet CBD Oil 150mg">
-            </a>
-        </div>
-        <h3>Pet CBD Oil</h3>
-        <p class="product-price"><span>150mg CBD - 30ml</span> R590.00</p>
-        <button class="cart-btn" data-product-id="37">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 oil">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Oils4.html">
+                                <img src="assets/img/products/product-img-61.jpg" alt="Pet CBD Oil 150mg">
+                            </a>
+                        </div>
+                        <h3>Pet CBD Oil</h3>
+                        <p class="product-price"><span>150mg CBD - 30ml</span> R590.00</p>
+                        <button class="cart-btn" data-product-id="37">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 oil">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Oils5.html">
-                <img src="assets/img/products/product-img-62.jpg" alt="Relax CBD Oil 300mg">
-            </a>
-        </div>
-        <h3>Relax CBD Oil</h3>
-        <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p>
-        <button class="cart-btn" data-product-id="38">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 oil">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Oils5.html">
+                                <img src="assets/img/products/product-img-62.jpg" alt="Relax CBD Oil 300mg">
+                            </a>
+                        </div>
+                        <h3>Relax CBD Oil</h3>
+                        <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p>
+                        <button class="cart-btn" data-product-id="38">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 oil">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Oils6.html">
-                <img src="assets/img/products/product-img-63.jpg" alt="Sleep Aid CBD Oil 300mg">
-            </a>
-        </div>
-        <h3>Sleep Aid CBD Oil</h3>
-        <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p>
-        <button class="cart-btn" data-product-id="39">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
-
-
-
+                <div class="col-lg-3 col-md-4 col-sm-6 oil">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Oils6.html">
+                                <img src="assets/img/products/product-img-63.jpg" alt="Sleep Aid CBD Oil 300mg">
+                            </a>
+                        </div>
+                        <h3>Sleep Aid CBD Oil</h3>
+                        <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p>
+                        <button class="cart-btn" data-product-id="39">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
 				<!-- Tea Products -->
-<div class="col-lg-3 col-md-4 col-sm-6 tea"> <!-- Added "tea" category class -->
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Rooibos Tea.html">
-                <img src="assets/img/products/product-img-64.jpg" alt="CBD Mint Rooibos Tea">
-            </a>
-        </div>
-        <h3>CBD Mint Rooibos Tea</h3>
-        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
-        <a href="cart.html" class="cart-btn" 
-           data-product-id="51" 
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </a>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 tea">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Rooibos Tea.html">
+                                <img src="assets/img/products/product-img-64.jpg" alt="CBD Mint Rooibos Tea">
+                            </a>
+                        </div>
+                        <h3>CBD Mint Rooibos Tea</h3>
+                        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
+                        <button class="cart-btn" data-product-id="51">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 tea">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Rooibos Tea1.html">
-                <img src="assets/img/products/product-img-65.jpg" alt="CBD Cinnamon Rooibos Tea">
-            </a>
-        </div>
-        <h3>CBD Cinnamon Rooibos Tea</h3>
-        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
-        <a href="cart.html" class="cart-btn" 
-           data-product-id="52" 
-           data-product-name="CBD Cinnamon Rooibos Tea" 
-           data-product-price="150.00">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </a>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 tea">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Rooibos Tea1.html">
+                                <img src="assets/img/products/product-img-65.jpg" alt="CBD Cinnamon Rooibos Tea">
+                            </a>
+                        </div>
+                        <h3>CBD Cinnamon Rooibos Tea</h3>
+                        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
+                        <button class="cart-btn" data-product-id="52">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 tea">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Rooibos Tea2.html">
-                <img src="assets/img/products/product-img-66.jpg" alt="CBD Ginger Rooibos Tea">
-            </a>
-        </div>
-        <h3>CBD Ginger Rooibos Tea</h3>
-        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
-        <a href="cart.html" class="cart-btn" 
-           data-product-id="53" 
-           data-product-name="CBD Ginger Rooibos Tea" 
-           data-product-price="150.00">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </a>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 tea">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Rooibos Tea2.html">
+                                <img src="assets/img/products/product-img-66.jpg" alt="CBD Ginger Rooibos Tea">
+                            </a>
+                        </div>
+                        <h3>CBD Ginger Rooibos Tea</h3>
+                        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
+                        <button class="cart-btn" data-product-id="53">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 tea">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Rooibos Tea3.html">
-                <img src="assets/img/products/product-img-67.jpg" alt="CBD Pomegranate Rooibos Tea">
-            </a>
-        </div>
-        <h3>CBD Pomegranate Rooibos Tea</h3> <!-- Fixed spelling -->
-        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
-        <a href="cart.html" class="cart-btn" 
-           data-product-id="54" 
-           data-product-name="CBD Pomegranate Rooibos Tea" 
-           data-product-price="150.00">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </a>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 tea">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Rooibos Tea3.html">
+                                <img src="assets/img/products/product-img-67.jpg" alt="CBD Pomegranate Rooibos Tea">
+                            </a>
+                        </div>
+                        <h3>CBD Pomegranate Rooibos Tea</h3>
+                        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
+                        <button class="cart-btn" data-product-id="54">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 tea">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="CBD Rooibos Tea3.html">
-                <img src="assets/img/products/product-img-68.jpg" alt="CBD Lemongrass Rooibos Tea">
-            </a>
-        </div>
-        <h3>CBD Lemongrass Rooibos Tea</h3>
-        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
-        <a href="cart.html" class="cart-btn" 
-           data-product-id="55" 
-           data-product-name="CBD Lemongrass Rooibos Tea" 
-           data-product-price="150.00">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </a>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 tea">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="CBD Rooibos Tea3.html">
+                                <img src="assets/img/products/product-img-68.jpg" alt="CBD Lemongrass Rooibos Tea">
+                            </a>
+                        </div>
+                        <h3>CBD Lemongrass Rooibos Tea</h3>
+                        <p class="product-price"><span>Full Spectrum 5mg</span> R150.00</p>
+                        <button class="cart-btn" data-product-id="55">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<!-- Soda product (belongs in treats category) -->
-<!-- Soda Products -->
-<div class="col-lg-3 col-md-4 col-sm-6 soda">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="berry-haze-soda.html">
-                <img src="assets/img/products/product-img-82.jpg" alt="Berry Haze CBD Soda">
-            </a>
-        </div>
-        <h3>Berry Haze CBD Soda</h3>
-        <p class="product-price"><span>30mg THC per can</span> R70.00</p>
-        <button class="cart-btn" data-product-id="44">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <!-- Soda Products -->
+                <div class="col-lg-3 col-md-4 col-sm-6 soda">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="berry-haze-soda.html">
+                                <img src="assets/img/products/product-img-82.jpg" alt="Berry Haze CBD Soda">
+                            </a>
+                        </div>
+                        <h3>Berry Haze CBD Soda</h3>
+                        <p class="product-price"><span>30mg THC per can</span> R70.00</p>
+                        <button class="cart-btn" data-product-id="44">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 soda">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="cherry-pop-soda.html">
-                <img src="assets/img/products/product-img-81.jpg" alt="Cherry Pop THC Soda">
-            </a>
-        </div>
-        <h3>Cherry Pop THC Soda</h3>
-        <p class="product-price"><span>30mg THC per can</span> R70.00</p>
-        <button class="cart-btn" data-product-id="45">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 soda">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="cherry-pop-soda.html">
+                                <img src="assets/img/products/product-img-81.jpg" alt="Cherry Pop THC Soda">
+                            </a>
+                        </div>
+                        <h3>Cherry Pop THC Soda</h3>
+                        <p class="product-price"><span>30mg THC per can</span> R70.00</p>
+                        <button class="cart-btn" data-product-id="45">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 soda">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="lemonade-soda.html">
-                <img src="assets/img/products/product-img-80.jpg" alt="Blueberry Lemonade Soda">
-            </a>
-        </div>
-        <h3>Blueberry Lemonade Soda</h3>
-        <p class="product-price"><span>30mg THC per can</span> R70.00</p>
-        <button class="cart-btn" data-product-id="46">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
-<!-- Treats Products -->
-<div class="col-lg-3 col-md-4 col-sm-6 treats">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="dogtreats.html">
-                <img src="assets/img/products/product-img-4.jpg" alt="CBD Dog Treats">
-            </a>
-        </div>
-        <h3>CBD Dog Treats</h3>
-        <p class="product-price"><span>20mg CBD - 10 pieces</span> R200.00</p>
-        <button class="cart-btn" data-product-id="42">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <div class="col-lg-3 col-md-4 col-sm-6 soda">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="lemonade-soda.html">
+                                <img src="assets/img/products/product-img-80.jpg" alt="Blueberry Lemonade Soda">
+                            </a>
+                        </div>
+                        <h3>Blueberry Lemonade Soda</h3>
+                        <p class="product-price"><span>30mg THC per can</span> R70.00</p>
+                        <button class="cart-btn" data-product-id="46">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-<div class="col-lg-3 col-md-4 col-sm-6 treats">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="lollipops.html">
-                <img src="assets/img/products/product-img-75.jpg" alt="THC Lollipops">
-            </a>
-        </div>
-        <h3>THC Lollipops</h3>
-        <p class="product-price"><span>20mg THC each</span> R80.00</p>
-        <button class="cart-btn" data-product-id="43">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
-		<div class="col-lg-3 col-md-4 col-sm-6 treats">
-    <div class="single-product-item">
-        <div class="product-image">
-            <a href="lollipops.html">
-                <img src="assets/img/products/product-img-83.jpeg" alt="THC Lollipops">
-            </a>
-        </div>
-        <h3>Sex Shot</h3>
-        <p class="product-price"><span>5mg THC each</span> R35.00</p>
-        <button class="cart-btn" data-product-id="44">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-        </button>
-    </div>
-</div>
+                <!-- Treats Products -->
+                <div class="col-lg-3 col-md-4 col-sm-6 treats">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="dogtreats.html">
+                                <img src="assets/img/products/product-img-4.jpg" alt="CBD Dog Treats">
+                            </a>
+                        </div>
+                        <h3>CBD Dog Treats</h3>
+                        <p class="product-price"><span>20mg CBD - 10 pieces</span> R200.00</p>
+                        <button class="cart-btn" data-product-id="42">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
 
-
+                <div class="col-lg-3 col-md-4 col-sm-6 treats">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="lollipops.html">
+                                <img src="assets/img/products/product-img-75.jpg" alt="THC Lollipops">
+                            </a>
+                        </div>
+                        <h3>THC Lollipops</h3>
+                        <p class="product-price"><span>20mg THC each</span> R80.00</p>
+                        <button class="cart-btn" data-product-id="43">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 treats">
+                    <div class="single-product-item">
+                        <div class="product-image">
+                            <a href="lollipops.html">
+                                <img src="assets/img/products/product-img-83.jpeg" alt="THC Lollipops">
+                            </a>
+                        </div>
+                        <h3>Sex Shot</h3>
+                        <p class="product-price"><span>5mg THC each</span> R35.00</p>
+                        <button class="cart-btn" data-product-id="44">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -808,45 +859,12 @@
             </div>
         </div>
     </div>
-<!-- Floating WhatsApp Icon with Text -->
+
+    <!-- Floating WhatsApp Icon with Text -->
     <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-text">Chat with us</span>
     </a>
-
-    <!-- Custom CSS for Floating WhatsApp Icon with Text -->
-    <style>
-        .float-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .float-whatsapp:hover {
-            background-color: #128c7e;
-            transform: scale(1.1);
-        }
-
-        .float-whatsapp i {
-            font-size: 30px;
-            margin-right: 10px;
-        }
-
-        .whatsapp-text {
-            font-size: 16px;
-            font-weight: bold;
-        }
-    </style>
 
     <!-- Scripts -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -861,32 +879,7 @@
                     : 'none';
             });
         });
-class EnhancedCart extends CartSystem {
-    constructor() {
-        super();
-        this.initCartPersistance();
-    }
 
-    initCartPersistance() {
-        window.addEventListener('beforeunload', () => {
-            sessionStorage.setItem('cartBackup', JSON.stringify(this.cart));
-        });
-    }
-
-    addToCart(e) {
-        super.addToCart(e);
-        this.showCartNotification(e.target);
-    }
-
-    showCartNotification(button) {
-        const notification = document.createElement('div');
-        notification.className = 'cart-notification';
-        notification.textContent = 'Added to cart!';
-        button.parentElement.appendChild(notification);
-        
-        setTimeout(() => notification.remove(), 2000);
-    }
-}
         // Cart System
         class CartSystem {
             constructor() {
@@ -896,37 +889,79 @@ class EnhancedCart extends CartSystem {
 
             init() {
                 this.updateCartCount();
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
                 document.querySelectorAll('.cart-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => this.addToCart(e));
                 });
             }
 
             addToCart(e) {
-                const productCard = e.target.closest('.single-product-item');
+                // Get the clicked button
+                const button = e.target.closest('.cart-btn');
+                
+                // Get product details from the closest product card
+                const productCard = button.closest('.single-product-item');
+                
+                // Extract price from the text (removes currency symbol and any other text)
+                const priceText = productCard.querySelector('.product-price').textContent;
+                const price = parseFloat(priceText.match(/[\d.]+/)[0]);
+                
+                // Create product object
                 const product = {
-                    id: e.target.dataset.productId,
+                    id: button.dataset.productId,
                     name: productCard.querySelector('h3').textContent,
-                    price: parseFloat(productCard.querySelector('.product-price').textContent.match(/[\d.]+/)[0]),
+                    price: price,
                     image: productCard.querySelector('img').src,
                     quantity: 1
                 };
 
+                // Check if product already exists in cart
                 const existingItem = this.cart.find(item => item.id === product.id);
-                existingItem ? existingItem.quantity++ : this.cart.push(product);
                 
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    this.cart.push(product);
+                }
+                
+                // Save to localStorage
                 localStorage.setItem('cart', JSON.stringify(this.cart));
+                
+                // Update cart count
                 this.updateCartCount();
+                
+                // Show added notification
+                this.showAddedNotification(button);
             }
 
             updateCartCount() {
                 const count = this.cart.reduce((sum, item) => sum + item.quantity, 0);
                 document.querySelector('.cart-count').textContent = count;
             }
+
+            showAddedNotification(button) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = 'cart-notification';
+                notification.textContent = 'Added to cart!';
+                
+                // Position it relative to the button
+                button.parentNode.appendChild(notification);
+                
+                // Remove after 2 seconds
+                setTimeout(() => {
+                    notification.remove();
+                }, 2000);
+            }
         }
 
-        // Initialize
+        // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            new CartSystem();
+            // Initialize cart system
+            const cartSystem = new CartSystem();
             
             // Email Protection
             document.querySelectorAll('.safe-email').forEach(element => {
@@ -935,7 +970,12 @@ class EnhancedCart extends CartSystem {
                 element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
             });
         });
-    </script>
 
+        // Mobile menu toggle function
+        function toggleMenu() {
+            const menu = document.querySelector('.main-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

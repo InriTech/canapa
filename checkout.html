@@ -3,46 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-
-    <!-- title -->
-    <title>Check Out</title>
-
-    <!-- favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out - Canapa Delights</title>
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
-    <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-    <!-- fontawesome -->
     <link rel="stylesheet" href="assets/css/all.min.css">
-    <!-- bootstrap -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <!-- owl carousel -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <!-- magnific popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!-- animate css -->
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <!-- mean menu css -->
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-    <!-- main style -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <!-- responsive -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
-
-    <!-- Custom CSS for Hamburger Menu -->
     <style>
         /* Hamburger Menu Styles */
         .hamburger-menu {
             display: none;
             cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+            padding: 15px;
         }
-
+        
         .hamburger-menu .bar {
             width: 25px;
             height: 3px;
@@ -50,139 +26,230 @@
             margin: 5px 0;
             transition: 0.4s;
         }
-
+        
         @media (max-width: 768px) {
             .hamburger-menu {
                 display: block;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                background: white;
+                border-radius: 4px;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             }
-
+            
             .main-menu {
-                display: none;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background-color: #90EE90; /* Light green background */
-                width: 100%;
-                text-align: center;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: white;
+                padding: 20px;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                transition: 0.3s;
+                z-index: 999;
             }
-
+            
             .main-menu.active {
-                display: block;
+                right: 0;
             }
-
+            
             .main-menu ul {
-                padding: 0;
-                margin: 0;
-                list-style: none;
+                flex-direction: column;
+                margin-top: 50px;
             }
-
-            .main-menu ul li {
-                padding: 10px;
-                border-bottom: 1px solid #ddd;
-            }
-
-            .main-menu ul li a {
-                color: white; /* White text color */
-                text-decoration: none;
-                font-size: 18px;
-                display: block;
-            }
-
-            /* Hide the Home link in the mobile menu */
-            .main-menu ul li.current-list-item {
-                display: none;
-            }
-
-            .main-menu ul li .sub-menu {
-                display: none;
-                padding-left: 20px;
-            }
-
-            .main-menu ul li .sub-menu.active {
-                display: block;
-            }
-
-            .main-menu ul li .sub-menu li {
-                border-bottom: none;
-            }
-
-            .header-icons {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                padding: 10px;
-            }
-
-            .header-icons a {
-                color: white; /* White text color */
-                font-size: 18px;
-            }
+        }
+        
+        /* Checkout Form Styles */
+        .checkout-accordion-wrap .card {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .checkout-accordion-wrap .card-header {
+            background-color: #f9f9f9;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .checkout-accordion-wrap .btn-link {
+            width: 100%;
+            text-align: left;
+            padding: 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .checkout-accordion-wrap .card-body {
+            padding: 20px;
+        }
+        
+        .checkout-accordion-wrap input,
+        .checkout-accordion-wrap textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .checkout-accordion-wrap textarea {
+            height: 100px;
+        }
+        
+        .order-details-wrap {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .order-details {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .order-details th {
+            text-align: left;
+            padding: 10px 0;
+            border-bottom: 2px solid #F28123;
+        }
+        
+        .order-details td {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-details .checkout-details tr:last-child td {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .boxed-btn {
+            display: inline-block;
+            background-color: #F28123;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .boxed-btn:hover {
+            background-color: #051922;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .card-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .card-icons i {
+            font-size: 30px;
+            color: #555;
+        }
+        
+        /* WhatsApp Floating Button */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .float-whatsapp:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+        
+        .float-whatsapp i {
+            font-size: 30px;
+            margin-right: 10px;
+        }
+        
+        .whatsapp-text {
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <!-- header -->
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Header -->
     <div class="top-header-area" id="sticker">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-sm-12 text-center">
+                <div class="col-lg-12 text-center">
                     <div class="main-menu-wrap">
-                        <!-- logo -->
                         <div class="site-logo">
                             <a href="index.html">
-                                <img src="assets/img/logo.png" alt="">
+                                <img src="assets/img/logo.png" alt="Canapa Delights Logo">
                             </a>
                         </div>
-                        <!-- logo -->
-
-                        <!-- Hamburger Menu -->
-                        <div class="hamburger-menu" onclick="toggleMenu()">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                        </div>
-
-                        <!-- menu start -->
                         <nav class="main-menu">
                             <ul>
-                                <li class="current-list-item"><a href="index.html">Home</a></li>
+                                <li><a href="index.html">Home</a></li>
                                 <li><a href="contact.html">Contact</a></li>
-                                <li><a href="shop.html">Shop</a>
-                                </li>
+                                <li><a href="shop.html">Shop</a></li>
                                 <li>
                                     <div class="header-icons">
-                                        <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                                        
+                                        <a class="shopping-cart" href="cart.html">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="cart-count">0</span>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>
                         </nav>
-                        <div class="mobile-menu"></div>
-                        <!-- menu end -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end header -->
 
-    <!-- breadcrumb-section -->
+    <!-- Breadcrumb Section -->
     <div class="breadcrumb-section breadcrumb-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>Canapa Delights</p>
                         <h1>Check Out</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end breadcrumb section -->
 
-    <!-- check out section -->
+    <!-- Checkout Section -->
     <div class="checkout-section mt-150 mb-150">
         <div class="container">
             <div class="row">
@@ -202,16 +269,19 @@
                                     <div class="card-body">
                                         <div class="billing-address-form">
                                             <form id="billingForm">
-                                                <p><input type="text" id="name" placeholder="Name" required></p>
+                                                <p><input type="text" id="name" placeholder="Full Name" required></p>
                                                 <p><input type="email" id="email" placeholder="Email" required></p>
-                                                <p><input type="text" id="address" placeholder="Address" required></p>
-                                                <p><input type="tel" id="phone" placeholder="Phone" required></p>
-                                                <p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Say Something"></textarea></p>
+                                                <p><input type="text" id="address" placeholder="Street Address" required></p>
+                                                <p><input type="text" id="city" placeholder="City" required></p>
+                                                <p><input type="text" id="postal" placeholder="Postal Code" required></p>
+                                                <p><input type="tel" id="phone" placeholder="Phone Number" required></p>
+                                                <p><textarea name="notes" id="notes" cols="30" rows="3" placeholder="Order Notes (Optional)"></textarea></p>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                             <!-- Shipping Address -->
                             <div class="card single-accordion">
                                 <div class="card-header" id="headingTwo">
@@ -224,34 +294,90 @@
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="shipping-address-form">
-                                            <p>Your shipping address form is here.</p>
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" id="sameAsBilling">
+                                                <label class="form-check-label" for="sameAsBilling">
+                                                    Same as billing address
+                                                </label>
+                                            </div>
+                                            <form id="shippingForm">
+                                                <p><input type="text" id="s-name" placeholder="Full Name" required></p>
+                                                <p><input type="text" id="s-address" placeholder="Street Address" required></p>
+                                                <p><input type="text" id="s-city" placeholder="City" required></p>
+                                                <p><input type="text" id="s-postal" placeholder="Postal Code" required></p>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Card Details -->
+                            
+                            <!-- Payment Method -->
                             <div class="card single-accordion">
                                 <div class="card-header" id="headingThree">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Card Details
+                                            Payment Method
                                         </button>
                                     </h5>
                                 </div>
                                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <div class="card-details">
-                                            <form id="paymentForm">
-                                                <p><input type="text" id="cardNumber" placeholder="Card Number" required></p>
-                                                <p><input type="text" id="expiryDate" placeholder="MM/YY" required></p>
-                                                <p><input type="text" id="cvv" placeholder="CVV" required></p>
-                                                <div class="card-icons">
-                                                    <i class="fab fa-cc-visa"></i>
-                                                    <i class="fab fa-cc-mastercard"></i>
-                                                    <i class="fab fa-cc-amex"></i>
-                                                    <i class="fab fa-cc-discover"></i>
-                                                </div>
-                                            </form>
+                                        <div class="payment-method">
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
+                                                <label class="form-check-label" for="creditCard">
+                                                    Credit/Debit Card
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" name="paymentMethod" id="eft" value="eft">
+                                                <label class="form-check-label" for="eft">
+                                                    EFT/Bank Transfer
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="cashOnDelivery">
+                                                <label class="form-check-label" for="cashOnDelivery">
+                                                    Cash on Delivery
+                                                </label>
+                                            </div>
+                                            
+                                            <!-- Credit Card Form (shown when credit card is selected) -->
+                                            <div id="creditCardForm" class="mt-4">
+                                                <form id="paymentForm">
+                                                    <p><input type="text" id="cardNumber" placeholder="Card Number" required></p>
+                                                    <p><input type="text" id="cardName" placeholder="Name on Card" required></p>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input type="text" id="cvv" placeholder="CVV" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-icons mt-3">
+                                                        <i class="fab fa-cc-visa"></i>
+                                                        <i class="fab fa-cc-mastercard"></i>
+                                                        <i class="fab fa-cc-amex"></i>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            
+                                            <!-- EFT Instructions (shown when EFT is selected) -->
+                                            <div id="eftInstructions" class="mt-4" style="display: none;">
+                                                <p>Please make payment to:</p>
+                                                <p><strong>Bank:</strong> Standard Bank</p>
+                                                <p><strong>Account Name:</strong> Canapa Delights</p>
+                                                <p><strong>Account Number:</strong> 1234567890</p>
+                                                <p><strong>Branch Code:</strong> 012345</p>
+                                                <p>Use your order number as reference.</p>
+                                            </div>
+                                            
+                                            <!-- COD Instructions (shown when COD is selected) -->
+                                            <div id="codInstructions" class="mt-4" style="display: none;">
+                                                <p>Pay with cash when your order is delivered.</p>
+                                                <p>An additional R50 cash handling fee will apply.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -265,12 +391,12 @@
                         <table class="order-details">
                             <thead>
                                 <tr>
-                                    <th>Your Order Details</th>
-                                    <th>Price</th>
+                                    <th>Your Order</th>
+                                    <th>Total</th>
                                 </tr>
                             </thead>
                             <tbody class="order-details-body" id="cartItems">
-                                <!-- Cart items will be dynamically inserted here -->
+                                <!-- Cart items will be populated by JavaScript -->
                             </tbody>
                             <tbody class="checkout-details">
                                 <tr>
@@ -279,7 +405,7 @@
                                 </tr>
                                 <tr>
                                     <td>Shipping</td>
-                                    <td>R0.00</td>
+                                    <td id="shipping">R50.00</td>
                                 </tr>
                                 <tr>
                                     <td>Total</td>
@@ -293,125 +419,235 @@
             </div>
         </div>
     </div>
-    <!-- end check out section -->
 
-    <!-- footer -->
+    <!-- Footer -->
     <div class="footer-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
-                    <div class="footer-box about-widget">
-                        <h2 class="widget-title">About us</h2>
-                        <p>About Canapa Delight</p>
+                    <div class="footer-box">
+                        <h4>About Us</h4>
+                        <p>Premium Cannabis Products</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="footer-box get-in-touch">
-                        <h2 class="widget-title">Get in Touch</h2>
+                    <div class="footer-box">
+                        <h4>Contact</h4>
                         <ul>
-                            <li>22 Karee Street, Southdowns Shopping Centre</li>
-                            <li>Canapadelight@gmail.com</li>
-                            <li>+27 71 031 4435</li>
+                            <li>22 Karee Street, Irene</li>
+                            <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com"></span></li>
+                            <li>Phone: +27 71 031 4435</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-box">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end footer -->
 
-    <!-- copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <p>Copyright &copy; 2025 - All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 text-right col-md-12">
-                    <div class="social-icons">
-                        <ul>
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end copyright -->
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
 
-    <!-- JavaScript for Hamburger Menu -->
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
     <script>
+        // Product price reference from shop.html (all prices in ZAR)
+        const productPrices = {
+            "1": 250.00,   // Choc Chip Cookies
+            "2": 250.00,   // Coconut Oat THC Cookies
+            "3": 250.00,   // Chocolate Cookies
+            "4": 150.00,   // Choc Cookie Chips
+            "5": 150.00,   // Choc Cookies
+            "7": 250.00,   // Yummy Gummies
+            "8": 250.00,   // Sugar Free THC Gummies
+            "9": 250.00,   // Sodaze Tropical Gummies
+            "10": 100.00,  // Sour THC Gummies
+            "11": 250.00,  // Relax – Full Spectrum
+            "12": 250.00,  // Sodaze Grape Gummies
+            "13": 150.00,  // Mixed THC Gummies Pack
+            "14": 250.00,  // Chillax– Full Spectrum
+            "15": 250.00,  // Sodaze Raspberry Gummies
+            "16": 250.00,  // Yummy Gummies (50mg)
+            "17": 250.00,  // Chocolate Fudge
+            "19": 1000.00, // Durban Poison Sativa
+            "20": 1000.00, // Northern Lights Indica
+            "21": 1300.00, // Live Resin Vape
+            "22": 500.00,  // Gelato Hybrid Cartridge
+            "23": 500.00,  // Jack Herrer Sativa
+            "24": 800.00,  // Sativa Cartridge
+            "26": 490.00,  // Relax CBD Vape Refill
+            "27": 400.00,  // Pain CBD Cartridge
+            "28": 500.00,  // Vape Battery Pen
+            "34": 290.00,  // Full Spectrum CBD Oil
+            "35": 1200.00, // Deep Sleep CBD Oil
+            "36": 590.00,  // Pain Relief CBD Oil
+            "37": 590.00,  // Pet CBD Oil
+            "38": 590.00,  // Relax CBD Oil
+            "39": 590.00,  // Sleep Aid CBD Oil
+            "51": 150.00,  // CBD Mint Rooibos Tea
+            "52": 150.00,  // CBD Cinnamon Rooibos Tea
+            "53": 150.00,  // CBD Ginger Rooibos Tea
+            "54": 150.00,  // CBD Pomegranate Rooibos Tea
+            "55": 150.00,  // CBD Lemongrass Rooibos Tea
+            "44": 70.00,   // Berry Haze CBD Soda
+            "45": 70.00,   // Cherry Pop THC Soda
+            "46": 70.00,   // Blueberry Lemonade Soda
+            "42": 200.00,  // CBD Dog Treats
+            "43": 80.00,   // THC Lollipops
+            "44": 35.00    // Sex Shot
+        };
+
+        // Mobile menu toggle function
         function toggleMenu() {
             const menu = document.querySelector('.main-menu');
             menu.classList.toggle('active');
         }
 
-        // JavaScript for Sub-Menu Toggle on Mobile
-        document.querySelectorAll('.main-menu ul li a').forEach(item => {
-            if (item.nextElementSibling && item.nextElementSibling.classList.contains('sub-menu')) {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    item.nextElementSibling.classList.toggle('active');
-                });
-            }
-        });
-    </script>
-
-    <!-- Cart Integration Script -->
-    <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Load cart from localStorage
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const cartItemsContainer = document.getElementById('cartItems');
             const subtotalElement = document.getElementById('subtotal');
+            const shippingElement = document.getElementById('shipping');
             const totalElement = document.getElementById('total');
-            const shippingCost = 200; // Fixed shipping cost
-
+            const placeOrderBtn = document.getElementById('placeOrder');
+            const sameAsBillingCheckbox = document.getElementById('sameAsBilling');
+            
+            // Payment method toggle
+            const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+            const creditCardForm = document.getElementById('creditCardForm');
+            const eftInstructions = document.getElementById('eftInstructions');
+            const codInstructions = document.getElementById('codInstructions');
+            
             let subtotal = 0;
+            const shippingCost = 50; // Standard shipping cost
+            let total = 0;
 
+            // Display cart items
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<tr><td colspan="2">Your cart is empty.</td></tr>';
+                cartItemsContainer.innerHTML = '<tr><td colspan="2">Your cart is empty</td></tr>';
+                placeOrderBtn.style.display = 'none';
             } else {
                 cartItemsContainer.innerHTML = cart.map(item => {
-                    const itemTotal = item.price * item.quantity;
+                    const correctPrice = productPrices[item.id] || item.price;
+                    const itemTotal = correctPrice * item.quantity;
                     subtotal += itemTotal;
 
                     return `
                         <tr>
-                            <td>${item.name} (x${item.quantity})</td>
+                            <td>${item.name} × ${item.quantity}</td>
                             <td>R${itemTotal.toFixed(2)}</td>
                         </tr>
                     `;
                 }).join('');
+                
+                // Calculate total
+                total = subtotal + shippingCost;
+                
+                // Update totals display
+                subtotalElement.textContent = `R${subtotal.toFixed(2)}`;
+                totalElement.textContent = `R${total.toFixed(2)}`;
+                
+                // Update cart count in header
+                const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.querySelector('.cart-count').textContent = itemCount;
             }
 
-            // Update subtotal and total
-            subtotalElement.textContent = `R${subtotal.toFixed(2)}`;
-            totalElement.textContent = `R${(subtotal + shippingCost).toFixed(2)}`;
+            // Same as billing address toggle
+            sameAsBillingCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    document.getElementById('s-name').value = document.getElementById('name').value;
+                    document.getElementById('s-address').value = document.getElementById('address').value;
+                    document.getElementById('s-city').value = document.getElementById('city').value;
+                    document.getElementById('s-postal').value = document.getElementById('postal').value;
+                }
+            });
+
+            // Payment method selection
+            paymentMethods.forEach(method => {
+                method.addEventListener('change', function() {
+                    creditCardForm.style.display = 'none';
+                    eftInstructions.style.display = 'none';
+                    codInstructions.style.display = 'none';
+                    
+                    if (this.id === 'creditCard') {
+                        creditCardForm.style.display = 'block';
+                    } else if (this.id === 'eft') {
+                        eftInstructions.style.display = 'block';
+                    } else if (this.id === 'cashOnDelivery') {
+                        codInstructions.style.display = 'block';
+                        // Add COD fee
+                        total += 50;
+                        totalElement.textContent = `R${total.toFixed(2)}`;
+                        shippingElement.textContent = 'R100.00';
+                    } else {
+                        // Reset to standard shipping if COD is unselected
+                        total -= 50;
+                        totalElement.textContent = `R${total.toFixed(2)}`;
+                        shippingElement.textContent = 'R50.00';
+                    }
+                });
+            });
+
+            // Place order button
+            placeOrderBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Validate forms
+                const billingValid = validateForm('billingForm');
+                const shippingValid = document.getElementById('sameAsBilling').checked || validateForm('shippingForm');
+                const paymentValid = document.getElementById('creditCard').checked ? validateForm('paymentForm') : true;
+                
+                if (billingValid && shippingValid && paymentValid) {
+                    // Process order
+                    alert('Order placed successfully!');
+                    // Clear cart
+                    localStorage.removeItem('cart');
+                    // Redirect to confirmation page
+                    window.location.href = 'order-confirmation.html';
+                } else {
+                    alert('Please fill in all required fields');
+                }
+            });
+
+            // Form validation helper
+            function validateForm(formId) {
+                const form = document.getElementById(formId);
+                const inputs = form.querySelectorAll('[required]');
+                let isValid = true;
+                
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        input.style.borderColor = 'red';
+                        isValid = false;
+                    } else {
+                        input.style.borderColor = '';
+                    }
+                });
+                
+                return isValid;
+            }
+
+            // Email Protection
+            document.querySelectorAll('.safe-email').forEach(element => {
+                const user = element.dataset.user;
+                const domain = element.dataset.domain;
+                element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+            });
         });
     </script>
-
-    <!-- jquery -->
-    <script src="assets/js/jquery-1.11.3.min.js"></script>
-    <!-- bootstrap -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!-- count down -->
-    <script src="assets/js/jquery.countdown.js"></script>
-    <!-- isotope -->
-    <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
-    <!-- waypoints -->
-    <script src="assets/js/waypoints.js"></script>
-    <!-- owl carousel -->
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <!-- magnific popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- mean menu -->
-    <script src="assets/js/jquery.meanmenu.min.js"></script>
-    <!-- sticker js -->
-    <script src="assets/js/sticker.js"></script>
-    <!-- main js -->
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
