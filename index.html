@@ -75,7 +75,7 @@
             color: black;
         }
 
-        /* Overlay */
+        /* Overlay - CRITICAL FIX */
         #overlay {
             position: fixed;
             top: 0;
@@ -85,9 +85,10 @@
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 9999;
             display: none;
+            pointer-events: none; /* THIS ALLOWS CLICKS TO PASS THROUGH */
         }
 
-        /* Login & Signup Modals */
+        /* Login & Signup Modals - CRITICAL FIX */
         #loginModal, #signupModal {
             position: fixed;
             top: 50%;
@@ -100,6 +101,7 @@
             z-index: 1001;
             width: 300px;
             display: none;
+            pointer-events: auto; /* THIS ENSURES FORMS ARE CLICKABLE */
         }
 
         #loginModal h2, #signupModal h2 {
@@ -113,6 +115,8 @@
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            background-color: white;
+            pointer-events: auto !important; /* FORCE INPUTS TO BE INTERACTIVE */
         }
 
         #loginModal button, #signupModal button {
@@ -142,6 +146,14 @@
 
         #loginModal a:hover, #signupModal a:hover {
             text-decoration: underline;
+        }
+
+        /* Error Message */
+        .error-message {
+            color: #ff4444;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
         }
 
         /* Hamburger Menu Styles */
@@ -261,9 +273,23 @@
             font-size: 16px;
             font-weight: bold;
         }
+
+        /* Debug Helper - Can be removed after testing */
+        #debugTest {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 99999;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
+    
+
     <!-- Age Verification Pop-up -->
     <div id="ageVerificationPopup">
         <p class="ageHeading">Age Verification</p>
@@ -284,9 +310,10 @@
             <input type="email" id="loginEmail" placeholder="Email" required>
             <input type="password" id="loginPassword" placeholder="Password" required>
             <button type="submit">Login</button>
-            <button type="button" onclick="document.getElementById('loginModal').style.display = 'none'" style="background: #ccc; margin-top: 10px;">Close</button>
+            <button type="button" onclick="closeAllModals()" style="background: #ccc; margin-top: 10px;">Close</button>
         </form>
         <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+        <div id="loginError" class="error-message"></div>
     </div>
 
     <!-- Signup Modal -->
@@ -297,9 +324,10 @@
             <input type="email" id="signupEmail" placeholder="Email" required>
             <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required>
             <button type="submit">Sign Up</button>
-            <button type="button" onclick="document.getElementById('signupModal').style.display = 'none'" style="background: #ccc; margin-top: 10px;">Close</button>
+            <button type="button" onclick="closeAllModals()" style="background: #ccc; margin-top: 10px;">Close</button>
         </form>
         <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        <div id="signupError" class="error-message"></div>
     </div>
 
     <!-- Hamburger Menu -->
@@ -529,7 +557,7 @@
 
     <!-- JavaScript -->
     <script>
-        // Firebase Configuration (YOUR CONFIG)
+        // Firebase Configuration
         const firebaseConfig = {
             apiKey: "AIzaSyCiJnj-Z9TXTeMelX_CTw8KM28_BaQW6bo",
             authDomain: "canapa-delight.firebaseapp.com",
@@ -542,88 +570,39 @@
         };
 
         // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+        try {
+            firebase.initializeApp(firebaseConfig);
+            console.log("Firebase initialized successfully");
+        } catch (error) {
+            console.error("Firebase initialization error:", error);
+        }
+
         const auth = firebase.auth();
         const database = firebase.database();
 
-        // Show/Hide Modals
-        function showLogin() {
-            document.getElementById('loginModal').style.display = 'block';
-            document.getElementById('signupModal').style.display = 'none';
-            document.getElementById('overlay').style.display = 'block';
+        // Debug function - can be removed after testing
+        function testFormAccess() {
+            const inputs = document.querySelectorAll('#loginModal input, #signupModal input');
+            let status = "Testing form inputs:\n";
+            
+            inputs.forEach(input => {
+                input.disabled = false;
+                input.style.opacity = 1;
+                input.style.pointerEvents = 'auto';
+                status += `${input.id}: ${input.disabled ? 'DISABLED' : 'ENABLED'}\n`;
+            });
+            
+            document.getElementById('debugStatus').textContent = status;
+            console.log(status);
+            alert("Form inputs have been forcibly enabled. Check console for details.");
         }
 
-        function showSignup() {
-            document.getElementById('signupModal').style.display = 'block';
-            document.getElementById('loginModal').style.display = 'none';
-            document.getElementById('overlay').style.display = 'block';
-        }
-
-        // Close Modals when clicking outside
-        document.getElementById('overlay').addEventListener('click', function() {
-            document.getElementById('loginModal').style.display = 'none';
-            document.getElementById('signupModal').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        });
-
-        // Login Function
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-
-            auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    alert("Logged in successfully!");
-                    document.getElementById('loginModal').style.display = 'none';
-                    document.getElementById('overlay').style.display = 'none';
-                })
-                .catch((error) => {
-                    alert("Error: " + error.message);
-                });
-        });
-
-        // Signup Function
-        document.getElementById('signupForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('signupName').value;
-            const email = document.getElementById('signupEmail').value;
-            const password = document.getElementById('signupPassword').value;
-
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Save user data to Firebase Database
-                    database.ref('users/' + userCredential.user.uid).set({
-                        name: name,
-                        email: email,
-                        createdAt: firebase.database.ServerValue.TIMESTAMP
-                    });
-                    alert("Account created successfully!");
-                    document.getElementById('signupModal').style.display = 'none';
-                    document.getElementById('overlay').style.display = 'none';
-                })
-                .catch((error) => {
-                    alert("Error: " + error.message);
-                });
-        });
-
-        // Check if user is logged in
-        auth.onAuthStateChanged((user) => {
-            if (user) {
-                console.log("User is logged in:", user.email);
-            } else {
-                console.log("User is logged out");
-            }
-        });
-
-        // Age Verification Pop-up
+        // Age Verification
         document.addEventListener('DOMContentLoaded', function() {
             const popup = document.getElementById('ageVerificationPopup');
             const overlay = document.getElementById('overlay');
 
-            const ageVerified = localStorage.getItem('ageVerified');
-
-            if (!ageVerified) {
+            if (!localStorage.getItem('ageVerified')) {
                 popup.style.display = 'block';
                 overlay.style.display = 'block';
             }
@@ -635,19 +614,107 @@
             });
 
             document.querySelector('.declineButton').addEventListener('click', function() {
-                alert('You must be 18 years or older to access this site.');
                 window.location.href = 'https://www.google.com';
             });
         });
 
-        // Hamburger Menu Toggle
+        // Form Management
+        function showLogin() {
+            document.getElementById('loginModal').style.display = 'block';
+            document.getElementById('signupModal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('loginError').textContent = '';
+            
+            // Force enable inputs
+            document.querySelectorAll('#loginModal input').forEach(input => {
+                input.disabled = false;
+            });
+        }
+
+        function showSignup() {
+            document.getElementById('signupModal').style.display = 'block';
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('signupError').textContent = '';
+            
+            // Force enable inputs
+            document.querySelectorAll('#signupModal input').forEach(input => {
+                input.disabled = false;
+            });
+        }
+
+        function closeAllModals() {
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('signupModal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Form Submissions
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const errorElement = document.getElementById('loginError');
+
+            try {
+                errorElement.textContent = 'Logging in...';
+                const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                errorElement.textContent = '';
+                closeAllModals();
+                alert("Logged in successfully!");
+            } catch (error) {
+                errorElement.textContent = "Error: " + error.message;
+            }
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const errorElement = document.getElementById('signupError');
+
+            try {
+                errorElement.textContent = 'Creating account...';
+                const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+                
+                await database.ref('users/' + userCredential.user.uid).set({
+                    name: name,
+                    email: email,
+                    createdAt: firebase.database.ServerValue.TIMESTAMP
+                });
+                
+                errorElement.textContent = '';
+                closeAllModals();
+                alert("Account created successfully!");
+            } catch (error) {
+                errorElement.textContent = "Error: " + error.message;
+            }
+        });
+
+        // Auth State Listener
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                console.log("User logged in:", user.email);
+            } else {
+                console.log("No user logged in");
+            }
+        });
+
+        // Hamburger Menu
         function toggleMenu() {
             const menu = document.querySelector('.main-menu');
             menu.classList.toggle('active');
         }
+
+        // Initial form input check
+        document.querySelectorAll('input').forEach(input => {
+            input.disabled = false;
+            input.style.pointerEvents = 'auto';
+        });
     </script>
 
-    <!-- Existing JS Files -->
+    <!-- Your existing JS files -->
     <script src="assets/js/jquery-1.11.3.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.countdown.js"></script>
