@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chocolate Fudge 20mg THC | Canapa Delights</title>
     <meta name="description" content="Premium cannabis-infused chocolate fudge. 20mg THC per serving (2 servings total). Vegan, gluten-free, lab-tested edibles.">
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
         "@context": "http://schema.org/",
@@ -40,18 +37,56 @@
     </script>
 </head>
 <body>
-    
+    <!-- Header -->
+    <div class="top-header-area" id="sticker">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 text-center">
+                    <div class="main-menu-wrap">
+                        <!-- Logo -->
+                        <div class="site-logo">
+                            <a href="index.html">
+                                <img src="assets/img/logo.png" alt="Canapa Delights Logo">
+                            </a>
+                        </div>
 
-    <!-- Header (Same as previous products) -->
-    
+                        <!-- Hamburger Menu -->
+                        <div class="hamburger-menu" onclick="toggleMenu()">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <nav class="main-menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li>
+                                    <div class="header-icons">
+                                        <a class="shopping-cart" href="cart.html">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="cart-count">0</span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Breadcrumb -->
     <div class="breadcrumb-section breadcrumb-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p><a href="index.html">Home</a> 
-                           <a href="shop.html">Shop</a> 
+                        <p><a href="index.html">Home</a> > 
+                           <a href="shop.html">Shop</a> > 
                            <a href="shop.html?category=edibles">Edibles</a></p>
                         <h1>Chocolate Fudge</h1>
                     </div>
@@ -72,7 +107,7 @@
                              class="img-fluid"
                              loading="lazy">
                         <div class="product-badges">
-                            <span class="thc-badge">40mg THC</span>
+                            <span class="thc-badge">20mg THC</span>
                             <span class="vegan-badge">Vegan</span>
                             <span class="gluten-badge">Gluten-Free</span>
                         </div>
@@ -127,87 +162,64 @@
                             </button>
                         </form>
 
-                        <!-- Product Tabs -->
-                        <div class="product-tabs mt-4">
-                            <ul class="nav nav-tabs" id="productTabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description">Description</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="lab-tab" data-toggle="tab" href="#lab">Lab Results</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews">Reviews</a>
-                                </li>
-                            </ul>
+                        <!-- Product Info Sections -->
+                        <div class="product-info-sections mt-5">
+                            <!-- Description Section -->
+                            <section class="product-section">
+                                <h3 class="section-title">Rich Chocolate Experience</h3>
+                                <p>Indulge in our premium cannabis-infused chocolate fudge made with 70% dark chocolate and organic ingredients. Each package contains two 20mg THC squares for precise dosing.</p>
+                                <ul class="product-details-list">
+                                    <li>✔️ 20mg total THC per package</li>
+                                    <li>✔️ Dairy-free and gluten-free</li>
+                                    <li>✔️ Made with fair-trade cocoa</li>
+                                    <li>✔️ Lab-tested for potency</li>
+                                </ul>
+                            </section>
 
-                            <div class="tab-content" id="productTabsContent">
-                                <!-- Description Tab -->
-                                <div class="tab-pane fade show active" id="description">
-                                    <h4>Rich Chocolate Experience</h4>
-                                    <p>Indulge in our premium cannabis-infused chocolate fudge made with 70% dark chocolate and organic ingredients. Each package contains two 20mg THC squares for precise dosing.</p>
-                                    <ul class="product-details-list">
-                                        <li>✔️ 40mg total THC per package</li>
-                                        <li>✔️ Dairy-free and gluten-free</li>
-                                        <li>✔️ Made with fair-trade cocoa</li>
-                                        <li>✔️ Lab-tested for potency</li>
-                                    </ul>
-                                    <div class="usage-instructions">
-                                        <h5>Consumption Advice:</h5>
-                                        <p>Start with 1/4 piece (5mg THC) and wait 2+ hours before consuming more. Effects may last 4-8 hours. Store in cool, dry place (16-20°C).</p>
-                                    </div>
-                                    <div class="effects">
-                                        <h5>Common Effects:</h5>
-                                        <ul>
-                                            <li>Euphoria and relaxation</li>
-                                            <li>Enhanced sensory perception</li>
-                                            <li>Appetite stimulation</li>
-                                            <li>Mild body high</li>
-                                        </ul>
-                                    </div>
+                            <!-- Consumption Advice Section -->
+                            <section class="product-section">
+                                <h3 class="section-title">Consumption Advice</h3>
+                                <p>Start with 1/4 piece (5mg THC) and wait 2+ hours before consuming more. Effects may last 4-8 hours. Store in cool, dry place (16-20°C).</p>
+                                <div class="alert alert-warning">
+                                    <strong>Important:</strong> Effects take 30-120 minutes to onset. Do not consume more while waiting.
                                 </div>
+                          </section>
 
-                                <!-- Lab Results Tab -->
-                                <div class="tab-pane fade" id="lab">
-                                    <h4>Quality Assurance</h4>
-                                    <div class="lab-results">
-                                        <a href="assets/docs/lab-report-6.pdf" class="lab-report" target="_blank">
-                                            <i class="fas fa-file-pdf"></i>
-                                            Download Lab Certificate (PDF)
-                                        </a>
-                                        <p>Batch Number: FUDGE-2024-06<br>
-                                        Tested: 1 May 2024<br>
-                                        THC: 42mg ±3% per package<br>
-                                        CBD: <1mg</p>
-                                    </div>
-                                </div>
+                            <!-- Effects Section -->
+                            <section class="product-section">
+                                <h3 class="section-title">Common Effects</h3>
+                                <ul>
+                                    <li>Euphoria and relaxation</li>
+                                    <li>Enhanced sensory perception</li>
+                                    <li>Appetite stimulation</li>
+                                    <li>Mild body high</li>
+                                </ul>
+                            </section>
 
-                                <!-- Reviews Tab -->
-                                <div class="tab-pane fade" id="reviews">
-                                    <div class="review">
-                                        <h5>Perfect Evening Treat</h5>
-                                        <div class="rating">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                        <p>"The perfect balance of chocolate flavor and effects. I take half a square for a perfect relaxed evening." - James L.</p>
-                                    </div>
+                            <!-- Lab Results Section -->
+                            <section class="product-section">
+                                <h3 class="section-title">Quality Assurance</h3>
+                                <div class="lab-results">
+                                    
+                                    <p><br>
+                                    Tested: 1 May 2024<br>
+                                    THC: 42mg ±3% per package<br>
+                                    CBD: <1mg</p>
                                 </div>
-                            </div>
+                            </section>
+
+                            <!-- Reviews Section -->
+                            <section class="product-section">
+                                <h3 class="section-title">Customer Reviews</h3>
+                                <div class="review">
+                                    
+                                    
+                                    
+                                </div>
+                            </section>
                         </div>
 
-                        <!-- Social Sharing -->
-                        <div class="social-sharing mt-4">
-                            <span>Share this product:</span>
-                            <a href="#" class="facebook-share">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="whatsapp-share">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="#" class="twitter-share">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -216,7 +228,7 @@
 
     <!-- Legal Disclaimer -->
     <div class="legal-disclaimer">
-        <p>⚠️ Edibles Warning: Effects take 30-120 minutes to onset. Do not consume more while waiting. Keep locked away from children/pets. Avoid operating vehicles/machinery. Consult doctor if using medications.</p>
+        <p>⚠️ Keep locked away from children/pets. Avoid operating vehicles/machinery. Consult doctor if using medications.</p>
     </div>
 
     <!-- Related Products -->
@@ -252,7 +264,7 @@
         </div>
     </div>
 
-    <!-- Footer with Email Protection -->
+    <!-- Footer -->
     <div class="footer-area">
         <div class="container">
             <div class="row">
@@ -267,20 +279,115 @@
                         <h2>Contact</h2>
                         <ul>
                             <li>22 Karee Street, Irene</li>
-                            <li><span class="email-protection" data-user="orders" data-domain="canapadelights.co.za"></span></li>
+                            <li>canapadelight@gmail.com</li>
                             <li>+27 68 408 9769</li>
                         </ul>
                     </div>
                 </div>
-                <!-- Social links -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-box social">
+                        <h2>Follow Us</h2>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Scripts (Same as previous products) -->
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
     <script>
-        // Email protection and age verification scripts
-        // (Same implementation as previous product pages)
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize cart count
+            updateCartCount();
+            
+            // Add to cart form submission
+            document.getElementById('addToCartForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const button = this.querySelector('.cart-btn');
+                const productId = button.dataset.productId;
+                const productName = button.dataset.productName;
+                const productPrice = parseFloat(button.dataset.productPrice);
+                const quantity = parseInt(this.querySelector('input[name="quantity"]').value);
+                
+                addToCart(productId, productName, productPrice, quantity);
+            });
+            
+            // Quantity controls
+            document.querySelectorAll('.qty-plus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentNode.querySelector('input');
+                    if (parseInt(input.value) < parseInt(input.max)) {
+                        input.value = parseInt(input.value) + 1;
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.qty-minus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentNode.querySelector('input');
+                    if (parseInt(input.value) > parseInt(input.min)) {
+                        input.value = parseInt(input.value) - 1;
+                    }
+                });
+            });
+        });
+        
+        function addToCart(id, name, price, quantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: id,
+                    name: name,
+                    price: price,
+                    quantity: quantity,
+                    image: document.querySelector('.single-product-img img').src
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showAddToCartNotification();
+        }
+        
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = count;
+        }
+        
+        function showAddToCartNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'add-to-cart-notification';
+            notification.innerHTML = '<i class="fas fa-check-circle"></i> Added to cart!';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 2000);
+            }, 10);
+        }
+        
+        function toggleMenu() {
+            document.querySelector('.main-menu').classList.toggle('active');
+            document.querySelector('.hamburger-menu').classList.toggle('active');
+        }
     </script>
 </body>
 </html>

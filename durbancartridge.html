@@ -17,18 +17,18 @@
     {
         "@context": "http://schema.org/",
         "@type": "Product",
-        "name": "Northern Lights Indica Vape",
-        "image": "assets/img/products/product-img-53.jpg",
-        "description": "Premium Northern Lights Indica THC disposable vape pen with 1ml pure cannabis extract for deep relaxation",
+        "name": "Durban Poison Cartridge",
+        "image": "assets/img/products/product-img-30.jpg",
+        "description": "Durban Poison Sativa THC vape cartridge. 0.5ml premium cannabis extract for energetic effects.",
         "brand": {
             "@type": "Brand",
             "name": "Canapa Delights"
         },
         "offers": {
             "@type": "Offer",
-            "url": "https://canapadelights.co.za/products/northern-lights-vape.html",
+            "url": "https://canapadelights.co.za/products/durban-poison-cartridge.html",
             "priceCurrency": "ZAR",
-            "price": "1000",
+            "price": "500",
             "availability": "http://schema.org/InStock",
             "seller": {
                 "@type": "Organization",
@@ -156,57 +156,44 @@
                             </button>
                         </form>
 
-                        <div class="product-tabs mt-4">
-                            <ul class="nav nav-tabs" id="productTabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description">Description</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="effects-tab" data-toggle="tab" href="#effects">Effects</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="usage-tab" data-toggle="tab" href="#usage">Usage</a>
-                                </li>
-                            </ul>
+                        <div class="product-info-sections mt-5">
+                            <section class="product-section">
+                                <h3 class="section-title">Product Details</h3>
+                                <p>The legendary South African Durban Poison strain in a convenient 510-thread cartridge. Pure sativa effects with sweet, earthy flavor.</p>
+                                <ul class="product-details-list">
+                                    <li>✔️ 0.5ml premium cannabis oil</li>
+                                    <li>✔️ 510-thread compatible</li>
+                                    <li>✔️ Ceramic heating element</li>
+                                    <li>✔️ Lab-tested for purity</li>
+                                    <li>✔️ Sweet and earthy flavor profile</li>
+                                </ul>
+                            </section>
 
-                            <div class="tab-content" id="productTabsContent">
-                                <div class="tab-pane fade show active" id="description">
-                                    <h4>Product Details</h4>
-                                    <p>The legendary South African Durban Poison strain in a convenient 510-thread cartridge. Pure sativa effects with sweet, earthy flavor.</p>
-                                    <ul class="product-details-list">
-                                        <li>✔️ 0.5ml premium cannabis oil</li>
-                                        <li>✔️ 510-thread compatible</li>
-                                        <li>✔️ Ceramic heating element</li>
-                                        <li>✔️ Lab-tested for purity</li>
-                                        <li>✔️ Sweet and earthy flavor profile</li>
-                                    </ul>
+                            <section class="product-section">
+                                <h3 class="section-title">Expected Effects</h3>
+                                <p>Durban Poison provides:</p>
+                                <ul>
+                                    <li>Clean, energetic high</li>
+                                    <li>Mental clarity and focus</li>
+                                    <li>Creativity boost</li>
+                                    <li>Mood elevation</li>
+                                    <li>Daytime productivity</li>
+                                </ul>
+                                <div class="alert alert-warning mt-3">
+                                    <strong>Note:</strong> This product contains THC and will cause psychoactive effects. Start with small puffs if you're new to cannabis vaping.
                                 </div>
+                            </section>
 
-                                <div class="tab-pane fade" id="effects">
-                                    <h4>Expected Effects</h4>
-                                    <p>Durban Poison provides:</p>
-                                    <ul>
-                                        <li>Clean, energetic high</li>
-                                        <li>Mental clarity and focus</li>
-                                        <li>Creativity boost</li>
-                                        <li>Mood elevation</li>
-                                        <li>Daytime productivity</li>
-                                    </ul>
+                            <section class="product-section">
+                                <h3 class="section-title">Usage Guidelines</h3>
+                                <p><strong>Best Voltage:</strong> 3.3v-3.7v for optimal flavor</p>
+                                <p><strong>For beginners:</strong> Start with 1 small puff</p>
+                                <p><strong>Daytime use:</strong> Ideal for morning/afternoon</p>
+                                <div class="alert alert-info">
+                                    <strong>Tip:</strong> Lower temperatures preserve the sweet terpene profile.
                                 </div>
-
-                                <div class="tab-pane fade" id="usage">
-                                    <h4>Usage Guidelines</h4>
-                                    <p><strong>Best Voltage:</strong> 3.3v-3.7v for optimal flavor</p>
-                                    <p><strong>For beginners:</strong> Start with 1 small puff</p>
-                                    <p><strong>Daytime use:</strong> Ideal for morning/afternoon</p>
-                                    <div class="alert alert-info">
-                                        <strong>Tip:</strong> Lower temperatures preserve the sweet terpene profile.
-                                    </div>
-                                </div>
-                            </div>
+                            </section>
                         </div>
-
-                        <!-- Social Sharing same as previous -->
                     </div>
                 </div>
             </div>
@@ -292,5 +279,96 @@
         </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script>
+        // Cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize cart count
+            updateCartCount();
+            
+            // Add to cart form submission
+            document.getElementById('addToCartForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const button = this.querySelector('.cart-btn');
+                const productId = button.dataset.productId;
+                const productName = button.dataset.productName;
+                const productPrice = parseFloat(button.dataset.productPrice);
+                const quantity = parseInt(this.querySelector('input[name="quantity"]').value);
+                
+                addToCart(productId, productName, productPrice, quantity);
+            });
+            
+            // Quantity controls
+            document.querySelectorAll('.qty-plus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentNode.querySelector('input');
+                    if (parseInt(input.value) < parseInt(input.max)) {
+                        input.value = parseInt(input.value) + 1;
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.qty-minus').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentNode.querySelector('input');
+                    if (parseInt(input.value) > parseInt(input.min)) {
+                        input.value = parseInt(input.value) - 1;
+                    }
+                });
+            });
+        });
+        
+        function addToCart(id, name, price, quantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: id,
+                    name: name,
+                    price: price,
+                    quantity: quantity,
+                    image: document.querySelector('.single-product-img img').src
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showAddToCartNotification();
+        }
+        
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = count;
+        }
+        
+        function showAddToCartNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'add-to-cart-notification';
+            notification.innerHTML = '<i class="fas fa-check-circle"></i> Added to cart!';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 2000);
+            }, 10);
+        }
+        
+        function toggleMenu() {
+            document.querySelector('.main-menu').classList.toggle('active');
+            document.querySelector('.hamburger-menu').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
