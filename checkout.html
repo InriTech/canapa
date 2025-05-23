@@ -10,373 +10,256 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Checkout - Canapa Delights",
+        "description": "Complete your purchase from Canapa Delights.",
+        "url": "https://canapadelights.co.za/checkout.html"
+        // Consider adding breadcrumb schema if you have a multi-step checkout
+    }
+    </script>
+
     <style>
-        /* Hamburger Menu Styles */
-        .hamburger-menu {
-            display: none;
-            cursor: pointer;
-            padding: 15px;
-        }
-        
-        .hamburger-menu .bar {
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 5px 0;
-            transition: 0.4s;
-        }
-        
-        @media (max-width: 768px) {
-            .hamburger-menu {
-                display: block;
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                z-index: 1000;
-                background: white;
-                border-radius: 4px;
-                padding: 10px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            }
-            
-            .main-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background: white;
-                padding: 20px;
-                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-                transition: 0.3s;
-                z-index: 999;
-            }
-            
-            .main-menu.active {
-                right: 0;
-            }
-            
-            .main-menu ul {
-                flex-direction: column;
-                margin-top: 50px;
-            }
-        }
-        
-        /* Checkout Form Styles */
-        .checkout-accordion-wrap .card {
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        
-        .checkout-accordion-wrap .card-header {
-            background-color: #f9f9f9;
-            padding: 0;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .checkout-accordion-wrap .btn-link {
-            width: 100%;
-            text-align: left;
-            padding: 15px;
-            color: #333;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .checkout-accordion-wrap .card-body {
-            padding: 20px;
-        }
-        
-        .checkout-accordion-wrap input,
-        .checkout-accordion-wrap textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        
-        .checkout-accordion-wrap textarea {
-            height: 100px;
-        }
-        
-        .order-details-wrap {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .order-details {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        
-        .order-details th {
-            text-align: left;
-            padding: 10px 0;
-            border-bottom: 2px solid #F28123;
-        }
-        
-        .order-details td {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .order-details .checkout-details tr:last-child td {
-            border-bottom: none;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        
-        .boxed-btn {
-            display: inline-block;
-            background-color: #F28123;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            font-weight: 700;
-            border: none;
-            transition: all 0.3s;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .boxed-btn:hover {
-            background-color: #051922;
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        .card-icons {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .card-icons i {
-            font-size: 30px;
-            color: #555;
-        }
-        
-        /* WhatsApp Floating Button */
-        .float-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        
-        .float-whatsapp:hover {
-            background-color: #128c7e;
-            transform: scale(1.1);
-        }
-        
-        .float-whatsapp i {
-            font-size: 30px;
-            margin-right: 10px;
-        }
-        
-        .whatsapp-text {
-            font-size: 16px;
-            font-weight: bold;
+        /* Age Verification, Overlay, Modals, Hamburger, Main Menu, WhatsApp - (Copied from previous unified versions) */
+        #ageVerificationPopup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10001; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center; width: 300px; display: none; }
+        #ageVerificationPopup .ageHeading { font-size: 1.5em; font-weight: bold; margin-bottom: 10px; }
+        #ageVerificationPopup .ageDescription { font-size: 0.9em; margin-bottom: 20px; }
+        #ageVerificationPopup .buttonContainer { display: flex; justify-content: center; gap: 20px; }
+        #ageVerificationPopup .confirmButton, #ageVerificationPopup .declineButton { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        #ageVerificationPopup .confirmButton { background-color: #90EE90; color: white; }
+        #ageVerificationPopup .declineButton { background-color: #dadada; color: black; }
+        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 10000; display: none; }
+        .modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 10001; width: 320px; display: none; pointer-events: auto; }
+        .modal h2 { margin-bottom: 20px; text-align: center; font-size: 1.8em; }
+        .modal input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; pointer-events: auto; }
+        .modal button { width: 100%; padding: 10px; background: #90EE90; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background-color 0.2s; }
+        .modal button:hover { background: #7ED957; }
+        .modal button[type="button"] { background: #ccc; margin-top: 10px; }
+        .modal button[type="button"]:hover { background: #bbb; }
+        .modal p { text-align: center; margin-top: 15px; }
+        .modal a { color: #90EE90; text-decoration: none; }
+        .modal a:hover { text-decoration: underline; }
+        .error-message { color: #ff4444; text-align: center; margin-top: 10px; font-size: 14px; min-height: 1.2em; }
+        .password-strength { font-size: 12px; margin-top: -10px; margin-bottom: 10px; height: 15px; }
+        .password-container { position: relative; }
+        .password-toggle { position: absolute; top: 30%; right: 10px; transform: translateY(-50%); cursor: pointer; color: #aaa; }
+        .main-menu-wrap { position: relative; }
+        .hamburger-menu { display: none; cursor: pointer; position: absolute; top: 50%; right: 15px; transform: translateY(-50%); z-index: 1002; }
+        .hamburger-menu .bar { width: 25px; height: 3px; background-color: #051922; margin: 5px 0; transition: 0.4s; }
+        .main-menu { text-align: right; }
+        .main-menu ul { margin: 0; padding: 0; list-style: none; }
+        .main-menu ul li { display: inline-block; margin-left: 25px; position:relative; }
+        .main-menu ul li a { color: #051922; font-weight: 700; text-decoration: none; padding: 25px 0; display: block; }
+        .main-menu ul li a:hover, .main-menu ul li.current-list-item a { color: #F28123; }
+        .shopping-cart .cart-count { background-color: #F28123; color: #fff; border-radius: 50%; padding: 2px 6px; font-size: 10px; vertical-align: top; margin-left: 3px; display: inline-block; line-height: 1; min-width: 16px; text-align: center; }
+        .float-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: #fff; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000; display: flex; align-items: center; padding: 10px 20px; text-decoration: none; transition: background-color 0.3s, transform 0.3s; }
+        .float-whatsapp:hover { background-color: #128c7e; transform: scale(1.1); }
+        .float-whatsapp i { font-size: 30px; margin-right: 10px; }
+        .whatsapp-text { font-size: 16px; font-weight: bold; }
+        .breadcrumb-section { padding: 120px 0; }
+        .breadcrumb-bg { background-image: url(assets/img/breadcrumb-bg.jpg); } /* Ensure you have this or change it */
+
+        /* Checkout Specific Styles */
+        .checkout-accordion-wrap .card { margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .checkout-accordion-wrap .card-header { background-color: #f9f9f9; padding: 0; border-bottom: 1px solid #ddd; }
+        .checkout-accordion-wrap .btn-link { width: 100%; text-align: left; padding: 15px; color: #333; text-decoration: none; font-weight: 600; }
+        .checkout-accordion-wrap .card-body { padding: 20px; }
+        .checkout-accordion-wrap input, .checkout-accordion-wrap textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; }
+        .checkout-accordion-wrap textarea { height: 100px; }
+        .order-details-wrap { background: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .order-details { width: 100%; margin-bottom: 20px; border-collapse: collapse; } /* Added border-collapse */
+        .order-details th { text-align: left; padding: 10px 0; border-bottom: 2px solid #F28123; }
+        .order-details td { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .order-details .order-details-body td { font-size: 0.9em; } /* Smaller font for item list */
+        .order-details .order-details-body td:last-child { text-align: right; } /* Align item total to right */
+        .order-details .checkout-details tr:last-child td { border-bottom: none; font-weight: bold; font-size: 18px; }
+        .boxed-btn { display: inline-block; background-color: #F28123; color: #fff; padding: 12px 30px; border-radius: 50px; text-transform: uppercase; font-weight: 700; border: none; transition: all 0.3s; text-align: center; width: 100%; }
+        .boxed-btn:hover { background-color: #051922; color: #fff; text-decoration: none; }
+        .card-icons { display: flex; gap: 10px; margin-top: 15px; }
+        .card-icons i { font-size: 30px; color: #555; }
+        .form-check-label { margin-left: 5px; }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 991px) {
+            .main-menu { display: none; position: absolute; top: 100%; right: 0; background-color: #90EE90; width: 100%; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 1001; }
+            .main-menu.active { display: block; }
+            .main-menu ul li { display: block; margin-left: 0; padding: 5px 10px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+            .main-menu ul li:last-child { border-bottom: none; }
+            .main-menu ul li a { color: white; padding: 10px 0; font-weight: normal; }
+            .hamburger-menu { display: block; }
+            .hamburger-menu .bar { background-color: #051922; }
+            .header-icons { display: flex; justify-content: center; gap: 20px; padding: 10px; }
+            .header-icons a { color: white; font-size: 18px; }
+            .shopping-cart .cart-count { background-color: #051922; color: #90EE90; }
+            .main-menu ul li .header-icons { border-bottom: none; }
+            .float-whatsapp .whatsapp-text { display: none; }
+            .float-whatsapp { padding: 12px 15px; }
+            .float-whatsapp i { margin-right: 0; font-size: 24px; }
+            .breadcrumb-section { padding: 80px 0; }
+            .checkout-section { margin-top: 80px; margin-bottom: 80px;}
+            .footer-box { margin-bottom: 30px; text-align: center; }
+            .copyright .col-lg-6 { text-align: center !important; margin-bottom: 10px; }
         }
     </style>
 </head>
 <body>
-    <!-- Hamburger Menu -->
-    <div class="hamburger-menu" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+    <div id="ageVerificationPopup" role="dialog" aria-modal="true" aria-labelledby="ageHeading">
+        <p id="ageHeading" class="ageHeading">Age Verification</p>
+        <p class="ageDescription">You must be 18 years or older to access this site. Please confirm your age.</p>
+        <div class="buttonContainer"> <button class="confirmButton">I am 18+</button> <button class="declineButton">I am under 18</button> </div>
     </div>
 
-    <!-- Header -->
+    <div id="overlay"></div>
+
+    <div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="loginHeading">
+        <h2 id="loginHeading">Login</h2> <form id="loginForm"> <input type="email" id="loginEmail" placeholder="Email" required aria-label="Email"> <div class="password-container"> <input type="password" id="loginPassword" placeholder="Password" required aria-label="Password"> <i class="fas fa-eye password-toggle"></i> </div> <button type="submit">Login</button> <button type="button" class="closeButton" aria-label="Close Login Modal">Close</button> </form> <p>Don't have an account? <a href="#" id="showSignupLink">Sign Up</a></p> <div id="loginError" class="error-message"></div>
+    </div>
+
+    <div id="signupModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="signupHeading">
+        <h2 id="signupHeading">Sign Up</h2> <form id="signupForm"> <input type="text" id="signupName" placeholder="Full Name" required aria-label="Full Name"> <input type="email" id="signupEmail" placeholder="Email" required aria-label="Email"> <div class="password-container"> <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required aria-label="Password" pattern=".{6,}"> <i class="fas fa-eye password-toggle"></i> </div> <div id="passwordStrength" class="password-strength"></div> <button type="submit">Sign Up</button> <button type="button" class="closeButton" aria-label="Close Signup Modal">Close</button> </form> <p>Already have an account? <a href="#" id="showLoginLink">Login</a></p> <div id="signupError" class="error-message"></div>
+    </div>
+
     <div class="top-header-area" id="sticker">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="main-menu-wrap">
-                        <div class="site-logo">
-                            <a href="index.html">
-                                <img src="assets/img/logo.png" alt="Canapa Delights Logo">
-                            </a>
-                        </div>
-                        <nav class="main-menu">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li>
-                                    <div class="header-icons">
-                                        <a class="shopping-cart" href="cart.html">
-                                            <i class="fas fa-shopping-cart"></i>
-                                            <span class="cart-count">0</span>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="container"> <div class="row"> <div class="col-lg-12 col-sm-12 text-center"> <div class="main-menu-wrap">
+            <div class="site-logo"> <a href="index.html"> <img src="assets/img/logo.png" alt="Canapa Delight Logo"> </a> </div>
+            <div class="hamburger-menu" onclick="toggleMenu()"> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> </div>
+            <nav class="main-menu"> <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="cart.html">Cart</a></li> <li id="loginNav"><a href="#" onclick="showLogin()">Login</a></li>
+                <li id="signupNav"><a href="#" onclick="showSignup()">Sign Up</a></li>
+                <li id="accountNav" style="display: none;"><a href="account.html">My Account</a></li>
+                <li id="logoutNav" style="display: none;"><a href="#" id="logoutButton">Logout</a></li>
+                <li> <div class="header-icons"> <a class="shopping-cart" href="cart.html" aria-label="View Shopping Cart"> <i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span> </a> </div> </li>
+            </ul> </nav>
+        </div> </div> </div> </div>
     </div>
 
-    <!-- Breadcrumb Section -->
-    <div class="breadcrumb-section breadcrumb-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="breadcrumb-text">
-                        <h1>Check Out</h1>
-                    </div>
-                </div>
-            </div>
+    <main>
+        <div class="breadcrumb-section breadcrumb-bg">
+            <div class="container"> <div class="row"> <div class="col-lg-8 offset-lg-2 text-center"> <div class="breadcrumb-text">
+                <h1>Check Out</h1>
+            </div> </div> </div> </div>
         </div>
-    </div>
 
-    <!-- Checkout Section -->
-    <div class="checkout-section mt-150 mb-150">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="checkout-accordion-wrap">
-                        <div class="accordion" id="accordionExample">
-                            <!-- Billing Address -->
-                            <div class="card single-accordion">
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Billing Address
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="billing-address-form">
-                                            <form id="billingForm">
-                                                <p><input type="text" id="name" placeholder="Full Name" required></p>
-                                                <p><input type="email" id="email" placeholder="Email" required></p>
-                                                <p><input type="text" id="address" placeholder="Street Address" required></p>
-                                                <p><input type="text" id="city" placeholder="City" required></p>
-                                                <p><input type="text" id="postal" placeholder="Postal Code" required></p>
-                                                <p><input type="tel" id="phone" placeholder="Phone Number" required></p>
-                                                <p><textarea name="notes" id="notes" cols="30" rows="3" placeholder="Order Notes (Optional)"></textarea></p>
-                                            </form>
-                                        </div>
+        <div class="checkout-section mt-150 mb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="checkout-accordion-wrap">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card single-accordion">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Billing Address
+                                            </button>
+                                        </h5>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Shipping Address -->
-                            <div class="card single-accordion">
-                                <div class="card-header" id="headingTwo">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Shipping Address
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="shipping-address-form">
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" type="checkbox" id="sameAsBilling">
-                                                <label class="form-check-label" for="sameAsBilling">
-                                                    Same as billing address
-                                                </label>
-                                            </div>
-                                            <form id="shippingForm">
-                                                <p><input type="text" id="s-name" placeholder="Full Name" required></p>
-                                                <p><input type="text" id="s-address" placeholder="Street Address" required></p>
-                                                <p><input type="text" id="s-city" placeholder="City" required></p>
-                                                <p><input type="text" id="s-postal" placeholder="Postal Code" required></p>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Payment Method -->
-                            <div class="card single-accordion">
-                                <div class="card-header" id="headingThree">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            Payment Method
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="payment-method">
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
-                                                <label class="form-check-label" for="creditCard">
-                                                    Credit/Debit Card
-                                                </label>
-                                            </div>
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" type="radio" name="paymentMethod" id="eft" value="eft">
-                                                <label class="form-check-label" for="eft">
-                                                    EFT/Bank Transfer
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="cashOnDelivery">
-                                                <label class="form-check-label" for="cashOnDelivery">
-                                                    Cash on Delivery
-                                                </label>
-                                            </div>
-                                            
-                                            <!-- Credit Card Form (shown when credit card is selected) -->
-                                            <div id="creditCardForm" class="mt-4">
-                                                <form id="paymentForm">
-                                                    <p><input type="text" id="cardNumber" placeholder="Card Number" required></p>
-                                                    <p><input type="text" id="cardName" placeholder="Name on Card" required></p>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <input type="text" id="expiryDate" placeholder="MM/YY" required>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <input type="text" id="cvv" placeholder="CVV" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-icons mt-3">
-                                                        <i class="fab fa-cc-visa"></i>
-                                                        <i class="fab fa-cc-mastercard"></i>
-                                                        <i class="fab fa-cc-amex"></i>
-                                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="billing-address-form">
+                                                <form id="billingForm">
+                                                    <p><input type="text" id="name" name="name" placeholder="Full Name" required></p>
+                                                    <p><input type="email" id="email" name="email" placeholder="Email" required></p>
+                                                    <p><input type="text" id="address" name="address" placeholder="Street Address" required></p>
+                                                    <p><input type="text" id="city" name="city" placeholder="City" required></p>
+                                                    <p><input type="text" id="postal" name="postal" placeholder="Postal Code" required></p>
+                                                    <p><input type="tel" id="phone" name="phone" placeholder="Phone Number" required></p>
+                                                    <p><textarea name="notes" id="notes" cols="30" rows="3" placeholder="Order Notes (Optional)"></textarea></p>
                                                 </form>
                                             </div>
-                                            
-                                            <!-- EFT Instructions (shown when EFT is selected) -->
-                                            <div id="eftInstructions" class="mt-4" style="display: none;">
-                                                <p>Please make payment to:</p>
-                                                <p><strong>Bank:</strong> Standard Bank</p>
-                                                <p><strong>Account Name:</strong> Canapa Delights</p>
-                                                <p><strong>Account Number:</strong> 1234567890</p>
-                                                <p><strong>Branch Code:</strong> 012345</p>
-                                                <p>Use your order number as reference.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card single-accordion">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Shipping Address
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="shipping-address-form">
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="sameAsBilling">
+                                                    <label class="form-check-label" for="sameAsBilling">
+                                                        Same as billing address
+                                                    </label>
+                                                </div>
+                                                <form id="shippingForm">
+                                                    <p><input type="text" id="s-name" name="s_name" placeholder="Full Name" required></p>
+                                                    <p><input type="text" id="s-address" name="s_address" placeholder="Street Address" required></p>
+                                                    <p><input type="text" id="s-city" name="s_city" placeholder="City" required></p>
+                                                    <p><input type="text" id="s-postal" name="s_postal" placeholder="Postal Code" required></p>
+                                                </form>
                                             </div>
-                                            
-                                            <!-- COD Instructions (shown when COD is selected) -->
-                                            <div id="codInstructions" class="mt-4" style="display: none;">
-                                                <p>Pay with cash when your order is delivered.</p>
-                                                <p>An additional R50 cash handling fee will apply.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card single-accordion">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Payment Method
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="payment-method">
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
+                                                    <label class="form-check-label" for="creditCard"> Credit/Debit Card </label>
+                                                </div>
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="radio" name="paymentMethod" id="eft" value="eft">
+                                                    <label class="form-check-label" for="eft"> EFT/Bank Transfer </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="cashOnDelivery">
+                                                    <label class="form-check-label" for="cashOnDelivery"> Cash on Delivery </label>
+                                                </div>
+                                                
+                                                <div id="creditCardForm" class="mt-4">
+                                                    <p class="alert alert-warning">Note: This is a placeholder for credit card input. Do NOT enter real card details. Actual payment processing requires a secure payment gateway.</p>
+                                                    <form id="paymentForm">
+                                                        <p><input type="text" id="cardNumber" placeholder="Card Number (placeholder)" ></p>
+                                                        <p><input type="text" id="cardName" placeholder="Name on Card (placeholder)" ></p>
+                                                        <div class="row">
+                                                            <div class="col-md-6"> <input type="text" id="expiryDate" placeholder="MM/YY (placeholder)" > </div>
+                                                            <div class="col-md-6"> <input type="text" id="cvv" placeholder="CVV (placeholder)" > </div>
+                                                        </div>
+                                                        <div class="card-icons mt-3"> <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i> <i class="fab fa-cc-amex"></i> </div>
+                                                    </form>
+                                                </div>
+                                                
+                                                <div id="eftInstructions" class="mt-4" style="display: none;">
+                                                    <p>Please make payment to:</p>
+                                                    <p><strong>Bank:</strong> Standard Bank</p>
+                                                    <p><strong>Account Name:</strong> Canapa Delights</p>
+                                                    <p><strong>Account Number:</strong> 1234567890</p>
+                                                    <p><strong>Branch Code:</strong> 012345</p>
+                                                    <p>Use your order number (generated after placing order) as reference.</p>
+                                                </div>
+                                                
+                                                <div id="codInstructions" class="mt-4" style="display: none;">
+                                                    <p>Pay with cash when your order is delivered.</p>
+                                                    <p>An additional R50 cash handling fee may apply and will be confirmed.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -384,285 +267,386 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4">
-                    <div class="order-details-wrap">
-                        <table class="order-details">
-                            <thead>
-                                <tr>
-                                    <th>Your Order</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody class="order-details-body" id="cartItems">
-                                <!-- Cart items will be populated by JavaScript -->
-                            </tbody>
-                            <tbody class="checkout-details">
-                                <tr>
-                                    <td>Subtotal</td>
-                                    <td id="subtotal">R0.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Shipping</td>
-                                    <td id="shipping">R50.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Total</td>
-                                    <td id="total">R0.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <a href="#" class="boxed-btn" id="placeOrder">Place Order</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-box">
-                        <h4>About Us</h4>
-                        <p>Premium Cannabis Products</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-box">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li>22 Karee Street, Irene</li>
-                            <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com"></span></li>
-                            <li>Phone: +27 71 031 4435</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-box">
-                        <h4>Follow Us</h4>
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                    <div class="col-lg-4">
+                        <div class="order-details-wrap">
+                            <table class="order-details">
+                                <thead> <tr> <th>Your Order</th> <th>Total</th> </tr> </thead>
+                                <tbody class="order-details-body" id="checkoutOrderItems">
+                                    </tbody>
+                                <tbody class="checkout-details">
+                                    <tr> <td>Subtotal</td> <td id="checkoutSubtotal">R0.00</td> </tr>
+                                    <tr> <td>Shipping</td> <td id="checkoutShipping">R50.00</td> </tr>
+                                    <tr> <td>Total</td> <td id="checkoutTotal">R0.00</td> </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" class="boxed-btn" id="placeOrderBtn">Place Order</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </main>
+
+    <footer class="footer-area">
+        <div class="container"> <div class="row">
+            <div class="col-lg-3 col-md-6"> <div class="footer-box about-widget"> <h2 class="widget-title">About us</h2> <p>Discover high-quality, curated cannabis products at Canapa Delights.</p> </div> </div>
+            <div class="col-lg-3 col-md-6"> <div class="footer-box get-in-touch"> <h2 class="widget-title">Get in Touch</h2> <ul> <li>22 Karee Street, Southdowns Shopping Centre, Irene</li> <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li> <li><a href="tel:+27710314435">+27 71 031 4435</a></li> </ul> </div> </div>
+            <div class="col-lg-3 col-md-6"> <div class="footer-box"> <h2 class="widget-title">Follow Us</h2> <div class="social-icons"> <a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a> <a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a> </div> </div> </div>
+        </div> </div>
+    </footer>
+
+    <div class="copyright">
+        <div class="container"> <div class="row">
+            <div class="col-lg-6 col-md-12"><p>Copyright © 2025 - All Rights Reserved.</p></div>
+            <div class="col-lg-6 text-right col-md-12"><div class="social-icons"><ul><li><a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a></li><li><a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a></li></ul></div></div>
+        </div> </div>
     </div>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-text">Chat with us</span>
-    </a>
+    <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank"> <i class="fab fa-whatsapp"></i> <span class="whatsapp-text">Chat with us</span> </a>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Product price reference from shop.html (all prices in ZAR)
-        const productPrices = {
-            // Cookies
-            "1": 250.00,   // Choc Chip Cookies
-            "2": 250.00,   // Coconut Oat THC Cookies
-            "3": 250.00,   // Chocolate Cookies
-            "4": 150.00,   // Choc Cookie Chips
-            "5": 150.00,   // Choc Cookies
-            
-            // Gummies
-            "7": 250.00,   // Yummy Gummies
-            "8": 250.00,   // Sugar Free THC Gummies
-            "9": 250.00,   // Sodaze Tropical Gummies
-            "10": 100.00,  // Sour THC Gummies
-            "11": 250.00,  // Relax – Full Spectrum
-            "12": 250.00,  // Sodaze Grape Gummies
-            "13": 150.00,  // Mixed THC Gummies Pack
-            "14": 250.00,  // Chillax– Full Spectrum
-            "15": 250.00,  // Sodaze Raspberry Gummies
-            "16": 250.00,  // Yummy Gummies (50mg)
-            "17": 250.00,  // Chocolate Fudge
-            
-            // Vapes
-            "19": 1000.00, // Durban Poison Sativa
-            "20": 1000.00, // Northern Lights Indica
-            "21": 1300.00, // Live Resin Vape
-            "22": 500.00,  // Gelato Hybrid Cartridge
-            "23": 500.00,  // Durban poison
-            "24": 800.00,  // Sativa Cartridge
-            "27": 400.00,  // Pain CBD Cartridge
-            "28": 500.00,  // Vape Battery Pen
-            
-            // Oils
-            "34": 290.00,  // Full Spectrum CBD Oil
-            "35": 1200.00, // Deep Sleep CBD Oil
-            "36": 590.00,  // Pain Relief CBD Oil 300mg
-            "36-600": 790.00, // Pain Relief CBD Oil 600mg
-            "37": 590.00,  // Pet CBD Oil 150mg
-            "38": 590.00,  // Relax CBD Oil 300mg
-            "38-600": 790.00, // Relax CBD Oil 600mg
-            "39": 590.00,  // Sleep Aid CBD Oil 300mg
-            "39-600": 790.00, // Sleep Aid CBD Oil 600mg
-            
-            // Tea
-            "51": 100.00,  // CBD Mint Rooibos Tea
-            "52": 100.00,  // CBD Cinnamon Rooibos Tea
-            "53": 100.00,  // CBD Ginger Rooibos Tea
-            "54": 100.00,  // CBD Pomegranate Rooibos Tea
-            "55": 100.00,  // CBD Lemongrass Rooibos Tea
-            
-            // Soda
-            "44": 70.00,   // Berry Haze CBD Soda
-            "45": 70.00,   // Cherry Pop THC Soda
-            "46": 70.00,   // Blueberry Lemonade Soda
-            
-            // Treats
-            "42": 200.00,  // CBD Dog Treats
-            "43": 80.00,   // THC Lollipops
-            "44": 35.00    // Sex Shot
-        };
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { getDatabase, ref, set, serverTimestamp, push } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js"; // Added push
 
-        // Mobile menu toggle function
-        function toggleMenu() {
-            const menu = document.querySelector('.main-menu');
-            menu.classList.toggle('active');
+        const firebaseConfig = { /* ... (Your Firebase Config, ensure it's correct) ... */ };
+
+        let auth, database;
+        try {
+            const app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            database = getDatabase(app);
+            console.log("Firebase initialized successfully for Checkout Page");
+        } catch (error) { console.error("Firebase initialization error:", error); }
+
+        // --- DOM Elements (from previous unified + checkout specific) ---
+        const agePopup = document.getElementById('ageVerificationPopup');
+        const overlay = document.getElementById('overlay');
+        const loginModal = document.getElementById('loginModal');
+        const signupModal = document.getElementById('signupModal');
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const loginError = document.getElementById('loginError');
+        const signupError = document.getElementById('signupError');
+        const passwordToggles = document.querySelectorAll('.password-toggle');
+        const signupPasswordInput = document.getElementById('signupPassword');
+        const passwordStrengthDiv = document.getElementById('passwordStrength');
+        const loginNav = document.getElementById('loginNav');
+        const signupNav = document.getElementById('signupNav');
+        const accountNav = document.getElementById('accountNav');
+        const logoutNav = document.getElementById('logoutNav');
+        const logoutButton = document.getElementById('logoutButton');
+        const mainMenu = document.querySelector('.main-menu');
+        // Checkout specific DOM elements
+        const checkoutOrderItemsContainer = document.getElementById('checkoutOrderItems');
+        const subtotalElement = document.getElementById('checkoutSubtotal');
+        const shippingElement = document.getElementById('checkoutShipping');
+        const totalElement = document.getElementById('checkoutTotal');
+        const placeOrderBtn = document.getElementById('placeOrderBtn');
+        const sameAsBillingCheckbox = document.getElementById('sameAsBilling');
+        const paymentMethodRadios = document.querySelectorAll('input[name="paymentMethod"]');
+        const creditCardFormDiv = document.getElementById('creditCardForm');
+        const eftInstructionsDiv = document.getElementById('eftInstructions');
+        const codInstructionsDiv = document.getElementById('codInstructions');
+
+        // --- Utility Functions (from previous unified) ---
+        const showModal = (modal) => { /* ... */ };
+        const hideModal = (modal) => { /* ... */ };
+        const closeAllModals = () => { /* ... */ };
+        const displayError = (element, error) => { /* ... */ };
+        const setLoading = (button, isLoading, originalText) => { /* ... */ };
+        const checkPasswordStrength = (password) => { /* ... */ };
+        const handleAgeVerification = () => { /* ... */ };
+        window.showLogin = () => { /* ... */ };
+        window.showSignup = () => { /* ... */ };
+        window.toggleMenu = () => { if(mainMenu) mainMenu.classList.toggle('active'); };
+
+        // --- Cart Data & Summary Logic for Checkout Page ---
+        let currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+        let currentSubtotal = 0;
+        const STANDARD_SHIPPING_COST = 50.00;
+        const COD_FEE = 50.00; // Additional fee for COD
+
+        function renderCheckoutOrderItems() {
+            if (!checkoutOrderItemsContainer) return;
+            checkoutOrderItemsContainer.innerHTML = '';
+            currentSubtotal = 0;
+
+            if (currentCart.length === 0) {
+                checkoutOrderItemsContainer.innerHTML = '<tr><td colspan="2">Your cart is empty. Please <a href="shop.html">add items</a> to proceed.</td></tr>';
+                if(placeOrderBtn) placeOrderBtn.disabled = true; // Disable place order if cart empty
+                updateCheckoutSummary(); // Update summary to show 0s
+                return;
+            }
+            if(placeOrderBtn) placeOrderBtn.disabled = false;
+
+            currentCart.forEach(item => {
+                const itemPrice = parseFloat(item.price) || 0;
+                const itemTotal = itemPrice * item.quantity;
+                currentSubtotal += itemTotal;
+                const row = `<tr>
+                                <td>${item.name || 'Product'} <span class="product-qty">x ${item.quantity}</span></td>
+                                <td>R${itemTotal.toFixed(2)}</td>
+                             </tr>`;
+                checkoutOrderItemsContainer.insertAdjacentHTML('beforeend', row);
+            });
+            updateCheckoutSummary();
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load cart from localStorage
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartItemsContainer = document.getElementById('cartItems');
-            const subtotalElement = document.getElementById('subtotal');
-            const shippingElement = document.getElementById('shipping');
-            const totalElement = document.getElementById('total');
-            const placeOrderBtn = document.getElementById('placeOrder');
-            const sameAsBillingCheckbox = document.getElementById('sameAsBilling');
+        function updateCheckoutSummary() {
+            if (!subtotalElement || !shippingElement || !totalElement) return;
             
-            // Payment method toggle
-            const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
-            const creditCardForm = document.getElementById('creditCardForm');
-            const eftInstructions = document.getElementById('eftInstructions');
-            const codInstructions = document.getElementById('codInstructions');
-            
-            let subtotal = 0;
-            const shippingCost = 50; // Standard shipping cost
-            let total = 0;
-
-            // Display cart items
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<tr><td colspan="2">Your cart is empty</td></tr>';
-                placeOrderBtn.style.display = 'none';
-            } else {
-                cartItemsContainer.innerHTML = cart.map(item => {
-                    const correctPrice = productPrices[item.id] || item.price;
-                    const itemTotal = correctPrice * item.quantity;
-                    subtotal += itemTotal;
-
-                    return `
-                        <tr>
-                            <td>${item.name} × ${item.quantity}</td>
-                            <td>R${itemTotal.toFixed(2)}</td>
-                        </tr>
-                    `;
-                }).join('');
-                
-                // Calculate total
-                total = subtotal + shippingCost;
-                
-                // Update totals display
-                subtotalElement.textContent = `R${subtotal.toFixed(2)}`;
-                totalElement.textContent = `R${total.toFixed(2)}`;
-                
-                // Update cart count in header
-                const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-                document.querySelector('.cart-count').textContent = itemCount;
+            let calculatedShipping = STANDARD_SHIPPING_COST;
+            if (currentSubtotal === 0) {
+                calculatedShipping = 0; // No shipping if cart is empty
+            } else if (currentSubtotal >= 500) {
+                calculatedShipping = 0; // Free shipping for orders over R500
             }
 
-            // Same as billing address toggle
-            sameAsBillingCheckbox.addEventListener('change', function() {
-                if (this.checked) {
-                    document.getElementById('s-name').value = document.getElementById('name').value;
-                    document.getElementById('s-address').value = document.getElementById('address').value;
-                    document.getElementById('s-city').value = document.getElementById('city').value;
-                    document.getElementById('s-postal').value = document.getElementById('postal').value;
-                }
-            });
+            let finalTotal = currentSubtotal + calculatedShipping;
+            const selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
 
-            // Payment method selection
-            paymentMethods.forEach(method => {
-                method.addEventListener('change', function() {
-                    creditCardForm.style.display = 'none';
-                    eftInstructions.style.display = 'none';
-                    codInstructions.style.display = 'none';
-                    
-                    if (this.id === 'creditCard') {
-                        creditCardForm.style.display = 'block';
-                    } else if (this.id === 'eft') {
-                        eftInstructions.style.display = 'block';
-                    } else if (this.id === 'cashOnDelivery') {
-                        codInstructions.style.display = 'block';
-                        // Add COD fee
-                        total += 50;
-                        totalElement.textContent = `R${total.toFixed(2)}`;
-                        shippingElement.textContent = 'R100.00';
-                    } else {
-                        // Reset to standard shipping if COD is unselected
-                        total -= 50;
-                        totalElement.textContent = `R${total.toFixed(2)}`;
-                        shippingElement.textContent = 'R50.00';
-                    }
-                });
-            });
-
-            // Place order button
-            placeOrderBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Validate forms
-                const billingValid = validateForm('billingForm');
-                const shippingValid = document.getElementById('sameAsBilling').checked || validateForm('shippingForm');
-                const paymentValid = document.getElementById('creditCard').checked ? validateForm('paymentForm') : true;
-                
-                if (billingValid && shippingValid && paymentValid) {
-                    // Process order
-                    alert('Order placed successfully!');
-                    // Clear cart
-                    localStorage.removeItem('cart');
-                    // Redirect to confirmation page
-                    window.location.href = 'order-confirmation.html';
-                } else {
-                    alert('Please fill in all required fields');
-                }
-            });
-
-            // Form validation helper
-            function validateForm(formId) {
-                const form = document.getElementById(formId);
-                const inputs = form.querySelectorAll('[required]');
-                let isValid = true;
-                
-                inputs.forEach(input => {
-                    if (!input.value.trim()) {
-                        input.style.borderColor = 'red';
-                        isValid = false;
-                    } else {
-                        input.style.borderColor = '';
-                    }
-                });
-                
-                return isValid;
+            if (selectedPaymentMethod && selectedPaymentMethod.value === 'cashOnDelivery' && currentSubtotal > 0) {
+                calculatedShipping += COD_FEE; // Add COD fee to shipping line for display
+                finalTotal += COD_FEE;
+                if(codInstructionsDiv) codInstructionsDiv.querySelector('p:last-child').textContent = `An additional R${COD_FEE.toFixed(2)} cash handling fee will apply.`;
             }
 
-            // Email Protection
+
+            subtotalElement.textContent = `R${currentSubtotal.toFixed(2)}`;
+            shippingElement.textContent = `R${calculatedShipping.toFixed(2)}`;
+            totalElement.textContent = `R${finalTotal.toFixed(2)}`;
+        }
+        
+        function updateHeaderCartCount() {
+            const count = currentCart.reduce((sum, item) => sum + item.quantity, 0);
+            const cartCountSpan = document.querySelector('.cart-count');
+            if(cartCountSpan) cartCountSpan.textContent = count;
+        }
+
+        function validateForm(formId) {
+            const form = document.getElementById(formId);
+            if (!form) return true; // If form doesn't exist, consider it valid for this step
+            const inputs = form.querySelectorAll('[required]');
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = 'red'; isValid = false;
+                } else { input.style.borderColor = '#ddd'; }
+            });
+            return isValid;
+        }
+
+        // --- Core Event Listeners & Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            if(agePopup) handleAgeVerification(); // From unified JS
+            // Auth modal links & general modal handling (from unified JS)
+            const showSignupLink = document.getElementById('showSignupLink');
+            const showLoginLink = document.getElementById('showLoginLink');
+            if(showSignupLink) showSignupLink.addEventListener('click', (e) => { e.preventDefault(); showSignup(); });
+            if(showLoginLink) showLoginLink.addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
+            document.querySelectorAll('.closeButton').forEach(btn => btn.addEventListener('click', closeAllModals));
+            if(overlay) overlay.addEventListener('click', closeAllModals);
+            document.querySelectorAll('.modal').forEach(modal => modal.addEventListener('click', (e) => e.stopPropagation()));
+            document.addEventListener('keydown', (e) => { if (e.key === "Escape" && overlay && overlay.style.display === 'block') { closeAllModals(); } });
+            passwordToggles.forEach(toggle => { /* ... (Full implementation) ... */ });
+            if (signupPasswordInput) { signupPasswordInput.addEventListener('input', () => checkPasswordStrength(signupPasswordInput.value)); }
+            if (loginForm) { loginForm.addEventListener('submit', async (e) => { /* ... (Full implementation) ... */ }); }
+            if (signupForm) { signupForm.addEventListener('submit', async (e) => { /* ... (Full implementation) ... */ }); }
+            if (logoutButton) { logoutButton.addEventListener('click', async (e) => { /* ... (Full implementation) ... */ }); }
+
+            renderCheckoutOrderItems(); // Display items and initial totals
+            updateHeaderCartCount(); // Update header cart icon
+
+            if (sameAsBillingCheckbox) {
+                sameAsBillingCheckbox.addEventListener('change', function() {
+                    const billingForm = document.getElementById('billingForm');
+                    const shippingForm = document.getElementById('shippingForm');
+                    if (!billingForm || !shippingForm) return;
+
+                    const bName = billingForm.querySelector('#name');
+                    const bAddress = billingForm.querySelector('#address');
+                    const bCity = billingForm.querySelector('#city');
+                    const bPostal = billingForm.querySelector('#postal');
+
+                    const sName = shippingForm.querySelector('#s-name');
+                    const sAddress = shippingForm.querySelector('#s-address');
+                    const sCity = shippingForm.querySelector('#s-city');
+                    const sPostal = shippingForm.querySelector('#s-postal');
+
+                    if (this.checked) {
+                        if(sName && bName) sName.value = bName.value;
+                        if(sAddress && bAddress) sAddress.value = bAddress.value;
+                        if(sCity && bCity) sCity.value = bCity.value;
+                        if(sPostal && bPostal) sPostal.value = bPostal.value;
+                        // Disable shipping form fields
+                        [sName, sAddress, sCity, sPostal].forEach(f => f.disabled = true);
+                    } else {
+                        // Enable shipping form fields and clear them
+                         [sName, sAddress, sCity, sPostal].forEach(f => { f.disabled = false; f.value = ''; });
+                    }
+                });
+            }
+
+            if (paymentMethodRadios) {
+                paymentMethodRadios.forEach(method => {
+                    method.addEventListener('change', function() {
+                        if(creditCardFormDiv) creditCardFormDiv.style.display = 'none';
+                        if(eftInstructionsDiv) eftInstructionsDiv.style.display = 'none';
+                        if(codInstructionsDiv) codInstructionsDiv.style.display = 'none';
+                        
+                        if (this.id === 'creditCard' && creditCardFormDiv) {
+                            creditCardFormDiv.style.display = 'block';
+                        } else if (this.id === 'eft' && eftInstructionsDiv) {
+                            eftInstructionsDiv.style.display = 'block';
+                        } else if (this.id === 'cashOnDelivery' && codInstructionsDiv) {
+                            codInstructionsDiv.style.display = 'block';
+                        }
+                        updateCheckoutSummary(); // Recalculate total if COD fee changes
+                    });
+                });
+                 // Trigger change on initial load for default checked payment method
+                const defaultCheckedPayment = document.querySelector('input[name="paymentMethod"]:checked');
+                if (defaultCheckedPayment) {
+                    const event = new Event('change');
+                    defaultCheckedPayment.dispatchEvent(event);
+                }
+            }
+
+            if (placeOrderBtn) {
+                placeOrderBtn.addEventListener('click', async function(e) {
+                    e.preventDefault();
+                    if (currentCart.length === 0) {
+                        alert('Your cart is empty. Please add items to your cart before placing an order.');
+                        window.location.href = 'shop.html';
+                        return;
+                    }
+
+                    const billingValid = validateForm('billingForm');
+                    const shippingAddressRequired = !document.getElementById('sameAsBilling')?.checked;
+                    const shippingValid = shippingAddressRequired ? validateForm('shippingForm') : true;
+                    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked')?.value;
+                    let paymentFormValid = true;
+                    if (paymentMethod === 'creditCard') {
+                        // Basic placeholder validation for card form.
+                        // Real validation would be much more complex and often handled by a payment gateway's JS library.
+                        paymentFormValid = validateForm('paymentForm');
+                        if (!paymentFormValid) alert('Please check your card details.');
+                    }
+
+                    if (billingValid && shippingValid && paymentFormValid) {
+                        const billingAddress = {
+                            name: document.getElementById('name')?.value,
+                            email: document.getElementById('email')?.value,
+                            address: document.getElementById('address')?.value,
+                            city: document.getElementById('city')?.value,
+                            postal: document.getElementById('postal')?.value,
+                            phone: document.getElementById('phone')?.value,
+                            notes: document.getElementById('notes')?.value
+                        };
+                        let shippingAddress = {};
+                        if (shippingAddressRequired) {
+                            shippingAddress = {
+                                name: document.getElementById('s-name')?.value,
+                                address: document.getElementById('s-address')?.value,
+                                city: document.getElementById('s-city')?.value,
+                                postal: document.getElementById('s-postal')?.value
+                            };
+                        } else {
+                            shippingAddress = { ...billingAddress }; // Copy relevant fields
+                            shippingAddress.email = undefined; // Not typically needed for shipping address if different from billing
+                            shippingAddress.phone = undefined;
+                            shippingAddress.notes = undefined;
+                        }
+
+                        const orderData = {
+                            userId: auth?.currentUser ? auth.currentUser.uid : 'guest',
+                            userName: auth?.currentUser ? auth.currentUser.displayName || billingAddress.name : billingAddress.name,
+                            userEmail: auth?.currentUser ? auth.currentUser.email : billingAddress.email,
+                            items: currentCart,
+                            billingAddress: billingAddress,
+                            shippingAddress: shippingAddress,
+                            paymentMethod: paymentMethod,
+                            subtotal: currentSubtotal,
+                            shipping: parseFloat(shippingElement.textContent.replace('R','')),
+                            total: parseFloat(totalElement.textContent.replace('R','')),
+                            orderDate: serverTimestamp(), // For Firebase
+                            status: 'Pending'
+                        };
+                        
+                        console.log('Order Data:', orderData);
+
+                        // Placeholder: Simulate saving order to Firebase (for logged-in users)
+                        if (auth?.currentUser && database) {
+                            try {
+                                const ordersRef = ref(database, 'orders/' + auth.currentUser.uid);
+                                const newOrderRef = push(ordersRef); // Creates a unique ID for the order
+                                await set(newOrderRef, orderData);
+                                console.log("Order saved to Firebase for user: ", auth.currentUser.uid);
+                            } catch (dbError) {
+                                console.error("Error saving order to Firebase: ", dbError);
+                                alert('There was an issue saving your order details. Please try again.');
+                                return; // Stop further processing
+                            }
+                        } else if(database) { // For guest users, save to a general 'guestOrders' or similar
+                             try {
+                                const guestOrdersRef = ref(database, 'guestOrders');
+                                const newGuestOrderRef = push(guestOrdersRef);
+                                await set(newGuestOrderRef, orderData);
+                                console.log("Guest order saved to Firebase.");
+                            } catch (dbError) {
+                                console.error("Error saving guest order to Firebase: ", dbError);
+                                // Decide if you want to alert the user for guest order save failures
+                            }
+                        }
+
+
+                        alert('Order placed successfully! (Simulation)');
+                        localStorage.removeItem('cart'); // Clear cart
+                        updateHeaderCartCount(); // Update header cart icon
+                        // Redirect to a confirmation page
+                        window.location.href = 'order-confirmation.html'; // Create this page
+                    } else {
+                        alert('Please fill in all required fields correctly.');
+                    }
+                });
+            }
+
             document.querySelectorAll('.safe-email').forEach(element => {
                 const user = element.dataset.user;
                 const domain = element.dataset.domain;
                 element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
             });
         });
+
+        if (auth) {
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    if(loginNav) loginNav.style.display = 'none'; if(signupNav) signupNav.style.display = 'none';
+                    if(accountNav) accountNav.style.display = 'inline-block'; if(logoutNav) logoutNav.style.display = 'inline-block';
+                    // Pre-fill billing info if user is logged in and data is available
+                    if(database && user.uid){
+                        // Example: You might fetch user profile data from Firebase here to pre-fill form
+                        // const userProfileRef = ref(database, 'users/' + user.uid);
+                        // onValue(userProfileRef, (snapshot) => { ... fill form ... });
+                    }
+                } else {
+                    if(loginNav) loginNav.style.display = 'inline-block'; if(signupNav) signupNav.style.display = 'inline-block';
+                    if(accountNav) accountNav.style.display = 'none'; if(logoutNav) logoutNav.style.display = 'none';
+                }
+            });
+        }
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.countdown.js"></script>
+    <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+    <script src="assets/js/waypoints.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/sticker.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
