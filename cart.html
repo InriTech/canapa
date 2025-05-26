@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart - Canapa Delights</title>
+
+    <title>Your Shopping Cart - Canapa Delights</title>
+    <meta name="description" content="Review your selected Canapa Delights premium cannabis products. Adjust quantities or proceed to checkout.">
+    <meta name="keywords" content="shopping cart, canapa delights, cannabis order, review cart, edibles, vapes, oils, South Africa">
+    <link rel="canonical" href="https://canapadelights.co.za/cart.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://canapadelights.co.za/cart.html">
+    <meta property="og:title" content="Your Shopping Cart - Canapa Delights">
+    <meta property="og:description" content="Review items in your shopping cart and proceed to a secure checkout for your Canapa Delights premium cannabis products.">
+    <meta property="og:image" content="https://canapadelights.co.za/assets/img/logo-social.png"> <meta property="og:site_name" content="Canapa Delights">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://canapadelights.co.za/cart.html">
+    <meta property="twitter:title" content="Your Shopping Cart - Canapa Delights">
+    <meta property="twitter:description" content="Review items in your shopping cart and proceed to a secure checkout for your Canapa Delights premium cannabis products.">
+    <meta property="twitter:image" content="https://canapadelights.co.za/assets/img/logo-social.png"> <meta name="theme-color" content="#F28123">
+
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -21,14 +38,21 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Shopping Cart - Canapa Delights",
-        "description": "Review items in your shopping cart before proceeding to checkout.",
-        "url": "https://canapadelights.co.za/cart.html"
+        "description": "Review items in your shopping cart before proceeding to checkout with Canapa Delights.",
+        "url": "https://canapadelights.co.za/cart.html",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://canapadelights.co.za/index.html"},
+                {"@type": "ListItem", "position": 2, "name": "Shop", "item": "https://canapadelights.co.za/shop.html"},
+                {"@type": "ListItem", "position": 3, "name": "Cart"}
+            ]
+        }
     }
     </script>
 
     <style>
-        /* Age Verification, Overlay, Modals, Hamburger, Main Menu, WhatsApp (Same as previous unified pages) */
-        #ageVerificationPopup, #overlay, .modal, .main-menu-wrap, .hamburger-menu, .main-menu, .float-whatsapp { /* Basic placeholders, full styles from previous unified versions */ }
+        /* Age Verification, Overlay, Modals, Hamburger, Main Menu, WhatsApp (Copied from previous unified versions) */
         #ageVerificationPopup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10001; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center; width: 300px; display: none; }
         #ageVerificationPopup .ageHeading { font-size: 1.5em; font-weight: bold; margin-bottom: 10px; }
         #ageVerificationPopup .ageDescription { font-size: 0.9em; margin-bottom: 20px; }
@@ -39,7 +63,7 @@
         #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 10000; display: none; }
         .modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 10001; width: 320px; display: none; pointer-events: auto; }
         .modal h2 { margin-bottom: 20px; text-align: center; font-size: 1.8em; }
-        .modal input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; pointer-events: auto; }
+        .modal input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; pointer-events: auto; font-size:16px; }
         .modal button { width: 100%; padding: 10px; background: #90EE90; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background-color 0.2s; }
         .modal button:hover { background: #7ED957; }
         .modal button[type="button"] { background: #ccc; margin-top: 10px; }
@@ -65,23 +89,24 @@
         .float-whatsapp i { font-size: 30px; margin-right: 10px; }
         .whatsapp-text { font-size: 16px; font-weight: bold; }
         .breadcrumb-section { padding: 120px 0; }
-        .breadcrumb-bg { background-image: url(assets/img/breadcrumb-bg.jpg); }
+        .breadcrumb-bg { background-image: url(assets/img/breadcrumb-bg.jpg); } /* Ensure this image exists or update path */
 
         /* Cart Specific Styles */
         .cart-product-item { display: flex; align-items: center; gap: 15px; }
-        .cart-product-item img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
-        .quantity-controls { display: flex; align-items: center; gap: 5px; }
-        .quantity-input { width: 50px; text-align: center; padding: 5px; border: 1px solid #ddd; border-radius: 4px; }
-        .quantity-btn { padding: 5px 10px; background: #F28123; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s; }
+        .cart-product-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; } /* Slightly smaller image */
+        .cart-product-item h4 { font-size: 1em; margin-bottom: 0; }
+        .quantity-controls { display: flex; align-items: center; gap: 8px; }
+        .quantity-input { width: 45px; text-align: center; padding: 6px; border: 1px solid #ddd; border-radius: 4px; font-size: 15px; }
+        .quantity-btn { padding: 6px 10px; background: #F28123; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background 0.3s; font-size:14px; line-height: 1; }
         .quantity-btn:hover { background: #e57216; }
-        .remove-btn { background: none; border: none; color: #dc3545; cursor: pointer; font-size: 16px; transition: transform 0.2s; }
-        .remove-btn:hover { transform: scale(1.2); }
+        .remove-btn { background: none; border: none; color: #dc3545; cursor: pointer; font-size: 18px; padding: 5px; transition: transform 0.2s; }
+        .remove-btn:hover { transform: scale(1.1); color: #a71d2a; }
         .total-table { width: 100%; margin-bottom: 30px; border-collapse: collapse; }
         .total-table th { text-align: left; padding: 15px 0; border-bottom: 2px solid #F28123; }
-        .total-table td { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .total-table td { padding: 12px 0; border-bottom: 1px solid #eee; }
         .total-table tr:last-child td { border-bottom: none; font-weight: bold; font-size: 18px; }
         .cart-buttons { display: flex; flex-direction: column; gap: 15px; }
-        .boxed-btn { display: inline-block; background-color: #F28123; color: #fff; padding: 12px 30px; border-radius: 50px; text-transform: uppercase; font-weight: 700; border: none; transition: all 0.3s; text-align: center; }
+        .boxed-btn { display: inline-block; background-color: #F28123; color: #fff; padding: 12px 30px; border-radius: 50px; text-transform: uppercase; font-weight: 700; border: none; transition: all 0.3s; text-align: center; text-decoration: none; font-size: 15px; }
         .boxed-btn:hover { background-color: #051922; color: #fff; text-decoration: none; }
         .boxed-btn.black { background-color: #051922; }
         .boxed-btn.black:hover { background-color: #F28123; }
@@ -93,7 +118,7 @@
         .empty-cart i { font-size: 60px; color: #ddd; margin-bottom: 20px; }
         .empty-cart h3 { margin-bottom: 20px; }
 
-        /* MOBILE OPTIMIZATION from previous pages */
+        /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 991px) {
             .main-menu { display: none; position: absolute; top: 100%; right: 0; background-color: #90EE90; width: 100%; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 1001; }
             .main-menu.active { display: block; }
@@ -112,15 +137,27 @@
             .breadcrumb-section { padding: 80px 0; }
             .footer-box { margin-bottom: 30px; text-align: center; }
             .copyright .col-lg-6 { text-align: center !important; margin-bottom: 10px; }
-            .cart-section { margin-top: 80px; margin-bottom: 80px; }
-            .cart-product-item { flex-direction: column; align-items: flex-start; }
-            .cart-table td, .cart-table th { padding: 10px 5px; font-size: 0.9em; }
-            .quantity-controls { flex-direction: row; } /* Keep horizontal on mobile for space */
-            .quantity-input { width: 40px; }
-            .cart-table th:nth-child(2), .cart-table td:nth-child(2) { display: none; } /* Hide price per item on mobile */
-            .cart-table th:nth-child(1) { width: 50%;} /* Adjust product column width */
-            .cart-table th:nth-child(3) { width: 25%;} /* Adjust quantity column */
-            .cart-table th:nth-child(4) { width: 20%;} /* Adjust total column */
+            .cart-section { margin-top: 40px; margin-bottom: 40px; } /* Reduced margin */
+
+            .cart-table th, .cart-table td { padding: 10px 8px; font-size: 0.85em; word-break: break-word; } /* Allow word break for long names */
+            .cart-product-item { flex-direction: row; gap: 10px; } /* Keep row for better space use if possible */
+            .cart-product-item img { width: 50px; height: 50px; }
+            .cart-product-item h4 { font-size: 0.9em; }
+            .quantity-controls { gap: 5px; }
+            .quantity-input { width: 35px; padding: 5px; font-size: 0.9em; }
+            .quantity-btn { padding: 5px 8px; font-size: 0.9em; }
+            .remove-btn { font-size: 1.1em; }
+
+            /* Hide individual price column, make others take up space */
+            .cart-table th:nth-child(2), .cart-table td:nth-child(2) { display: none; } /* Hide Price */
+            .cart-table th:nth-child(1) { width: auto; } /* Product */
+            .cart-table th:nth-child(3), .cart-table td:nth-child(3) { width: 100px; text-align: center; } /* Quantity */
+            .cart-table th:nth-child(4), .cart-table td:nth-child(4) { width: 80px; text-align: right; } /* Total */
+            .cart-table th:nth-child(5), .cart-table td:nth-child(5) { width: 40px; text-align: center; } /* Remove */
+
+            .total-section { margin-top: 30px; } /* Space when stacked */
+            .total-table td, .total-table th { font-size: 0.95em; }
+            .boxed-btn { padding: 10px 20px; font-size: 0.95em; }
         }
     </style>
 </head>
@@ -149,7 +186,8 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="shop.html">Shop</a></li>
-                <li class="current-list-item"><a href="cart.html">Cart</a></li> <li id="loginNav"><a href="#" onclick="showLogin()">Login</a></li>
+                <li class="current-list-item"><a href="cart.html">Cart</a></li>
+                <li id="loginNav"><a href="#" onclick="showLogin()">Login</a></li>
                 <li id="signupNav"><a href="#" onclick="showSignup()">Sign Up</a></li>
                 <li id="accountNav" style="display: none;"><a href="account.html">My Account</a></li>
                 <li id="logoutNav" style="display: none;"><a href="#" id="logoutButton">Logout</a></li>
@@ -164,6 +202,7 @@
                 <h1>Your Cart</h1>
             </div> </div> </div> </div>
         </div>
+
         <div class="cart-section mt-150 mb-150">
             <div class="container">
                 <div class="row">
@@ -209,22 +248,10 @@
                 </div>
             </div>
         </div>
-        </main>
+    </main>
 
-    <footer class="footer-area">
-        <div class="container"> <div class="row">
-            <div class="col-lg-3 col-md-6"> <div class="footer-box about-widget"> <h2 class="widget-title">About us</h2> <p>Discover high-quality, curated cannabis products at Canapa Delight.</p> </div> </div>
-            <div class="col-lg-3 col-md-6"> <div class="footer-box get-in-touch"> <h2 class="widget-title">Get in Touch</h2> <ul> <li>22 Karee Street, Southdowns Shopping Centre, Irene</li> <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li> <li><a href="tel:+27710314435">+27 71 031 4435</a></li> </ul> </div> </div>
-            <div class="col-lg-3 col-md-6"> <div class="footer-box"> <h2 class="widget-title">Follow Us</h2> <div class="social-icons"> <a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a> <a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a> </div> </div> </div>
-        </div> </div>
-    </footer>
-
-    <div class="copyright">
-        <div class="container"> <div class="row">
-            <div class="col-lg-6 col-md-12"><p>Copyright © 2025 - All Rights Reserved.</p></div>
-            <div class="col-lg-6 text-right col-md-12"><div class="social-icons"><ul><li><a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a></li><li><a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a></li></ul></div></div>
-        </div> </div>
-    </div>
+    <footer class="footer-area"> <div class="container"> <div class="row"> <div class="col-lg-3 col-md-6"> <div class="footer-box about-widget"> <h2 class="widget-title">About us</h2> <p>Discover high-quality, curated cannabis products at Canapa Delights.</p> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box get-in-touch"> <h2 class="widget-title">Get in Touch</h2> <ul> <li>22 Karee Street, Southdowns Shopping Centre, Irene</li> <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li> <li><a href="tel:+27710314435">+27 71 031 4435</a></li> </ul> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box"> <h2 class="widget-title">Follow Us</h2> <div class="social-icons"> <a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a> <a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a> </div> </div> </div> </div> </div> </footer>
+    <div class="copyright"> <div class="container"> <div class="row"> <div class="col-lg-6 col-md-12"><p>Copyright © 2025 - All Rights Reserved.</p></div> <div class="col-lg-6 text-right col-md-12"><div class="social-icons"><ul><li><a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a></li><li><a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a></li></ul></div></div> </div> </div> </div>
 
     <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank"> <i class="fab fa-whatsapp"></i> <span class="whatsapp-text">Chat with us</span> </a>
 
@@ -252,7 +279,6 @@
             console.log("Firebase initialized successfully for Cart Page");
         } catch (error) { console.error("Firebase initialization error:", error); }
 
-        // --- DOM Elements ---
         const agePopup = document.getElementById('ageVerificationPopup');
         const overlay = document.getElementById('overlay');
         const loginModal = document.getElementById('loginModal');
@@ -271,225 +297,93 @@
         const logoutButton = document.getElementById('logoutButton');
         const mainMenu = document.querySelector('.main-menu');
 
-        // --- Utility Functions ---
         const showModal = (modal) => { if(modal) { modal.style.display = 'block'; overlay.style.display = 'block'; modal.querySelector('input, button')?.focus(); }};
         const hideModal = (modal) => { if(modal) modal.style.display = 'none'; };
         const closeAllModals = () => { hideModal(loginModal); hideModal(signupModal); if(overlay) overlay.style.display = 'none'; };
         const displayError = (element, error) => { if(element) element.textContent = "Error: " + error.message.replace('Firebase: ', ''); console.error(error); };
         const setLoading = (button, isLoading, originalText) => { if(button) { button.disabled = isLoading; button.textContent = isLoading ? 'Processing...' : originalText; }};
-        const checkPasswordStrength = (password) => { /* Full implementation from previous response */ };
-
-        // --- Age Verification ---
-        const handleAgeVerification = () => { /* Full implementation from previous response */ };
-
-        // --- Global Functions for Header ---
+        const checkPasswordStrength = (password) => {
+            if (!passwordStrengthDiv) return; let strength = 0;
+            if (password.length >= 8) strength++; if (password.match(/[a-z]/)) strength++; if (password.match(/[A-Z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++; if (password.match(/[^a-zA-Z0-9]/)) strength++;
+            switch (strength) { case 0: case 1: case 2: passwordStrengthDiv.textContent = 'Weak'; passwordStrengthDiv.style.color = 'red'; break;
+                case 3: passwordStrengthDiv.textContent = 'Medium'; passwordStrengthDiv.style.color = 'orange'; break;
+                case 4: case 5: passwordStrengthDiv.textContent = 'Strong'; passwordStrengthDiv.style.color = 'green'; break;
+                default: passwordStrengthDiv.textContent = ''; break; }
+             if (!password) passwordStrengthDiv.textContent = '';
+        };
+        const handleAgeVerification = () => {
+            if (!agePopup) return;
+             if (!sessionStorage.getItem('ageVerified') && !localStorage.getItem('ageVerified')) {
+                agePopup.style.display = 'block'; if(overlay) overlay.style.display = 'block'; }
+            const confirmBtn = agePopup.querySelector('.confirmButton'); const declineBtn = agePopup.querySelector('.declineButton');
+            if (confirmBtn) { confirmBtn.addEventListener('click', () => { localStorage.setItem('ageVerified', 'true'); sessionStorage.setItem('ageVerified', 'true'); agePopup.style.display = 'none'; if(overlay) overlay.style.display = 'none'; }); }
+            if (declineBtn) { declineBtn.addEventListener('click', () => { alert("You must be 18 or older to enter."); window.location.href = 'https://www.google.com'; }); }
+        };
         window.showLogin = () => { hideModal(signupModal); showModal(loginModal); if(loginError) loginError.textContent = ''; };
         window.showSignup = () => { hideModal(loginModal); showModal(signupModal); if(signupError) signupError.textContent = ''; };
         window.toggleMenu = () => { if(mainMenu) mainMenu.classList.toggle('active'); };
 
-        // --- Cart System for cart.html ---
         class CartSystem {
-            constructor() {
-                this.cart = JSON.parse(localStorage.getItem('cart')) || [];
-                this.initCartDisplay();
-                this.updateHeaderCartCount(); // Keep header count updated
-            }
-
-            initCartDisplay() {
-                this.renderCartItems();
-                this.setupEventListeners(); // Setup after rendering
-                this.updateCartSummary();
-                this.toggleEmptyCartMessage();
-                this.toggleCheckoutButton();
-            }
-
+            constructor() { this.cart = JSON.parse(localStorage.getItem('cart')) || []; this.initCartDisplay(); this.updateHeaderCartCount(); }
+            initCartDisplay() { this.renderCartItems(); this.setupEventListeners(); this.updateCartSummary(); this.toggleEmptyCartMessage(); this.toggleCheckoutButton(); }
             renderCartItems() {
-                const cartItemsContainer = document.getElementById('cart-items');
-                if (!cartItemsContainer) return;
-                cartItemsContainer.innerHTML = ''; // Clear existing items
-
+                const cartItemsContainer = document.getElementById('cart-items'); if (!cartItemsContainer) return; cartItemsContainer.innerHTML = '';
                 this.cart.forEach((item, index) => {
-                    // Price consistency: Use the price stored with the item when it was added to cart
-                    const itemPrice = parseFloat(item.price) || 0;
-                    const itemTotal = itemPrice * item.quantity;
-
-                    const cartItemHTML = `
-                        <tr>
-                            <td class="product-cell">
-                                <div class="cart-product-item">
-                                    <img src="${item.image || 'assets/img/default-product.png'}" alt="${item.name || 'Product'}">
-                                    <h4>${item.name || 'Product Name'}</h4>
-                                </div>
-                            </td>
-                            <td class="price-cell">R${itemPrice.toFixed(2)}</td>
-                            <td class="quantity-cell">
-                                <div class="quantity-controls">
-                                    <button class="quantity-btn minus" data-index="${index}">-</button>
-                                    <input type="number" class="quantity-input" value="${item.quantity}" min="1" data-index="${index}" aria-label="Quantity for ${item.name}">
-                                    <button class="quantity-btn plus" data-index="${index}">+</button>
-                                </div>
-
-                            </td>
-                            <td class="total-cell">R${itemTotal.toFixed(2)}</td>
-                            <td class="remove-cell">
-                                <button class="remove-btn" data-index="${index}" aria-label="Remove ${item.name} from cart">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    `;
-                    cartItemsContainer.insertAdjacentHTML('beforeend', cartItemHTML);
-                });
+                    const itemPrice = parseFloat(item.price) || 0; const itemTotal = itemPrice * item.quantity;
+                    const cartItemHTML = `<tr><td class="product-cell"><div class="cart-product-item"><img src="${item.image || 'assets/img/default-product.png'}" alt="${item.name || 'Product'}"><h4>${item.name || 'Product Name'}</h4></div></td><td class="price-cell">R${itemPrice.toFixed(2)}</td><td class="quantity-cell"><div class="quantity-controls"><button class="quantity-btn minus" data-index="${index}">-</button><input type="number" class="quantity-input" value="${item.quantity}" min="1" data-index="${index}" aria-label="Quantity for ${item.name}"><button class="quantity-btn plus" data-index="${index}">+</button></div></td><td class="total-cell">R${itemTotal.toFixed(2)}</td><td class="remove-cell"><button class="remove-btn" data-index="${index}" aria-label="Remove ${item.name} from cart"><i class="fas fa-trash"></i></button></td></tr>`;
+                    cartItemsContainer.insertAdjacentHTML('beforeend', cartItemHTML); });
             }
-
             setupEventListeners() {
-                // Remove previous listeners to avoid duplication if re-rendering
-                const oldQuantityBtns = document.querySelectorAll('.quantity-btn');
-                oldQuantityBtns.forEach(btn => btn.replaceWith(btn.cloneNode(true))); // Clone to remove listeners
-
-                const oldQuantityInputs = document.querySelectorAll('.quantity-input');
-                oldQuantityInputs.forEach(input => input.replaceWith(input.cloneNode(true)));
-
-                const oldRemoveBtns = document.querySelectorAll('.remove-btn');
-                oldRemoveBtns.forEach(btn => btn.replaceWith(btn.cloneNode(true)));
-
-                // Add new listeners
-                document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
-                    btn.addEventListener('click', (e) => this.adjustQuantity(e.target.dataset.index, true));
-                });
-                document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
-                    btn.addEventListener('click', (e) => this.adjustQuantity(e.target.dataset.index, false));
-                });
-                document.querySelectorAll('.quantity-input').forEach(input => {
-                    input.addEventListener('change', (e) => this.changeQuantity(e.target.dataset.index, parseInt(e.target.value)));
-                });
-                document.querySelectorAll('.remove-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => this.removeItem(e.currentTarget.dataset.index));
-                });
+                const oldQuantityBtns = document.querySelectorAll('.quantity-btn'); oldQuantityBtns.forEach(btn => btn.replaceWith(btn.cloneNode(true)));
+                const oldQuantityInputs = document.querySelectorAll('.quantity-input'); oldQuantityInputs.forEach(input => input.replaceWith(input.cloneNode(true)));
+                const oldRemoveBtns = document.querySelectorAll('.remove-btn'); oldRemoveBtns.forEach(btn => btn.replaceWith(btn.cloneNode(true)));
+                document.querySelectorAll('.quantity-btn.plus').forEach(btn => { btn.addEventListener('click', (e) => this.adjustQuantity(e.target.dataset.index, true)); });
+                document.querySelectorAll('.quantity-btn.minus').forEach(btn => { btn.addEventListener('click', (e) => this.adjustQuantity(e.target.dataset.index, false)); });
+                document.querySelectorAll('.quantity-input').forEach(input => { input.addEventListener('change', (e) => this.changeQuantity(e.target.dataset.index, parseInt(e.target.value))); });
+                document.querySelectorAll('.remove-btn').forEach(btn => { btn.addEventListener('click', (e) => this.removeItem(e.currentTarget.dataset.index)); });
             }
-
-            adjustQuantity(index, isPlus) {
-                if (this.cart[index]) {
-                    if (isPlus) {
-                        this.cart[index].quantity++;
-                    } else {
-                        if (this.cart[index].quantity > 1) this.cart[index].quantity--;
-                    }
-                    this.updateCart();
-                }
-            }
-
-            changeQuantity(index, newQuantity) {
-                if (this.cart[index]) {
-                    if (newQuantity > 0) {
-                        this.cart[index].quantity = newQuantity;
-                    } else { // If invalid input, revert or set to 1
-                        this.cart[index].quantity = 1;
-                    }
-                    this.updateCart();
-                }
-            }
-
-            removeItem(index) {
-                if (this.cart[index]) {
-                    this.cart.splice(index, 1);
-                    this.updateCart();
-                }
-            }
-
-            updateCart() {
-                localStorage.setItem('cart', JSON.stringify(this.cart));
-                this.initCartDisplay(); // Re-render everything on cart page
-                this.updateHeaderCartCount();
-            }
-
+            adjustQuantity(index, isPlus) { if (this.cart[index]) { if (isPlus) { this.cart[index].quantity++; } else { if (this.cart[index].quantity > 1) this.cart[index].quantity--; } this.updateCart(); }}
+            changeQuantity(index, newQuantity) { if (this.cart[index]) { if (newQuantity > 0) { this.cart[index].quantity = newQuantity; } else { this.cart[index].quantity = 1; } this.updateCart(); }}
+            removeItem(index) { if (this.cart[index]) { this.cart.splice(index, 1); this.updateCart(); }}
+            updateCart() { localStorage.setItem('cart', JSON.stringify(this.cart)); this.initCartDisplay(); this.updateHeaderCartCount(); }
             updateCartSummary() {
-                const subtotal = this.cart.reduce((sum, item) => {
-                    const itemPrice = parseFloat(item.price) || 0;
-                    return sum + (itemPrice * item.quantity);
-                }, 0);
-
+                const subtotal = this.cart.reduce((sum, item) => { const itemPrice = parseFloat(item.price) || 0; return sum + (itemPrice * item.quantity); }, 0);
                 const shippingElement = document.getElementById('cart-shipping');
-                // Example: Free shipping over R500
-                const shippingCost = subtotal > 0 && subtotal < 500 ? 50.00 : 0.00;
+                const shippingCost = subtotal > 0 && subtotal < 500 ? 50.00 : 0.00; // Free shipping over R500
                 if(shippingElement) shippingElement.textContent = subtotal > 0 ? `R${shippingCost.toFixed(2)}` : 'R0.00';
-                
                 const total = subtotal > 0 ? subtotal + shippingCost : 0;
-
-                const subtotalEl = document.getElementById('cart-subtotal');
-                const totalEl = document.getElementById('cart-total');
-                if(subtotalEl) subtotalEl.textContent = `R${subtotal.toFixed(2)}`;
-                if(totalEl) totalEl.textContent = `R${total.toFixed(2)}`;
+                const subtotalEl = document.getElementById('cart-subtotal'); const totalEl = document.getElementById('cart-total');
+                if(subtotalEl) subtotalEl.textContent = `R${subtotal.toFixed(2)}`; if(totalEl) totalEl.textContent = `R${total.toFixed(2)}`;
             }
-
-            updateHeaderCartCount() {
-                const count = this.cart.reduce((sum, item) => sum + item.quantity, 0);
-                const cartCountSpan = document.querySelector('.cart-count');
-                if(cartCountSpan) { cartCountSpan.textContent = count; }
-            }
-
+            updateHeaderCartCount() { const count = this.cart.reduce((sum, item) => sum + item.quantity, 0); const cartCountSpan = document.querySelector('.cart-count'); if(cartCountSpan) { cartCountSpan.textContent = count; }}
             toggleEmptyCartMessage() {
-                const emptyCartMessage = document.getElementById('empty-cart-message');
-                const cartTable = document.querySelector('.cart-table');
-                const totalSection = document.querySelector('.total-section');
+                const emptyCartMessage = document.getElementById('empty-cart-message'); const cartTable = document.querySelector('.cart-table'); const totalSection = document.querySelector('.total-section');
                 if (!emptyCartMessage || !cartTable || !totalSection) return;
-
-                if(this.cart.length === 0) {
-                    emptyCartMessage.style.display = 'block';
-                    cartTable.style.display = 'none';
-                    totalSection.style.display = 'none'; // Hide summary if cart is empty
-                } else {
-                    emptyCartMessage.style.display = 'none';
-                    cartTable.style.display = 'table';
-                    totalSection.style.display = 'block';
-                }
+                if(this.cart.length === 0) { emptyCartMessage.style.display = 'block'; cartTable.style.display = 'none'; totalSection.style.display = 'none'; }
+                else { emptyCartMessage.style.display = 'none'; cartTable.style.display = 'table'; totalSection.style.display = 'block'; }
             }
-
-            toggleCheckoutButton() {
-                const checkoutBtn = document.getElementById('checkout-btn');
-                if(!checkoutBtn) return;
-                checkoutBtn.style.display = this.cart.length === 0 ? 'none' : 'inline-block';
-            }
+            toggleCheckoutButton() { const checkoutBtn = document.getElementById('checkout-btn'); if(!checkoutBtn) return; checkoutBtn.style.display = this.cart.length === 0 ? 'none' : 'inline-block'; }
         }
 
-        // --- Core Event Listeners & Initialization ---
         document.addEventListener('DOMContentLoaded', () => {
             if(agePopup) handleAgeVerification();
-
-            const showSignupLink = document.getElementById('showSignupLink');
-            const showLoginLink = document.getElementById('showLoginLink');
+            const showSignupLink = document.getElementById('showSignupLink'); const showLoginLink = document.getElementById('showLoginLink');
             if(showSignupLink) showSignupLink.addEventListener('click', (e) => { e.preventDefault(); showSignup(); });
             if(showLoginLink) showLoginLink.addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
             document.querySelectorAll('.closeButton').forEach(btn => btn.addEventListener('click', closeAllModals));
             if(overlay) overlay.addEventListener('click', closeAllModals);
             document.querySelectorAll('.modal').forEach(modal => modal.addEventListener('click', (e) => e.stopPropagation()));
             document.addEventListener('keydown', (e) => { if (e.key === "Escape" && overlay && overlay.style.display === 'block') { closeAllModals(); } });
-            passwordToggles.forEach(toggle => { /* ... (Full implementation from previous response) ... */ });
+            passwordToggles.forEach(toggle => { toggle.addEventListener('click', () => { const passwordInput = toggle.previousElementSibling; if(passwordInput) { const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password'; passwordInput.setAttribute('type', type); toggle.classList.toggle('fa-eye'); toggle.classList.toggle('fa-eye-slash'); }}); });
             if (signupPasswordInput) { signupPasswordInput.addEventListener('input', () => checkPasswordStrength(signupPasswordInput.value)); }
-            if (loginForm) { loginForm.addEventListener('submit', async (e) => { /* ... (Full implementation) ... */ }); }
-            if (signupForm) { signupForm.addEventListener('submit', async (e) => { /* ... (Full implementation) ... */ }); }
-            if (logoutButton) { logoutButton.addEventListener('click', async (e) => { /* ... (Full implementation) ... */ }); }
-
-            new CartSystem(); // Initialize Cart System for this page
-
-            document.querySelectorAll('.safe-email').forEach(element => {
-                const user = element.dataset.user;
-                const domain = element.dataset.domain;
-                element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
-            });
+            if (loginForm) { loginForm.addEventListener('submit', async (e) => { e.preventDefault(); const email = document.getElementById('loginEmail').value; const password = document.getElementById('loginPassword').value; const button = e.target.querySelector('button[type="submit"]'); setLoading(button, true, 'Login'); if(loginError) loginError.textContent = ''; try { await signInWithEmailAndPassword(auth, email, password); closeAllModals(); alert("Logged in successfully!"); } catch (error) { if(loginError) displayError(loginError, error); } finally { setLoading(button, false, 'Login'); }}); }
+            if (signupForm) { signupForm.addEventListener('submit', async (e) => { e.preventDefault(); const name = document.getElementById('signupName').value; const email = document.getElementById('signupEmail').value; const password = document.getElementById('signupPassword').value; const button = e.target.querySelector('button[type="submit"]'); if (password.length < 6) { if(signupError) signupError.textContent = "Password must be at least 6 characters long."; return; } setLoading(button, true, 'Sign Up'); if(signupError) signupError.textContent = ''; try { const userCredential = await createUserWithEmailAndPassword(auth, email, password); const user = userCredential.user; await set(ref(database, 'users/' + user.uid), { name: name, email: email, createdAt: serverTimestamp() }); closeAllModals(); alert("Account created successfully!"); } catch (error) { if(signupError) displayError(signupError, error); } finally { setLoading(button, false, 'Sign Up'); }}); }
+            if (logoutButton) { logoutButton.addEventListener('click', async (e) => { e.preventDefault(); try { await signOut(auth); alert("Logged out successfully!"); } catch (error) { console.error("Logout Error:", error); alert("Failed to log out."); }}); }
+            new CartSystem();
+            document.querySelectorAll('.safe-email').forEach(element => { const user = element.dataset.user; const domain = element.dataset.domain; element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`; });
         });
-
-        if (auth) {
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    if(loginNav) loginNav.style.display = 'none'; if(signupNav) signupNav.style.display = 'none';
-                    if(accountNav) accountNav.style.display = 'inline-block'; if(logoutNav) logoutNav.style.display = 'inline-block';
-                } else {
-                    if(loginNav) loginNav.style.display = 'inline-block'; if(signupNav) signupNav.style.display = 'inline-block';
-                    if(accountNav) accountNav.style.display = 'none'; if(logoutNav) logoutNav.style.display = 'none';
-                }
-            });
-        }
+        if (auth) { onAuthStateChanged(auth, (user) => { if (user) { if(loginNav) loginNav.style.display = 'none'; if(signupNav) signupNav.style.display = 'none'; if(accountNav) accountNav.style.display = 'inline-block'; if(logoutNav) logoutNav.style.display = 'inline-block'; } else { if(loginNav) loginNav.style.display = 'inline-block'; if(signupNav) signupNav.style.display = 'inline-block'; if(accountNav) accountNav.style.display = 'none'; if(logoutNav) logoutNav.style.display = 'none'; }}); }
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

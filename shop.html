@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - Canapa Delights</title>
+
+    <title>Shop Premium Cannabis Products - Canapa Delights</title>
+    <meta name="description" content="Explore Canapa Delights' wide range of premium cannabis products. Shop online for cookies, gummies, vapes, oils, teas, and more in South Africa.">
+    <meta name="keywords" content="shop, cannabis, canapa delights, edibles, vapes, THC, CBD, cookies, gummies, oils, tea, South Africa, online store, buy cannabis online">
+    <link rel="canonical" href="https://canapadelights.co.za/shop.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://canapadelights.co.za/shop.html">
+    <meta property="og:title" content="Shop Premium Cannabis Products | Canapa Delights">
+    <meta property="og:description" content="Browse and buy from our exclusive collection of cannabis edibles, vapes, oils, and more. Quality and delight delivered.">
+    <meta property="og:image" content="https://canapadelights.co.za/assets/img/logo-social.png"> <meta property="og:site_name" content="Canapa Delights">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://canapadelights.co.za/shop.html">
+    <meta property="twitter:title" content="Shop Premium Cannabis Products | Canapa Delights">
+    <meta property="twitter:description" content="Browse and buy from our exclusive collection of cannabis edibles, vapes, oils, and more.">
+    <meta property="twitter:image" content="https://canapadelights.co.za/assets/img/logo-social.png">
+
+    <meta name="theme-color" content="#F28123">
+
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -20,55 +39,43 @@
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Canapa Delights Shop",
-        "description": "Online store for premium cannabis products including cookies, gummies, vapes, oils, and more.",
+        "name": "Canapa Delights Shop - All Products",
+        "description": "Online store for premium cannabis products including cookies, gummies, vapes, oils, teas, sodas, and treats.",
         "url": "https://canapadelights.co.za/shop.html",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://canapadelights.co.za/index.html"},
+                {"@type": "ListItem", "position": 2, "name": "Shop"}
+            ]
+        },
         "mainEntity": {
             "@type": "ItemList",
             "name": "Products",
-            "description": "A selection of Canapa Delights products.",
+            "description": "A selection of Canapa Delights cannabis products.",
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Choc Chip Cookies", "image": "https://canapadelights.co.za/assets/img/products/product-img-1.jpg", "description": "10mg THC - 10 cookies", "offers": {"@type": "Offer","price": "150.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } },
-                { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Yummy Gummies", "image": "https://canapadelights.co.za/assets/img/products/product-img-2.jpg", "description": "20mg THC - 10 pieces", "offers": {"@type": "Offer","price": "250.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } }
-                // NOTE: Add more list items here or generate dynamically
+                { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Coconut Oat Cookies", "image": "https://canapadelights.co.za/assets/img/products/product-img-10.jpg", "description": "20mg THC - 10 cookies", "offers": {"@type": "Offer","price": "250.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } },
+                { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Yummy Gummies", "image": "https://canapadelights.co.za/assets/img/products/product-img-2.jpg", "description": "20mg THC - 10 pieces", "offers": {"@type": "Offer","price": "250.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } }
+                // NOTE: Ideally, this ItemList should be dynamically populated or list more key products.
             ]
         }
     }
     </script>
 
     <style>
-        /* Age Verification Pop-up Styles */
-        #ageVerificationPopup {
-            position: fixed; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10001; background-color: white; padding: 20px;
-            border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center; width: 300px; display: none;
-        }
+        /* Age Verification, Overlay, Modals, Hamburger, Main Menu, WhatsApp (Copied from previous unified versions) */
+        #ageVerificationPopup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10001; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center; width: 300px; display: none; }
         #ageVerificationPopup .ageHeading { font-size: 1.5em; font-weight: bold; margin-bottom: 10px; }
         #ageVerificationPopup .ageDescription { font-size: 0.9em; margin-bottom: 20px; }
         #ageVerificationPopup .buttonContainer { display: flex; justify-content: center; gap: 20px; }
         #ageVerificationPopup .confirmButton, #ageVerificationPopup .declineButton { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
         #ageVerificationPopup .confirmButton { background-color: #90EE90; color: white; }
         #ageVerificationPopup .declineButton { background-color: #dadada; color: black; }
-
-        /* Overlay */
-        #overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 10000; display: none;
-        }
-
-        /* Login & Signup Modals */
-        .modal {
-            position: fixed; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            background: white; padding: 30px; border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            z-index: 10001; width: 320px; display: none; pointer-events: auto;
-        }
+        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 10000; display: none; }
+        .modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 10001; width: 320px; display: none; pointer-events: auto; }
         .modal h2 { margin-bottom: 20px; text-align: center; font-size: 1.8em; }
-        .modal input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; pointer-events: auto; }
+        .modal input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; pointer-events: auto; font-size:16px; }
         .modal button { width: 100%; padding: 10px; background: #90EE90; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background-color 0.2s; }
         .modal button:hover { background: #7ED957; }
         .modal button[type="button"] { background: #ccc; margin-top: 10px; }
@@ -80,54 +87,43 @@
         .password-strength { font-size: 12px; margin-top: -10px; margin-bottom: 10px; height: 15px; }
         .password-container { position: relative; }
         .password-toggle { position: absolute; top: 30%; right: 10px; transform: translateY(-50%); cursor: pointer; color: #aaa; }
-
-        /* Cart Notification */
-        .cart-notification {
-            position: absolute; bottom: -30px; left: 50%;
-            transform: translateX(-50%); background: #4CAF50; color: white;
-            padding: 5px 10px; border-radius: 4px; font-size: 12px;
-            white-space: nowrap; z-index: 100; animation: fadeInOut 2s ease-in-out;
-        }
-        @keyframes fadeInOut { 0%, 100% { opacity: 0; } 20%, 80% { opacity: 1; } }
-        .single-product-item { position: relative; }
-
-        /* Hamburger Menu & Mobile Nav (Unified) */
         .main-menu-wrap { position: relative; }
         .hamburger-menu { display: none; cursor: pointer; position: absolute; top: 50%; right: 15px; transform: translateY(-50%); z-index: 1002; }
         .hamburger-menu .bar { width: 25px; height: 3px; background-color: #051922; margin: 5px 0; transition: 0.4s; }
         .main-menu { text-align: right; }
         .main-menu ul { margin: 0; padding: 0; list-style: none; }
-        .main-menu ul li { display: inline-block; margin-left: 25px; }
+        .main-menu ul li { display: inline-block; margin-left: 25px; position:relative; }
         .main-menu ul li a { color: #051922; font-weight: 700; text-decoration: none; padding: 25px 0; display: block; }
         .main-menu ul li a:hover, .main-menu ul li.current-list-item a { color: #F28123; }
         .shopping-cart .cart-count { background-color: #F28123; color: #fff; border-radius: 50%; padding: 2px 6px; font-size: 10px; vertical-align: top; margin-left: 3px; display: inline-block; line-height: 1; min-width: 16px; text-align: center; }
-
-        /* Floating WhatsApp */
         .float-whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: #fff; border-radius: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000; display: flex; align-items: center; padding: 10px 20px; text-decoration: none; transition: background-color 0.3s, transform 0.3s; }
         .float-whatsapp:hover { background-color: #128c7e; transform: scale(1.1); }
         .float-whatsapp i { font-size: 30px; margin-right: 10px; }
         .whatsapp-text { font-size: 16px; font-weight: bold; }
-
-        /* Breadcrumb/Filter styling */
         .breadcrumb-section { padding: 120px 0; }
-        .breadcrumb-bg { background-image: url(assets/img/breadcrumb-bg.jpg); /* Ensure you have this or change it */ }
-        .form-select { max-width: 300px; margin: 0 auto; }
+        .breadcrumb-bg { background-image: url(assets/img/breadcrumb-bg.jpg); }
+
+        /* Cart Notification */
+        .cart-notification { position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); background: #4CAF50; color: white; padding: 5px 10px; border-radius: 4px; font-size: 12px; white-space: nowrap; z-index: 100; animation: fadeInOut 2s ease-in-out; }
+        @keyframes fadeInOut { 0%, 100% { opacity: 0; } 20%, 80% { opacity: 1; } }
+        .single-product-item { position: relative; display: flex; flex-direction: column; height: 100%; }
+        .single-product-item .product-image { margin-bottom: 15px; }
+        .single-product-item .product-image img { max-width: 100%; height: auto; display: block; }
+        .form-select { max-width: 300px; margin: 0 auto; font-size: 16px; }
 
 
         /* --- MOBILE OPTIMIZATION --- */
-        @media (max-width: 991px) {
-            .main-menu {
-                display: none; position: absolute; top: 100%; right: 0;
-                background-color: white; width: 100%; text-align: center;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 1001;
-            }
+        @media (max-width: 991px) { /* This breakpoint affects sm and xs tablets and phones */
+            .main-menu { display: none; position: absolute; top: 100%; right: 0; background-color: #90EE90; width: 100%; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 1001; }
             .main-menu.active { display: block; }
-            .main-menu ul li { display: block; margin-left: 0; padding: 10px; border-bottom: 1px solid #eee; }
+            .main-menu ul li { display: block; margin-left: 0; padding: 5px 10px; border-bottom: 1px solid rgba(255,255,255,0.2); }
             .main-menu ul li:last-child { border-bottom: none; }
-            .main-menu ul li a { color: #051922; padding: 10px 0; }
+            .main-menu ul li a { color: white; padding: 10px 0; font-weight: normal; }
             .hamburger-menu { display: block; }
+            .hamburger-menu .bar { background-color: #051922; }
             .header-icons { display: flex; justify-content: center; gap: 20px; padding: 10px; }
-            .header-icons a { color: #051922; font-size: 18px; }
+            .header-icons a { color: white; font-size: 18px; }
+            .shopping-cart .cart-count { background-color: #051922; color: #90EE90; }
             .main-menu ul li .header-icons { border-bottom: none; }
             .float-whatsapp .whatsapp-text { display: none; }
             .float-whatsapp { padding: 12px 15px; }
@@ -135,6 +131,26 @@
             .breadcrumb-section { padding: 80px 0; }
             .footer-box { margin-bottom: 30px; text-align: center; }
             .copyright .col-lg-6 { text-align: center !important; margin-bottom: 10px; }
+
+            /* Product Image and Card adjustments for Mobile Single-Column */
+            .single-product-item {
+                margin-bottom: 30px; /* Ensure spacing between stacked items */
+            }
+            .single-product-item .product-image {
+                min-height: auto; /* Let the image dictate its height in single column */
+                display: block; /* Revert from flex if not needed for centering */
+                overflow: hidden;
+                margin-bottom: 15px; /* Standard margin */
+            }
+            .single-product-item .product-image img {
+                width: 100%; /* Full width of the column */
+                height: auto;    /* Maintain aspect ratio */
+                object-fit: cover; /* Still useful to ensure consistency if images have odd aspect ratios, will fill width and crop height if needed */
+                display: block;
+            }
+            .single-product-item h3 { font-size: 1.1em; margin-bottom: 8px; } /* Slightly larger for single column */
+            .single-product-item .product-price { font-size: 1em; margin-bottom: 12px; }
+            .single-product-item .cart-btn { padding: 10px 15px; font-size: 1em; }
         }
     </style>
 </head>
@@ -142,80 +158,35 @@
     <div id="ageVerificationPopup" role="dialog" aria-modal="true" aria-labelledby="ageHeading">
         <p id="ageHeading" class="ageHeading">Age Verification</p>
         <p class="ageDescription">You must be 18 years or older to access this site. Please confirm your age.</p>
-        <div class="buttonContainer">
-            <button class="confirmButton">I am 18+</button>
-            <button class="declineButton">I am under 18</button>
-        </div>
+        <div class="buttonContainer"> <button class="confirmButton">I am 18+</button> <button class="declineButton">I am under 18</button> </div>
     </div>
 
     <div id="overlay"></div>
 
     <div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="loginHeading">
-        <h2 id="loginHeading">Login</h2>
-        <form id="loginForm">
-            <input type="email" id="loginEmail" placeholder="Email" required aria-label="Email">
-            <div class="password-container">
-                <input type="password" id="loginPassword" placeholder="Password" required aria-label="Password">
-                <i class="fas fa-eye password-toggle"></i>
-            </div>
-            <button type="submit">Login</button>
-            <button type="button" class="closeButton" aria-label="Close Login Modal">Close</button>
-        </form>
-        <p>Don't have an account? <a href="#" id="showSignupLink">Sign Up</a></p>
-        <div id="loginError" class="error-message"></div>
+        <h2 id="loginHeading">Login</h2> <form id="loginForm"> <input type="email" id="loginEmail" placeholder="Email" required aria-label="Email"> <div class="password-container"> <input type="password" id="loginPassword" placeholder="Password" required aria-label="Password"> <i class="fas fa-eye password-toggle"></i> </div> <button type="submit">Login</button> <button type="button" class="closeButton" aria-label="Close Login Modal">Close</button> </form> <p>Don't have an account? <a href="#" id="showSignupLink">Sign Up</a></p> <div id="loginError" class="error-message"></div>
     </div>
 
     <div id="signupModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="signupHeading">
-        <h2 id="signupHeading">Sign Up</h2>
-        <form id="signupForm">
-            <input type="text" id="signupName" placeholder="Full Name" required aria-label="Full Name">
-            <input type="email" id="signupEmail" placeholder="Email" required aria-label="Email">
-            <div class="password-container">
-                <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required aria-label="Password" pattern=".{6,}">
-                <i class="fas fa-eye password-toggle"></i>
-            </div>
-            <div id="passwordStrength" class="password-strength"></div>
-            <button type="submit">Sign Up</button>
-            <button type="button" class="closeButton" aria-label="Close Signup Modal">Close</button>
-        </form>
-        <p>Already have an account? <a href="#" id="showLoginLink">Login</a></p>
-        <div id="signupError" class="error-message"></div>
+        <h2 id="signupHeading">Sign Up</h2> <form id="signupForm"> <input type="text" id="signupName" placeholder="Full Name" required aria-label="Full Name"> <input type="email" id="signupEmail" placeholder="Email" required aria-label="Email"> <div class="password-container"> <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required aria-label="Password" pattern=".{6,}"> <i class="fas fa-eye password-toggle"></i> </div> <div id="passwordStrength" class="password-strength"></div> <button type="submit">Sign Up</button> <button type="button" class="closeButton" aria-label="Close Signup Modal">Close</button> </form> <p>Already have an account? <a href="#" id="showLoginLink">Login</a></p> <div id="signupError" class="error-message"></div>
     </div>
 
     <div class="top-header-area" id="sticker">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-sm-12 text-center">
-                    <div class="main-menu-wrap">
-                        <div class="site-logo">
-                            <a href="index.html"> <img src="assets/img/logo.png" alt="Canapa Delight Logo"> </a>
-                        </div>
-                        <div class="hamburger-menu" onclick="toggleMenu()">
-                            <div class="bar"></div> <div class="bar"></div> <div class="bar"></div>
-                        </div>
-                        <nav class="main-menu">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li class="current-list-item"><a href="shop.html">Shop</a></li>
-                                <li id="loginNav"><a href="#" onclick="showLogin()">Login</a></li>
-                                <li id="signupNav"><a href="#" onclick="showSignup()">Sign Up</a></li>
-                                <li id="accountNav" style="display: none;"><a href="account.html">My Account</a></li>
-                                <li id="logoutNav" style="display: none;"><a href="#" id="logoutButton">Logout</a></li>
-                                <li>
-                                    <div class="header-icons">
-                                        <a class="shopping-cart" href="cart.html" aria-label="View Shopping Cart">
-                                            <i class="fas fa-shopping-cart"></i>
-                                            <span class="cart-count">0</span>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="container"> <div class="row"> <div class="col-lg-12 col-sm-12 text-center"> <div class="main-menu-wrap">
+            <div class="site-logo"> <a href="index.html"> <img src="assets/img/logo.png" alt="Canapa Delight Logo"> </a> </div>
+            <div class="hamburger-menu" onclick="toggleMenu()"> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> </div>
+            <nav class="main-menu"> <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="current-list-item"><a href="shop.html">Shop</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li id="loginNav"><a href="#" onclick="showLogin()">Login</a></li>
+                <li id="signupNav"><a href="#" onclick="showSignup()">Sign Up</a></li>
+                <li id="accountNav" style="display: none;"><a href="account.html">My Account</a></li>
+                <li id="logoutNav" style="display: none;"><a href="#" id="logoutButton">Logout</a></li>
+                <li> <div class="header-icons"> <a class="shopping-cart" href="cart.html" aria-label="View Shopping Cart"> <i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span> </a> </div> </li>
+            </ul> </nav>
+        </div> </div> </div> </div>
     </div>
 
     <main>
@@ -246,108 +217,72 @@
         <div class="product-section mt-150 mb-150">
             <div class="container">
                 <div class="row product-lists g-4">
-                    <div class="col-lg-3 col-md-4 col-sm-6 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="chocchip.html"> <img src="assets/img/products/product-img-1.jpg" alt="Chocolate Chip Cookies"> </a> </div> <h3>Choc Chip Cookies</h3> <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="1"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="cookiescocooat.html"> <img src="assets/img/products/product-img-10.jpg" alt="Coconut Oat Cookies"> </a> </div> <h3>Coconut Oat Cookies</h3> <p class="product-price"><span>20mg THC - 10 cookies</span> R250.00</p> <button class="cart-btn" data-product-id="2"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="dcookies.html"> <img src="assets/img/products/product-img-13.jpg" alt="Double Chocolate Cookies"> </a> </div> <h3>Chocolate Cookies</h3> <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="3"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="spicycookies.html"> <img src="assets/img/products/product-img-9.jpg" alt="Spicy Pecan Nut Cookies"> </a> </div> <h3>Spicy Pecan Nut Cookies</h3> <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="4"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="chocookies.html"> <img src="assets/img/products/product-img-11.jpg" alt="Cookie Bites"> </a> </div> <h3>Choc Cookie Chips</h3> <p class="product-price"><span>20mg THC - 5 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="5"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="minicookies.html"> <img src="assets/img/products/product-img-12.jpg" alt="Mini Cookies"> </a> </div> <h3>Mini Choc Cookies</h3> <p class="product-price"><span>20mg THC - 3 cookies</span> R100.00</p> <button class="cart-btn" data-product-id="6"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="chocchip.html"> <img src="assets/img/products/product-img-1.jpg" alt="Chocolate Chip Cookies" loading="lazy"> </a> </div> <h3>Choc Chip Cookies</h3> <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="1"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="cookiescocooat.html"> <img src="assets/img/products/product-img-10.jpg" alt="Coconut Oat Cookies" loading="lazy"> </a> </div> <h3>Coconut Oat Cookies</h3> <p class="product-price"><span>20mg THC - 10 cookies</span> R250.00</p> <button class="cart-btn" data-product-id="2"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="dcookies.html"> <img src="assets/img/products/product-img-13.jpg" alt="Double Chocolate Cookies" loading="lazy"> </a> </div> <h3>Chocolate Cookies</h3> <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="3"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="spicycookies.html"> <img src="assets/img/products/product-img-9.jpg" alt="Spicy Pecan Nut Cookies" loading="lazy"> </a> </div> <h3>Spicy Pecan Nut Cookies</h3> <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="4"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="chocookies.html"> <img src="assets/img/products/product-img-11.jpg" alt="Cookie Bites" loading="lazy"> </a> </div> <h3>Choc Cookie Chips</h3> <p class="product-price"><span>20mg THC - 5 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="5"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="minicookies.html"> <img src="assets/img/products/product-img-12.jpg" alt="Mini Cookies" loading="lazy"> </a> </div> <h3>Mini Choc Cookies</h3> <p class="product-price"><span>20mg THC - 3 cookies</span> R100.00</p> <button class="cart-btn" data-product-id="6"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
 
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="yummygummies.html"> <img src="assets/img/products/product-img-2.jpg" alt="THC Gummies"> </a> </div> <h3>Yummy Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="7"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="freegummies.html"> <img src="assets/img/products/product-img-8.jpg" alt="Sugar Free Gummies"> </a> </div> <h3>Sugar Free Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="8"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sodazetropical.html"> <img src="assets/img/products/product-img-14.jpg" alt="Tropical Gummies"> </a> </div> <h3>Tropical Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="9"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sourgummies.html"> <img src="assets/img/products/product-img-16.jpg" alt="Sour Gummies"> </a> </div> <h3>Sour Gummies</h3> <p class="product-price"><span>10mg THC - 5 pieces</span> R100.00</p> <button class="cart-btn" data-product-id="10"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="cbdrelaxgummies.html"> <img src="assets/img/products/product-img-19.jpg" alt="CBD Gummies"> </a> </div> <h3>CBD Relax Gummies</h3> <p class="product-price"><span>20mg CBD - 15 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="11"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sodazegrape.html"> <img src="assets/img/products/product-img-79.jpg" alt="Grape Gummies"> </a> </div> <h3>Grape Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="12"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="mixedgummies.html"> <img src="assets/img/products/product-img-17.jpg" alt="Mixed Gummies"> </a> </div> <h3>Mixed Gummies Pack</h3> <p class="product-price"><span>20mg THC - 5 pieces</span> R150.00</p> <button class="cart-btn" data-product-id="13"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="chillaxcbd.html"> <img src="assets/img/products/product-img-20.jpg" alt="Sleep Gummies"> </a> </div> <h3>Chillax CBD Gummies</h3> <p class="product-price"><span>10mg CBD - 15 pieces</span> R150.00</p> <button class="cart-btn" data-product-id="14"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sodazeraspberry.html"> <img src="assets/img/products/product-img-15.jpg" alt="Raspberry Gummies"> </a> </div> <h3>Raspberry Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="15"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="classicgummies.html"> <img src="assets/img/products/product-img-7.jpg" alt="THC Gummies"> </a> </div> <h3>Yummy Gummies</h3> <p class="product-price"><span>10mg THC - 10 pieces</span> R150.00</p> <button class="cart-btn" data-product-id="16"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="Fudge.html"> <img src="assets/img/products/product-img-18.jpg" alt="Chocolate Fudge"> </a> </div> <h3>Chocolate Fudge</h3> <p class="product-price"><span>20mg THC - 2 pieces</span> R120.00</p> <button class="cart-btn" data-product-id="17"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="yummygummies.html"> <img src="assets/img/products/product-img-2.jpg" alt="THC Gummies" loading="lazy"> </a> </div> <h3>Yummy Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="7"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="freegummies.html"> <img src="assets/img/products/product-img-8.jpg" alt="Sugar Free Gummies" loading="lazy"> </a> </div> <h3>Sugar Free Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="8"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sodazetropical.html"> <img src="assets/img/products/product-img-14.jpg" alt="Tropical Gummies" loading="lazy"> </a> </div> <h3>Tropical Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="9"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sourgummies.html"> <img src="assets/img/products/product-img-16.jpg" alt="Sour Gummies" loading="lazy"> </a> </div> <h3>Sour Gummies</h3> <p class="product-price"><span>10mg THC - 5 pieces</span> R100.00</p> <button class="cart-btn" data-product-id="10"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="cbdrelaxgummies.html"> <img src="assets/img/products/product-img-19.jpg" alt="CBD Gummies" loading="lazy"> </a> </div> <h3>CBD Relax Gummies</h3> <p class="product-price"><span>20mg CBD - 15 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="11"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sodazegrape.html"> <img src="assets/img/products/product-img-79.jpg" alt="Grape Gummies" loading="lazy"> </a> </div> <h3>Grape Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="12"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="mixedgummies.html"> <img src="assets/img/products/product-img-17.jpg" alt="Mixed Gummies" loading="lazy"> </a> </div> <h3>Mixed Gummies Pack</h3> <p class="product-price"><span>20mg THC - 5 pieces</span> R150.00</p> <button class="cart-btn" data-product-id="13"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="chillaxcbd.html"> <img src="assets/img/products/product-img-20.jpg" alt="Sleep Gummies" loading="lazy"> </a> </div> <h3>Chillax CBD Gummies</h3> <p class="product-price"><span>10mg CBD - 15 pieces</span> R150.00</p> <button class="cart-btn" data-product-id="14"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sodazeraspberry.html"> <img src="assets/img/products/product-img-15.jpg" alt="Raspberry Gummies" loading="lazy"> </a> </div> <h3>Raspberry Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="15"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="classicgummies.html"> <img src="assets/img/products/product-img-7.jpg" alt="THC Gummies" loading="lazy"> </a> </div> <h3>Yummy Gummies</h3> <p class="product-price"><span>10mg THC - 10 pieces</span> R150.00</p> <button class="cart-btn" data-product-id="16"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="Fudge.html"> <img src="assets/img/products/product-img-18.jpg" alt="Chocolate Fudge" loading="lazy"> </a> </div> <h3>Chocolate Fudge</h3> <p class="product-price"><span>20mg THC - 2 pieces</span> R120.00</p> <button class="cart-btn" data-product-id="17"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
 
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="durbansativa.html"> <img src="assets/img/products/product-img-3.jpg" alt="Durban Poison Vape"> </a> </div> <h3>Durban Poison Sativa</h3> <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p> <button class="cart-btn" data-product-id="18"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="northernlights.html"> <img src="assets/img/products/product-img-53.jpg" alt="Northern Lights Vape"> </a> </div> <h3>Northern Lights Indica</h3> <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p> <button class="cart-btn" data-product-id="19"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="liveresin.html"> <img src="assets/img/products/product-img-56.jpg" alt="Live Resin Vape"> </a> </div> <h3>Live Resin Vape</h3> <p class="product-price"><span>1ml Premium Extract</span> R1200.00</p> <button class="cart-btn" data-product-id="20"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="gelatohybrid.html"> <img src="assets/img/products/product-img-33.jpg" alt="Gelato Cartridge"> </a> </div> <h3>Gelato Hybrid Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="21"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="jack.html"> <img src="assets/img/products/product-img-38.jpg" alt="Jack Herrer Cartridge"> </a> </div> <h3>Jack Herrer Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="22"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="durbancartridge.html"> <img src="assets/img/products/product-img-30.jpg" alt="Durban Poison Cartridge"> </a> </div> <h3>Durban Poison Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="23"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="mimosasativa.html"> <img src="assets/img/products/product-img-42.jpg" alt="Mimosa Cartridge"> </a> </div> <h3>Mimosa Sativa Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="24"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="sativa.html"> <img src="assets/img/products/product-img-45.jpg" alt="Sativa Cartridge"> </a> </div> <h3>Sativa Cartridge</h3> <p class="product-price"><span>1ml THC</span> R800.00</p> <button class="cart-btn" data-product-id="25"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="paincartridge.html"> <img src="assets/img/products/product-img-6.jpg" alt="CBD Cartridge"> </a> </div> <h3>Pain CBD Cartridge</h3> <p class="product-price"><span>300mg CBD - 0.5ml</span> R400.00</p> <button class="cart-btn" data-product-id="26"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="sleepcartridge.html"> <img src="assets/img/products/product-img-71.jpg" alt="Sleep CBD Cartridge"> </a> </div> <h3>Sleep CBD Cartridge</h3> <p class="product-price"><span>300mg CBD - 0.5ml</span> R400.00</p> <button class="cart-btn" data-product-id="27"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="relaxcartridge.html"> <img src="assets/img/products/product-img-70.jpg" alt="Relax CBD Cartridge"> </a> </div> <h3>Relax CBD Cartridge</h3> <p class="product-price"><span>300mg CBD - 0.5ml</span> R400.00</p> <button class="cart-btn" data-product-id="28"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="vapbatterypen.html"> <img src="assets/img/products/product-img-23.jpg" alt="Vape Pen"> </a> </div> <h3>Vape Battery Pen</h3> <p class="product-price"><span>270mAh Battery</span> R300.00</p> <button class="cart-btn" data-product-id="29"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="durbansativa.html"> <img src="assets/img/products/product-img-3.jpg" alt="Durban Poison Vape" loading="lazy"> </a> </div> <h3>Durban Poison Sativa</h3> <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p> <button class="cart-btn" data-product-id="18"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="northernlights.html"> <img src="assets/img/products/product-img-53.jpg" alt="Northern Lights Vape" loading="lazy"> </a> </div> <h3>Northern Lights Indica</h3> <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p> <button class="cart-btn" data-product-id="19"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="liveresin.html"> <img src="assets/img/products/product-img-56.jpg" alt="Live Resin Vape" loading="lazy"> </a> </div> <h3>Live Resin Vape</h3> <p class="product-price"><span>1ml Premium Extract</span> R1200.00</p> <button class="cart-btn" data-product-id="20"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="gelatohybrid.html"> <img src="assets/img/products/product-img-33.jpg" alt="Gelato Cartridge" loading="lazy"> </a> </div> <h3>Gelato Hybrid Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="21"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="jack.html"> <img src="assets/img/products/product-img-38.jpg" alt="Jack Herrer Cartridge" loading="lazy"> </a> </div> <h3>Jack Herrer Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="22"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="durbancartridge.html"> <img src="assets/img/products/product-img-30.jpg" alt="Durban Poison Cartridge" loading="lazy"> </a> </div> <h3>Durban Poison Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="23"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="mimosasativa.html"> <img src="assets/img/products/product-img-42.jpg" alt="Mimosa Cartridge" loading="lazy"> </a> </div> <h3>Mimosa Sativa Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="24"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="sativa.html"> <img src="assets/img/products/product-img-45.jpg" alt="Sativa Cartridge" loading="lazy"> </a> </div> <h3>Sativa Cartridge</h3> <p class="product-price"><span>1ml THC</span> R800.00</p> <button class="cart-btn" data-product-id="25"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="paincartridge.html"> <img src="assets/img/products/product-img-6.jpg" alt="CBD Cartridge" loading="lazy"> </a> </div> <h3>Pain CBD Cartridge</h3> <p class="product-price"><span>300mg CBD - 0.5ml</span> R400.00</p> <button class="cart-btn" data-product-id="26"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="sleepcartridge.html"> <img src="assets/img/products/product-img-71.jpg" alt="Sleep CBD Cartridge" loading="lazy"> </a> </div> <h3>Sleep CBD Cartridge</h3> <p class="product-price"><span>300mg CBD - 0.5ml</span> R400.00</p> <button class="cart-btn" data-product-id="27"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="relaxcartridge.html"> <img src="assets/img/products/product-img-70.jpg" alt="Relax CBD Cartridge" loading="lazy"> </a> </div> <h3>Relax CBD Cartridge</h3> <p class="product-price"><span>300mg CBD - 0.5ml</span> R400.00</p> <button class="cart-btn" data-product-id="28"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="vapbatterypen.html"> <img src="assets/img/products/product-img-23.jpg" alt="Vape Pen" loading="lazy"> </a> </div> <h3>Vape Battery Pen</h3> <p class="product-price"><span>270mAh Battery</span> R300.00</p> <button class="cart-btn" data-product-id="29"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
 
-                    <div class="col-lg-3 col-md-4 col-sm-6 oil"> <div class="single-product-item"> <div class="product-image"> <a href="cbdoil.html"> <img src="assets/img/products/product-img-5.jpg" alt="CBD Oil"> </a> </div> <h3>Full Spectrum CBD Oil</h3> <p class="product-price"><span>100mg CBD - 15ml</span> R290.00</p> <button class="cart-btn" data-product-id="30"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 oil"> <div class="single-product-item"> <div class="product-image"> <a href="sleepoil.html"> <img src="assets/img/products/product-img-58.jpg" alt="Deep Sleep CBD Oil"> </a> </div> <h3>Deep Sleep CBD Oil</h3> <p class="product-price"><span>300mg CBD/CBN - 30ml</span> R1200.00</p> <button class="cart-btn" data-product-id="31"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 oil"> <div class="single-product-item"> <div class="product-image"> <a href="painoil.html"> <img src="assets/img/products/product-img-60.jpg" alt="Pain Relief CBD Oil"> </a> </div> <h3>Pain Relief CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="32"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 oil"> <div class="single-product-item"> <div class="product-image"> <a href="petoil.html"> <img src="assets/img/products/product-img-61.jpg" alt="Pet CBD Oil"> </a> </div> <h3>Pet CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="33"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 oil"> <div class="single-product-item"> <div class="product-image"> <a href="relaxoil.html"> <img src="assets/img/products/product-img-62.jpg" alt="Relax CBD Oil"> </a> </div> <h3>Relax CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="34"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 oil"> <div class="single-product-item"> <div class="product-image"> <a href="sleepaidoil.html"> <img src="assets/img/products/product-img-63.jpg" alt="Sleep Aid CBD Oil"> </a> </div> <h3>Sleep Aid CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="35"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 oil"> <div class="single-product-item"> <div class="product-image"> <a href="painrelief.html"> <img src="assets/img/products/product-img-60.jpg" alt="Pain Relief CBD Oil 600mg"> </a> </div> <h3>Pain Relief CBD Oil</h3> <p class="product-price"><span>600mg CBD - 30ml</span> R790.00</p> <button class="cart-btn" data-product-id="36"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 oil"> <div class="single-product-item"> <div class="product-image"> <a href="CBD Oils5-600mg.html"> <img src="assets/img/products/product-img-62.jpg" alt="Relax CBD Oil 600mg"> </a> </div> <h3>Relax CBD Oil</h3> <p class="product-price"><span>600mg CBD - 30ml</span> R790.00</p> <button class="cart-btn" data-product-id="37"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 oil"> <div class="single-product-item"> <div class="product-image"> <a href="CBD Oils6-600mg.html"> <img src="assets/img/products/product-img-63.jpg" alt="Sleep Aid CBD Oil 600mg"> </a> </div> <h3>Sleep Aid CBD Oil</h3> <p class="product-price"><span>600mg CBD - 30ml</span> R790.00</p> <button class="cart-btn" data-product-id="38"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="cbdoil.html"> <img src="assets/img/products/product-img-5.jpg" alt="CBD Oil" loading="lazy"> </a> </div> <h3>Full Spectrum CBD Oil</h3> <p class="product-price"><span>100mg CBD - 15ml</span> R290.00</p> <button class="cart-btn" data-product-id="30"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="sleepoil.html"> <img src="assets/img/products/product-img-58.jpg" alt="Deep Sleep CBD Oil" loading="lazy"> </a> </div> <h3>Deep Sleep CBD Oil</h3> <p class="product-price"><span>300mg CBD/CBN - 30ml</span> R1200.00</p> <button class="cart-btn" data-product-id="31"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="painoil.html"> <img src="assets/img/products/product-img-60.jpg" alt="Pain Relief CBD Oil" loading="lazy"> </a> </div> <h3>Pain Relief CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="32"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="petoil.html"> <img src="assets/img/products/product-img-61.jpg" alt="Pet CBD Oil" loading="lazy"> </a> </div> <h3>Pet CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="33"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="relaxoil.html"> <img src="assets/img/products/product-img-62.jpg" alt="Relax CBD Oil" loading="lazy"> </a> </div> <h3>Relax CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="34"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="sleepaidoil.html"> <img src="assets/img/products/product-img-63.jpg" alt="Sleep Aid CBD Oil" loading="lazy"> </a> </div> <h3>Sleep Aid CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="35"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="painrelief.html"> <img src="assets/img/products/product-img-60.jpg" alt="Pain Relief CBD Oil 600mg" loading="lazy"> </a> </div> <h3>Pain Relief CBD Oil</h3> <p class="product-price"><span>600mg CBD - 30ml</span> R790.00</p> <button class="cart-btn" data-product-id="36"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="CBD Oils5-600mg.html"> <img src="assets/img/products/product-img-62.jpg" alt="Relax CBD Oil 600mg" loading="lazy"> </a> </div> <h3>Relax CBD Oil</h3> <p class="product-price"><span>600mg CBD - 30ml</span> R790.00</p> <button class="cart-btn" data-product-id="37"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="CBD Oils6-600mg.html"> <img src="assets/img/products/product-img-63.jpg" alt="Sleep Aid CBD Oil 600mg" loading="lazy"> </a> </div> <h3>Sleep Aid CBD Oil</h3> <p class="product-price"><span>600mg CBD - 30ml</span> R790.00</p> <button class="cart-btn" data-product-id="38"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
 
-                    <div class="col-lg-3 col-md-4 col-sm-6 tea"> <div class="single-product-item"> <div class="product-image"> <a href="minttea.html"> <img src="assets/img/products/product-img-64.jpg" alt="CBD Mint Tea"> </a> </div> <h3>CBD Mint Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="39"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 tea"> <div class="single-product-item"> <div class="product-image"> <a href="cinnamontea.html"> <img src="assets/img/products/product-img-65.jpg" alt="CBD Cinnamon Tea"> </a> </div> <h3>CBD Cinnamon Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="40"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 tea"> <div class="single-product-item"> <div class="product-image"> <a href="CBD Rooibos Tea2.html"> <img src="assets/img/products/product-img-66.jpg" alt="CBD Ginger Tea"> </a> </div> <h3>CBD Ginger Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="41"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 tea"> <div class="single-product-item"> <div class="product-image"> <a href="pomegranatetea.html"> <img src="assets/img/products/product-img-67.jpg" alt="CBD Pomegranate Tea"> </a> </div> <h3>CBD Pomegranate Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="42"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 tea"> <div class="single-product-item"> <div class="product-image"> <a href="lemongrasstea.html"> <img src="assets/img/products/product-img-68.jpg" alt="CBD Lemongrass Tea"> </a> </div> <h3>CBD Lemongrass Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="43"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 tea"> <div class="single-product-item"> <div class="product-image"> <a href="vanillatea.html"> <img src="assets/img/products/product-img-vanilla.jpg" alt="CBD Vanilla Tea"> </a> </div> <h3>CBD Vanilla Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="44"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 tea"> <div class="single-product-item"> <div class="product-image"> <a href="originaltea.html"> <img src="assets/img/products/product-img-original.jpg" alt="CBD Original Tea"> </a> </div> <h3>CBD Original Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="45"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 tea"> <div class="single-product-item"> <div class="product-image"> <a href="honeybushtea.html"> <img src="assets/img/products/product-img-honeybush.jpg" alt="CBD Honeybush Tea"> </a> </div> <h3>CBD Honeybush Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="46"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 tea"> <div class="single-product-item"> <div class="product-image"> <a href="chamomiletea.html"> <img src="assets/img/products/product-img-chamomile.jpg" alt="CBD Chamomile Tea"> </a> </div> <h3>CBD Chamomile Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="47"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="minttea.html"> <img src="assets/img/products/product-img-64.jpg" alt="CBD Mint Tea" loading="lazy"> </a> </div> <h3>CBD Mint Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="39"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="cinnamontea.html"> <img src="assets/img/products/product-img-65.jpg" alt="CBD Cinnamon Tea" loading="lazy"> </a> </div> <h3>CBD Cinnamon Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="40"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="CBD Rooibos Tea2.html"> <img src="assets/img/products/product-img-66.jpg" alt="CBD Ginger Tea" loading="lazy"> </a> </div> <h3>CBD Ginger Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="41"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="pomegranatetea.html"> <img src="assets/img/products/product-img-67.jpg" alt="CBD Pomegranate Tea" loading="lazy"> </a> </div> <h3>CBD Pomegranate Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="42"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="lemongrasstea.html"> <img src="assets/img/products/product-img-68.jpg" alt="CBD Lemongrass Tea" loading="lazy"> </a> </div> <h3>CBD Lemongrass Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="43"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="vanillatea.html"> <img src="assets/img/products/product-img-vanilla.jpg" alt="CBD Vanilla Tea" loading="lazy"> </a> </div> <h3>CBD Vanilla Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="44"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="originaltea.html"> <img src="assets/img/products/product-img-original.jpg" alt="CBD Original Tea" loading="lazy"> </a> </div> <h3>CBD Original Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="45"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="honeybushtea.html"> <img src="assets/img/products/product-img-honeybush.jpg" alt="CBD Honeybush Tea" loading="lazy"> </a> </div> <h3>CBD Honeybush Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="46"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="chamomiletea.html"> <img src="assets/img/products/product-img-chamomile.jpg" alt="CBD Chamomile Tea" loading="lazy"> </a> </div> <h3>CBD Chamomile Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="47"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
 
-                    <div class="col-lg-3 col-md-4 col-sm-6 soda"> <div class="single-product-item"> <div class="product-image"> <a href="berrysoda.html"> <img src="assets/img/products/product-img-82.jpg" alt="Berry Haze Soda"> </a> </div> <h3>Berry Haze CBD Soda</h3> <p class="product-price"><span>30mg CBD per can</span> R70.00</p> <button class="cart-btn" data-product-id="48"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 soda"> <div class="single-product-item"> <div class="product-image"> <a href="cherrysoda.html"> <img src="assets/img/products/product-img-81.jpg" alt="Cherry Pop Soda"> </a> </div> <h3>Cherry Pop THC Soda</h3> <p class="product-price"><span>30mg THC per can</span> R70.00</p> <button class="cart-btn" data-product-id="49"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 soda"> <div class="single-product-item"> <div class="product-image"> <a href="lemonadesoda.html"> <img src="assets/img/products/product-img-80.jpg" alt="Lemonade Soda"> </a> </div> <h3>Blueberry Lemonade Soda</h3> <p class="product-price"><span>30mg THC per can</span> R70.00</p> <button class="cart-btn" data-product-id="50"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 soda"> <div class="single-product-item"> <div class="product-image"> <a href="berrysoda.html"> <img src="assets/img/products/product-img-82.jpg" alt="Berry Haze Soda" loading="lazy"> </a> </div> <h3>Berry Haze CBD Soda</h3> <p class="product-price"><span>30mg CBD per can</span> R70.00</p> <button class="cart-btn" data-product-id="48"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 soda"> <div class="single-product-item"> <div class="product-image"> <a href="cherrysoda.html"> <img src="assets/img/products/product-img-81.jpg" alt="Cherry Pop Soda" loading="lazy"> </a> </div> <h3>Cherry Pop THC Soda</h3> <p class="product-price"><span>30mg THC per can</span> R70.00</p> <button class="cart-btn" data-product-id="49"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 soda"> <div class="single-product-item"> <div class="product-image"> <a href="lemonadesoda.html"> <img src="assets/img/products/product-img-80.jpg" alt="Lemonade Soda" loading="lazy"> </a> </div> <h3>Blueberry Lemonade Soda</h3> <p class="product-price"><span>30mg THC per can</span> R70.00</p> <button class="cart-btn" data-product-id="50"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
 
-                    <div class="col-lg-3 col-md-4 col-sm-6 treats"> <div class="single-product-item"> <div class="product-image"> <a href="dogtreats.html"> <img src="assets/img/products/product-img-4.jpg" alt="CBD Dog Treats"> </a> </div> <h3>CBD Dog Treats</h3> <p class="product-price"><span>5mg CBD - 10 pieces</span> R200.00</p> <button class="cart-btn" data-product-id="51"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 treats"> <div class="single-product-item"> <div class="product-image"> <a href="lollipops.html"> <img src="assets/img/products/product-img-75.jpg" alt="THC Lollipops"> </a> </div> <h3>THC Lollipops</h3> <p class="product-price"><span>20mg THC each</span> R80.00</p> <button class="cart-btn" data-product-id="52"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 treats"> <div class="single-product-item"> <div class="product-image"> <a href="sexshot.html"> <img src="assets/img/products/product-img-83.jpeg" alt="CBD Shot"> </a> </div> <h3>Sex Shot</h3> <p class="product-price"><span>5mg CBD each</span> R35.00</p> <button class="cart-btn" data-product-id="53"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 treats"> <div class="single-product-item"> <div class="product-image"> <a href="dogtreats.html"> <img src="assets/img/products/product-img-4.jpg" alt="CBD Dog Treats" loading="lazy"> </a> </div> <h3>CBD Dog Treats</h3> <p class="product-price"><span>5mg CBD - 10 pieces</span> R200.00</p> <button class="cart-btn" data-product-id="51"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 treats"> <div class="single-product-item"> <div class="product-image"> <a href="lollipops.html"> <img src="assets/img/products/product-img-75.jpg" alt="THC Lollipops" loading="lazy"> </a> </div> <h3>THC Lollipops</h3> <p class="product-price"><span>20mg THC each</span> R80.00</p> <button class="cart-btn" data-product-id="52"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 treats"> <div class="single-product-item"> <div class="product-image"> <a href="sexshot.html"> <img src="assets/img/products/product-img-83.jpeg" alt="CBD Shot" loading="lazy"> </a> </div> <h3>Sex Shot</h3> <p class="product-price"><span>5mg CBD each</span> R35.00</p> <button class="cart-btn" data-product-id="53"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-box about-widget">
-                        <h2 class="widget-title">About us</h2>
-                        <p>Discover high-quality, curated cannabis products at Canapa Delight.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-box get-in-touch">
-                        <h2 class="widget-title">Get in Touch</h2>
-                        <ul>
-                            <li>22 Karee Street, Southdowns Shopping Centre, Irene</li>
-                            <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li>
-                            <li><a href="tel:+27710314435">+27 71 031 4435</a></li>
-                        </ul>
-                    </div>
-                </div>
-                 <div class="col-lg-3 col-md-6">
-                    <div class="footer-box">
-                        <h2 class="widget-title">Follow Us</h2>
-                        <div class="social-icons">
-                           <a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
-                           <a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div class="copyright">
-        <div class="container"> <div class="row">
-            <div class="col-lg-6 col-md-12"><p>Copyright &copy; 2025 - All Rights Reserved.</p></div>
-            <div class="col-lg-6 text-right col-md-12"><div class="social-icons"><ul><li><a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a></li><li><a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a></li></ul></div></div>
-        </div> </div>
-    </div>
+    <footer class="footer-area"> <div class="container"> <div class="row"> <div class="col-lg-3 col-md-6"> <div class="footer-box about-widget"> <h2 class="widget-title">About us</h2> <p>Discover high-quality, curated cannabis products at Canapa Delights.</p> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box get-in-touch"> <h2 class="widget-title">Get in Touch</h2> <ul> <li>22 Karee Street, Southdowns Shopping Centre, Irene</li> <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li> <li><a href="tel:+27710314435">+27 71 031 4435</a></li> </ul> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box"> <h2 class="widget-title">Follow Us</h2> <div class="social-icons"> <a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a> <a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a> </div> </div> </div> </div> </div> </footer>
+    <div class="copyright"> <div class="container"> <div class="row"> <div class="col-lg-6 col-md-12"><p>Copyright &copy; 2025 - All Rights Reserved.</p></div> <div class="col-lg-6 text-right col-md-12"><div class="social-icons"><ul><li><a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a></li><li><a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a></li></ul></div></div> </div> </div> </div>
 
     <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank"> <i class="fab fa-whatsapp"></i> <span class="whatsapp-text">Chat with us</span> </a>
 
@@ -361,21 +296,16 @@
             authDomain: "canapa-delight.firebaseapp.com",
             databaseURL: "https://canapa-delight-default-rtdb.firebaseio.com",
             projectId: "canapa-delight",
-            storageBucket: "canapa-delight.firebasestorage.app",
+            storageBucket: "canapa-delight.appspot.com",
             messagingSenderId: "35385881641",
             appId: "1:35385881641:web:846ac0863099c5c64c1838",
             measurementId: "G-6GMPH5C04L"
         };
 
         let auth, database;
-        try {
-            const app = initializeApp(firebaseConfig);
-            auth = getAuth(app);
-            database = getDatabase(app);
-            console.log("Firebase initialized successfully");
+        try { const app = initializeApp(firebaseConfig); auth = getAuth(app); database = getDatabase(app); console.log("Firebase initialized successfully for Shop Page");
         } catch (error) { console.error("Firebase initialization error:", error); }
 
-        // --- DOM Elements ---
         const agePopup = document.getElementById('ageVerificationPopup');
         const overlay = document.getElementById('overlay');
         const loginModal = document.getElementById('loginModal');
@@ -395,202 +325,80 @@
         const mainMenu = document.querySelector('.main-menu');
         const categorySelect = document.getElementById('categorySelect');
 
-        // --- Utility Functions ---
-        const showModal = (modal) => { modal.style.display = 'block'; overlay.style.display = 'block'; modal.querySelector('input, button')?.focus(); };
-        const hideModal = (modal) => { modal.style.display = 'none'; };
-        const closeAllModals = () => { hideModal(loginModal); hideModal(signupModal); overlay.style.display = 'none'; };
-        const displayError = (element, error) => { element.textContent = "Error: " + error.message.replace('Firebase: ', ''); console.error(error); };
-        const setLoading = (button, isLoading, originalText) => { button.disabled = isLoading; button.textContent = isLoading ? 'Processing...' : originalText; };
-
+        const showModal = (modal) => { if(modal) { modal.style.display = 'block'; overlay.style.display = 'block'; modal.querySelector('input, button')?.focus(); }};
+        const hideModal = (modal) => { if(modal) modal.style.display = 'none'; };
+        const closeAllModals = () => { hideModal(loginModal); hideModal(signupModal); if(overlay) overlay.style.display = 'none'; };
+        const displayError = (element, error) => { if(element) element.textContent = "Error: " + error.message.replace('Firebase: ', ''); console.error(error); };
+        const setLoading = (button, isLoading, originalText) => { if(button) { button.disabled = isLoading; button.textContent = isLoading ? 'Processing...' : originalText; }};
         const checkPasswordStrength = (password) => {
-            let strength = 0;
-            if (password.length >= 8) strength++;
-            if (password.match(/[a-z]/)) strength++;
-            if (password.match(/[A-Z]/)) strength++;
-            if (password.match(/[0-9]/)) strength++;
-            if (password.match(/[^a-zA-Z0-9]/)) strength++;
-
-            switch (strength) {
-                case 0: case 1: case 2: passwordStrengthDiv.textContent = 'Weak'; passwordStrengthDiv.style.color = 'red'; break;
+            if (!passwordStrengthDiv) return; let strength = 0;
+            if (password.length >= 8) strength++; if (password.match(/[a-z]/)) strength++; if (password.match(/[A-Z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++; if (password.match(/[^a-zA-Z0-9]/)) strength++;
+            switch (strength) { case 0: case 1: case 2: passwordStrengthDiv.textContent = 'Weak'; passwordStrengthDiv.style.color = 'red'; break;
                 case 3: passwordStrengthDiv.textContent = 'Medium'; passwordStrengthDiv.style.color = 'orange'; break;
                 case 4: case 5: passwordStrengthDiv.textContent = 'Strong'; passwordStrengthDiv.style.color = 'green'; break;
-                default: passwordStrengthDiv.textContent = ''; break;
-            }
+                default: passwordStrengthDiv.textContent = ''; break; }
              if (!password) passwordStrengthDiv.textContent = '';
         };
-
-        // --- Age Verification ---
         const handleAgeVerification = () => {
+            if (!agePopup) return;
              if (!sessionStorage.getItem('ageVerified') && !localStorage.getItem('ageVerified')) {
-                agePopup.style.display = 'block'; overlay.style.display = 'block';
-            }
-            document.querySelector('.confirmButton').addEventListener('click', () => {
-                localStorage.setItem('ageVerified', 'true'); sessionStorage.setItem('ageVerified', 'true');
-                agePopup.style.display = 'none'; overlay.style.display = 'none';
-            });
-            document.querySelector('.declineButton').addEventListener('click', () => {
-                alert("You must be 18 or older to enter."); window.location.href = 'https://www.google.com';
-            });
+                agePopup.style.display = 'block'; if(overlay) overlay.style.display = 'block'; }
+            const confirmBtn = agePopup.querySelector('.confirmButton'); const declineBtn = agePopup.querySelector('.declineButton');
+            if (confirmBtn) { confirmBtn.addEventListener('click', () => { localStorage.setItem('ageVerified', 'true'); sessionStorage.setItem('ageVerified', 'true'); agePopup.style.display = 'none'; if(overlay) overlay.style.display = 'none'; }); }
+            if (declineBtn) { declineBtn.addEventListener('click', () => { alert("You must be 18 or older to enter."); window.location.href = 'https://www.google.com'; }); }
         };
+        window.showLogin = () => { hideModal(signupModal); showModal(loginModal); if(loginError) loginError.textContent = ''; };
+        window.showSignup = () => { hideModal(loginModal); showModal(signupModal); if(signupError) signupError.textContent = ''; };
+        window.toggleMenu = () => { if(mainMenu) mainMenu.classList.toggle('active'); };
 
-        // --- Global Functions ---
-        window.showLogin = () => { hideModal(signupModal); showModal(loginModal); loginError.textContent = ''; };
-        window.showSignup = () => { hideModal(loginModal); showModal(signupModal); signupError.textContent = ''; };
-        window.toggleMenu = () => { mainMenu.classList.toggle('active'); };
-
-        // --- Cart System ---
         class CartSystem {
-            constructor() {
-                this.cart = JSON.parse(localStorage.getItem('cart')) || [];
-                this.init();
-            }
-            init() {
-                this.updateCartCount();
-                this.setupEventListeners();
-            }
-            setupEventListeners() {
+            constructor() { this.cart = JSON.parse(localStorage.getItem('cart')) || []; this.initShopPage(); }
+            initShopPage() { this.updateHeaderCartCount(); this.setupAddToCartListeners(); }
+            setupAddToCartListeners() {
                 document.querySelectorAll('.cart-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => this.addToCart(e));
-                });
+                    const newBtn = btn.cloneNode(true); btn.parentNode.replaceChild(newBtn, btn);
+                    newBtn.addEventListener('click', (e) => this.addToCart(e)); });
             }
             addToCart(e) {
-                const button = e.target.closest('.cart-btn');
-                const productCard = button.closest('.single-product-item');
-                const priceText = productCard.querySelector('.product-price').textContent;
-                const priceMatch = priceText.match(/R([\d.]+)/);
-                const price = priceMatch ? parseFloat(priceMatch[1]) : 0;
-
-                const product = {
-                    id: button.dataset.productId,
-                    name: productCard.querySelector('h3').textContent,
-                    price: price,
-                    image: productCard.querySelector('img').src,
-                    quantity: 1
-                };
-
+                const button = e.target.closest('.cart-btn'); if (!button) return;
+                const productCard = button.closest('.single-product-item'); if (!productCard) return;
+                const priceTextElement = productCard.querySelector('.product-price'); let price = 0;
+                if (priceTextElement) { const priceMatch = priceTextElement.textContent.match(/R([\d.]+)/); price = priceMatch ? parseFloat(priceMatch[1]) : 0; }
+                const nameElement = productCard.querySelector('h3'); const imageElement = productCard.querySelector('img');
+                const product = { id: button.dataset.productId, name: nameElement ? nameElement.textContent : 'Unknown Product', price: price, image: imageElement ? imageElement.src : 'assets/img/default-product.png', quantity: 1 };
                 const existingItem = this.cart.find(item => item.id === product.id);
-                if (existingItem) { existingItem.quantity++; }
-                else { this.cart.push(product); }
-
-                localStorage.setItem('cart', JSON.stringify(this.cart));
-                this.updateCartCount();
-                this.showAddedNotification(button);
+                if (existingItem) { existingItem.quantity++; } else { this.cart.push(product); }
+                localStorage.setItem('cart', JSON.stringify(this.cart)); this.updateHeaderCartCount(); this.showAddedNotification(button);
             }
-            updateCartCount() {
-                const count = this.cart.reduce((sum, item) => sum + item.quantity, 0);
-                const cartCountSpan = document.querySelector('.cart-count');
-                if(cartCountSpan) { cartCountSpan.textContent = count; }
-            }
+            updateHeaderCartCount() { const count = this.cart.reduce((sum, item) => sum + item.quantity, 0); const cartCountSpan = document.querySelector('.cart-count'); if(cartCountSpan) { cartCountSpan.textContent = count; }}
             showAddedNotification(button) {
-
-                // Remove any existing notification first
-                const existingNotif = button.parentNode.querySelector('.cart-notification');
-                if (existingNotif) existingNotif.remove();
-
-                const notification = document.createElement('div');
-                notification.className = 'cart-notification';
-                notification.textContent = 'Added to cart!';
-                button.parentNode.appendChild(notification);
-                setTimeout(() => notification.remove(), 2000);
+                const parentNode = button.parentNode; if (!parentNode) return;
+                const existingNotif = parentNode.querySelector('.cart-notification'); if (existingNotif) existingNotif.remove();
+                const notification = document.createElement('div'); notification.className = 'cart-notification'; notification.textContent = 'Added to cart!';
+                parentNode.appendChild(notification); setTimeout(() => notification.remove(), 2000);
             }
         }
 
-        // --- Event Listeners ---
         document.addEventListener('DOMContentLoaded', () => {
-            handleAgeVerification();
-
-            document.getElementById('showSignupLink').addEventListener('click', (e) => { e.preventDefault(); showSignup(); });
-            document.getElementById('showLoginLink').addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
+            if(agePopup) handleAgeVerification();
+            const showSignupLink = document.getElementById('showSignupLink'); const showLoginLink = document.getElementById('showLoginLink');
+            if(showSignupLink) showSignupLink.addEventListener('click', (e) => { e.preventDefault(); showSignup(); });
+            if(showLoginLink) showLoginLink.addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
             document.querySelectorAll('.closeButton').forEach(btn => btn.addEventListener('click', closeAllModals));
-            overlay.addEventListener('click', closeAllModals);
+            if(overlay) overlay.addEventListener('click', closeAllModals);
             document.querySelectorAll('.modal').forEach(modal => modal.addEventListener('click', (e) => e.stopPropagation()));
-            document.addEventListener('keydown', (e) => { if (e.key === "Escape" && overlay.style.display === 'block') { closeAllModals(); } });
-
-            passwordToggles.forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    const passwordInput = toggle.previousElementSibling;
-                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                    passwordInput.setAttribute('type', type);
-                    toggle.classList.toggle('fa-eye');
-                    toggle.classList.toggle('fa-eye-slash');
-                });
-            });
-
-            if (signupPasswordInput) {
-                signupPasswordInput.addEventListener('input', () => checkPasswordStrength(signupPasswordInput.value));
-            }
-
-            loginForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const email = document.getElementById('loginEmail').value;
-                const password = document.getElementById('loginPassword').value;
-                const button = e.target.querySelector('button[type="submit"]');
-                setLoading(button, true, 'Login'); loginError.textContent = '';
-                try {
-                    await signInWithEmailAndPassword(auth, email, password);
-                    closeAllModals(); alert("Logged in successfully!");
-                } catch (error) { displayError(loginError, error);
-                } finally { setLoading(button, false, 'Login'); }
-            });
-
-            signupForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const name = document.getElementById('signupName').value;
-                const email = document.getElementById('signupEmail').value;
-                const password = document.getElementById('signupPassword').value;
-                const button = e.target.querySelector('button[type="submit"]');
-                if (password.length < 6) { signupError.textContent = "Password must be at least 6 characters long."; return; }
-                setLoading(button, true, 'Sign Up'); signupError.textContent = '';
-                try {
-                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                    const user = userCredential.user;
-                    await set(ref(database, 'users/' + user.uid), {
-                        name: name, email: email, createdAt: serverTimestamp()
-                    });
-                    closeAllModals(); alert("Account created successfully!");
-                } catch (error) { displayError(signupError, error);
-                } finally { setLoading(button, false, 'Sign Up'); }
-            });
-
-            logoutButton.addEventListener('click', async (e) => {
-                e.preventDefault();
-                try { await signOut(auth); alert("Logged out successfully!");
-                } catch (error) { console.error("Logout Error:", error); alert("Failed to log out."); }
-            });
-
-            // Shop Filter Listener
-            if (categorySelect) {
-                categorySelect.addEventListener('change', function() {
-                    const category = this.value;
-                    document.querySelectorAll('.product-lists > div').forEach(product => {
-                        product.style.display = (category === 'all' || product.classList.contains(category))
-                            ? 'block' : 'none';
-                    });
-                });
-            }
-
-            // Initialize Cart
+            document.addEventListener('keydown', (e) => { if (e.key === "Escape" && overlay && overlay.style.display === 'block') { closeAllModals(); } });
+            passwordToggles.forEach(toggle => { toggle.addEventListener('click', () => { const passwordInput = toggle.previousElementSibling; if(passwordInput) { const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password'; passwordInput.setAttribute('type', type); toggle.classList.toggle('fa-eye'); toggle.classList.toggle('fa-eye-slash'); }}); });
+            if (signupPasswordInput) { signupPasswordInput.addEventListener('input', () => checkPasswordStrength(signupPasswordInput.value)); }
+            if (loginForm) { loginForm.addEventListener('submit', async (e) => { e.preventDefault(); const email = document.getElementById('loginEmail').value; const password = document.getElementById('loginPassword').value; const button = e.target.querySelector('button[type="submit"]'); setLoading(button, true, 'Login'); if(loginError) loginError.textContent = ''; try { await signInWithEmailAndPassword(auth, email, password); closeAllModals(); alert("Logged in successfully!"); } catch (error) { if(loginError) displayError(loginError, error); } finally { setLoading(button, false, 'Login'); }}); }
+            if (signupForm) { signupForm.addEventListener('submit', async (e) => { e.preventDefault(); const name = document.getElementById('signupName').value; const email = document.getElementById('signupEmail').value; const password = document.getElementById('signupPassword').value; const button = e.target.querySelector('button[type="submit"]'); if (password.length < 6) { if(signupError) signupError.textContent = "Password must be at least 6 characters long."; return; } setLoading(button, true, 'Sign Up'); if(signupError) signupError.textContent = ''; try { const userCredential = await createUserWithEmailAndPassword(auth, email, password); const user = userCredential.user; await set(ref(database, 'users/' + user.uid), { name: name, email: email, createdAt: serverTimestamp() }); closeAllModals(); alert("Account created successfully!"); } catch (error) { if(signupError) displayError(signupError, error); } finally { setLoading(button, false, 'Sign Up'); }}); }
+            if (logoutButton) { logoutButton.addEventListener('click', async (e) => { e.preventDefault(); try { await signOut(auth); alert("Logged out successfully!"); } catch (error) { console.error("Logout Error:", error); alert("Failed to log out."); }}); }
+            if (categorySelect) { categorySelect.addEventListener('change', function() { const category = this.value; document.querySelectorAll('.product-lists > div[class*="col-"]').forEach(product => { product.style.display = (category === 'all' || product.classList.contains(category)) ? 'block' : 'none'; }); });}
             new CartSystem();
-
-            // Safe Email
-             document.querySelectorAll('.safe-email').forEach(element => {
-                const user = element.dataset.user;
-                const domain = element.dataset.domain;
-                element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
-            });
+            document.querySelectorAll('.safe-email').forEach(element => { const user = element.dataset.user; const domain = element.dataset.domain; element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`; });
         });
-
-        // --- Auth State Listener ---
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                loginNav.style.display = 'none'; signupNav.style.display = 'none';
-                accountNav.style.display = 'inline-block'; logoutNav.style.display = 'inline-block';
-            } else {
-                loginNav.style.display = 'inline-block'; signupNav.style.display = 'inline-block';
-                accountNav.style.display = 'none'; logoutNav.style.display = 'none';
-            }
-        });
-
+        if (auth) { onAuthStateChanged(auth, (user) => { if (user) { if(loginNav) loginNav.style.display = 'none'; if(signupNav) signupNav.style.display = 'none'; if(accountNav) accountNav.style.display = 'inline-block'; if(logoutNav) logoutNav.style.display = 'inline-block'; } else { if(loginNav) loginNav.style.display = 'inline-block'; if(signupNav) signupNav.style.display = 'inline-block'; if(accountNav) accountNav.style.display = 'none'; if(logoutNav) logoutNav.style.display = 'none'; }}); }
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
