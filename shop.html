@@ -981,15 +981,22 @@
         // Hide preloader when everything is loaded
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
-            if (preloader) {
-                // Fade out the preloader
-                preloader.style.opacity = '0';
-                
-                // Remove it from the DOM after fade out completes
-                setTimeout(function() {
-                    preloader.style.display = 'none';
-                }, 500);
+            
+            // Function to hide the preloader
+            function hidePreloader() {
+                if (preloader) {
+                    // Fade out the preloader
+                    preloader.style.opacity = '0';
+                    
+                    // Remove it from the DOM after fade out completes
+                    setTimeout(function() {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }
             }
+
+            // Wait 2 seconds (2000 milliseconds) AFTER the page is loaded, then hide it
+            setTimeout(hidePreloader, 2000); 
         });
     </script>
     
@@ -1007,7 +1014,7 @@
                     const preloader = document.getElementById('preloader');
                     if (preloader) {
                         preloader.style.opacity = '1';
-                        preloader.style.display = 'flex';
+                        preloader.style.display = 'block'; // Use block or flex depending on centering method
                     }
                     
                     // Allow the navigation to proceed

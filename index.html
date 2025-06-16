@@ -73,7 +73,43 @@
     </script>
 
     <style>
-        /* Age Verification, Overlay, Modals, Hamburger, Main Menu, WhatsApp, Hero, Cart Notification (Unified) */
+        /* --- PRELOADER STYLES --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff; /* Use a light background for this page */
+            z-index: 9999;
+            display: flex; /* Using flex to help center the absolute positioned child */
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+        .progress-loader {
+            width: 150px;
+            background: rgba(236, 236, 238, 0.253);
+            height: 3px;
+            border-radius: 7px;
+        }
+        .progress {
+            width: 1px;
+            height: 3px;
+            border-radius: 7px;
+            background: #90EE90; /* Adjusted to match page theme */
+            transition: 0.5s;
+            animation: loading1274 2s ease infinite;
+        }
+        @keyframes loading1274 {
+            0% { width: 0%; }
+            10% { width: 10%; }
+            50% { width: 40%; }
+            60% { width: 60%; }
+            100% { width: 100%; }
+        }
+
+        /* --- REST OF THE STYLES --- */
         #ageVerificationPopup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10001; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center; width: 300px; display: none; }
         #ageVerificationPopup .ageHeading { font-size: 1.5em; font-weight: bold; margin-bottom: 10px; }
         #ageVerificationPopup .ageDescription { font-size: 0.9em; margin-bottom: 20px; }
@@ -118,7 +154,6 @@
         .single-product-item .product-image img { max-width: 100%; height: auto; display: block; }
         .single-product-item .cart-btn { margin-top: 15px; } /* Added for spacing */
 
-        /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 991px) {
             .main-menu { display: none; position: absolute; top: 100%; right: 0; background-color: #90EE90; width: 100%; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 1001; }
             .main-menu.active { display: block; }
@@ -139,8 +174,6 @@
             .copyright .col-lg-6 { text-align: center !important; margin-bottom: 10px; }
             .section-title h3 { font-size: 2em; }
             .list-section .list-box { margin-bottom: 30px; }
-
-            /* Product Image and Card adjustments for Mobile Single-Column (from shop.html) */
             .single-product-item { margin-bottom: 30px; }
             .single-product-item .product-image { min-height: auto; display: block; overflow: hidden; margin-bottom: 15px; }
             .single-product-item .product-image img { width: 100%; height: auto; object-fit: cover; display: block; }
@@ -151,6 +184,12 @@
     </style>
 </head>
 <body>
+    <div id="preloader">
+        <div class="progress-loader">
+            <div class="progress"></div>
+        </div>
+    </div>
+
     <div id="ageVerificationPopup" role="dialog" aria-modal="true" aria-labelledby="ageHeading">
         <p id="ageHeading" class="ageHeading">Age Verification</p>
         <p class="ageDescription">You must be 18 years or older to access this site. Please confirm your age.</p>
@@ -207,29 +246,29 @@
             <div class="container">
                 <div class="row"><div class="col-lg-8 offset-lg-2 text-center"><div class="section-title"><h3><span class="orange-text">Our</span> Products</h3><p>Our Cannabis Products</p></div></div></div>
                 <div class="row product-lists"> <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-product-item">
-                            <div class="product-image"><a href="chocchip.html"><img src="assets/img/products/product-img-1.jpg" alt="Choc Chip Cookies" loading="lazy"></a></div>
-                            <h3>Choc Chip Cookies</h3>
-                            <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p>
-                            <button class="cart-btn" data-product-id="1"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                        </div>
+                    <div class="single-product-item">
+                        <div class="product-image"><a href="chocchip.html"><img src="assets/img/products/product-img-1.jpg" alt="Choc Chip Cookies" loading="lazy"></a></div>
+                        <h3>Choc Chip Cookies</h3>
+                        <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p>
+                        <button class="cart-btn" data-product-id="1"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                     </div>
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-product-item">
-                            <div class="product-image"><a href="yummygummies.html"><img src="assets/img/products/product-img-2.jpg" alt="Yummy Gummies" loading="lazy"></a></div>
-                            <h3>Yummy Gummies</h3>
-                            <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p>
-                            <button class="cart-btn" data-product-id="7"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                        </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image"><a href="yummygummies.html"><img src="assets/img/products/product-img-2.jpg" alt="Yummy Gummies" loading="lazy"></a></div>
+                        <h3>Yummy Gummies</h3>
+                        <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p>
+                        <button class="cart-btn" data-product-id="7"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                     </div>
-                    <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-                        <div class="single-product-item">
-                            <div class="product-image"><a href="durbansativa.html"><img src="assets/img/products/product-img-3.jpg" alt="Durban Poison Sativa Vape" loading="lazy"></a></div>
-                            <h3>Durban Poison Sativa</h3>
-                            <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p>
-                            <button class="cart-btn" data-product-id="18"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                        </div>
+                </div>
+                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
+                    <div class="single-product-item">
+                        <div class="product-image"><a href="durbansativa.html"><img src="assets/img/products/product-img-3.jpg" alt="Durban Poison Sativa Vape" loading="lazy"></a></div>
+                        <h3>Durban Poison Sativa</h3>
+                        <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p>
+                        <button class="cart-btn" data-product-id="18"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                     </div>
+                </div>
                 </div>
                 <div style="text-align: center; padding: 20px;"><a href="shop.html" class="boxed-btn"><i class="fas fa-shopping-cart"></i> Shop All our Products</a></div>
             </div>
@@ -239,6 +278,7 @@
                  <div class="image-column col-lg-6"><div class="image"><img src="assets/img/a.jpg" alt="Promotional Banner Image" loading="lazy"></div></div>
                  <div class="content-column col-lg-6"><h3><span class="orange-text">Deal</span> of the month</h3><h4>Canapa Delight</h4><div class="text">buy 3 get 1 free</div><a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a></div>
              </div> </div>
+
         </section>
         </main>
 
@@ -303,7 +343,7 @@
         const handleAgeVerification = () => {
             if (!agePopup) return;
              if (!sessionStorage.getItem('ageVerified') && !localStorage.getItem('ageVerified')) {
-                agePopup.style.display = 'block'; if(overlay) overlay.style.display = 'block'; }
+                 agePopup.style.display = 'block'; if(overlay) overlay.style.display = 'block'; }
             const confirmBtn = agePopup.querySelector('.confirmButton'); const declineBtn = agePopup.querySelector('.declineButton');
             if (confirmBtn) { confirmBtn.addEventListener('click', () => { localStorage.setItem('ageVerified', 'true'); sessionStorage.setItem('ageVerified', 'true'); agePopup.style.display = 'none'; if(overlay) overlay.style.display = 'none'; }); }
             if (declineBtn) { declineBtn.addEventListener('click', () => { alert("You must be 18 or older to enter."); window.location.href = 'https://www.google.com'; }); }
@@ -382,5 +422,49 @@
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/sticker.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // Hide preloader when everything is loaded
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            
+            // Function to hide the preloader
+            function hidePreloader() {
+                if (preloader) {
+                    // Fade out the preloader
+                    preloader.style.opacity = '0';
+                    
+                    // Remove it from the DOM after fade out completes
+                    setTimeout(function() {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }
+            }
+
+            // Wait 2 seconds (2000 milliseconds) AFTER the page is loaded, then hide it
+            setTimeout(hidePreloader, 2000); 
+        });
+    </script>
+    
+    <script>
+        // Show preloader when navigating away from the page
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="javascript"])');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Don't intercept if it's a hash link or special javascript action
+                    if (this.href.includes('#') || this.href.startsWith('javascript:')) return;
+                    
+                    // Show preloader
+                    const preloader = document.getElementById('preloader');
+                    if (preloader) {
+                        preloader.style.display = 'flex'; // Use flex to re-enable centering
+                        preloader.style.opacity = '1';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
