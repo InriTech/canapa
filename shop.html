@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Shop Premium Cannabis Products - Canapa Delights</title>
     <meta name="description" content="Explore Canapa Delights' wide range of premium cannabis products. Shop online for cookies, gummies, vapes, oils, teas, and more in South Africa.">
     <meta name="keywords" content="shop, cannabis, canapa delights, edibles, vapes, THC, CBD, cookies, gummies, oils, tea, South Africa, online store, buy cannabis online">
@@ -14,7 +13,8 @@
     <meta property="og:url" content="https://canapadelights.co.za/shop.html">
     <meta property="og:title" content="Shop Premium Cannabis Products | Canapa Delights">
     <meta property="og:description" content="Browse and buy from our exclusive collection of cannabis edibles, vapes, oils, and more. Quality and delight delivered.">
-    <meta property="og:image" content="https://canapadelights.co.za/assets/img/logo-social.png"> <meta property="og:site_name" content="Canapa Delights">
+    <meta property="og:image" content="https://canapadelights.co.za/assets/img/logo-social.png">
+    <meta property="og:site_name" content="Canapa Delights">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://canapadelights.co.za/shop.html">
@@ -24,9 +24,18 @@
 
     <meta name="theme-color" content="#F28123">
 
+    <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="https://code.jquery.com/jquery-3.6.4.min.js" as="script">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.gstatic.com">
+
     <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
@@ -35,6 +44,226 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/shop.css">
+
+    <style>
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1a1a1a;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        /* From Uiverse.io by mrhyddenn */
+        .progress-loader {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            background: rgba(236, 236, 238, 0.253);
+            height: 3px;
+            border-radius: 7px;
+        }
+
+        .progress {
+            content: '';
+            width: 1px;
+            height: 3px;
+            border-radius: 7px;
+            background: #F28123; /* Changed to theme color */
+            transition: 0.5s;
+            animation: loading1274 2s ease infinite;
+        }
+
+        @keyframes loading1274 {
+            0% {
+                width: 0%;
+            }
+            10% {
+                width: 10%;
+            }
+            50% {
+                width: 40%;
+            }
+            60% {
+                width: 60%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+
+        .single-product-item {
+            display: block;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            margin-bottom: 30px;
+            position: relative;
+            height: 100%;
+        }
+        .single-product-item.loaded {
+            opacity: 1;
+        }
+        
+        .product-lists {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+            will-change: transform;
+        }
+        
+        .product-lists > div[class*="col-"] {
+            padding: 15px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .product-lists > div[class*="col-"].filter-hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            height: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            pointer-events: none;
+            position: absolute;
+        }
+        
+        @media (min-width: 576px) {
+            .product-lists > .col-sm-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .product-lists > .col-md-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .product-lists > .col-lg-3 {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+        
+        .product-price {
+            min-height: 40px;
+        }
+        
+        .cart-notification {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #F28123;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            animation: fadeInOut 2s ease;
+            z-index: 10;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        .single-product-item > div {
+            height: 100%;
+        }
+        
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            max-height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+        
+        .product-image img[loading="lazy"] {
+            opacity: 0;
+        }
+        
+        .product-image img.loaded {
+            opacity: 1;
+        }
+        
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .category-filter a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            margin: 0;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s;
+            font-size: 1rem;
+            border: 1px solid transparent;
+        }
+        .category-filter a:hover, .category-filter a.active {
+            background-color: #F28123;
+            border-color: #F28123;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .pagination a {
+            color: #333;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .pagination a.active {
+            background-color: #F28123;
+            color: white;
+            border: 1px solid #F28123;
+        }
+        
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        
+        .pagination a.disabled {
+            pointer-events: none;
+            color: #aaa;
+            border-color: #ddd;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -58,13 +287,19 @@
                 { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Choc Chip Cookies", "image": "https://canapadelights.co.za/assets/img/products/product-img-1.jpg", "description": "10mg THC - 10 cookies", "offers": {"@type": "Offer","price": "150.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } },
                 { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Coconut Oat Cookies", "image": "https://canapadelights.co.za/assets/img/products/product-img-10.jpg", "description": "20mg THC - 10 cookies", "offers": {"@type": "Offer","price": "250.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } },
                 { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Yummy Gummies", "image": "https://canapadelights.co.za/assets/img/products/product-img-2.jpg", "description": "20mg THC - 10 pieces", "offers": {"@type": "Offer","price": "250.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } }
-                // NOTE: Ideally, this ItemList should be dynamically populated or list more key products.
             ]
         }
     }
     </script>
 </head>
 <body>
+
+    <div id="preloader">
+        <div class="progress-loader">
+            <div class="progress"></div>
+        </div>
+    </div>
+
     <div id="ageVerificationPopup" role="dialog" aria-modal="true" aria-labelledby="ageHeading">
         <p id="ageHeading" class="ageHeading">Age Verification</p>
         <p class="ageDescription">You must be 18 years or older to access this site. Please confirm your age.</p>
@@ -83,7 +318,7 @@
 
     <div class="top-header-area" id="sticker">
         <div class="container"> <div class="row"> <div class="col-lg-12 col-sm-12 text-center"> <div class="main-menu-wrap">
-            <div class="site-logo"> <a href="index.html"> <img src="assets/img/logo.png" alt="Canapa Delight Logo"> </a> </div>
+            <div class="site-logo"> <a href="index.html"> <img src="assets/img/logo.png" alt="Canapa Delight Logo" width="180" height="60"> </a> </div>
             <div class="hamburger-menu" onclick="toggleMenu()"> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> </div>
             <nav class="main-menu"> <ul>
                 <li><a href="index.html">Home</a></li>
@@ -107,16 +342,14 @@
                         <div class="breadcrumb-text">
                             <h1>Our Products</h1>
                             <div class="category-filter mt-4">
-                                <select class="form-select" id="categorySelect" aria-label="Filter Products by Category">
-                                    <option value="all">All Categories</option>
-                                    <option value="cookies">Cookies</option>
-                                    <option value="gummies">Gummies</option>
-                                    <option value="vapes">Vapes</option>
-                                    <option value="oil">Oils</option>
-                                    <option value="tea">Tea</option>
-                                    <option value="soda">Sodas</option>
-                                    <option value="treats">Treats</option>
-                                </select>
+                                <a href="shop.html" class="active">All</a>
+                                <a href="cookies.html">Cookies</a>
+                                <a href="gummies.html">Gummies</a>
+                                <a href="vapes.html">Vapes</a>
+                                <a href="oils.html">Oils</a>
+                                <a href="tea.html">Tea</a>
+                                <a href="sodas.html">Sodas</a>
+                                <a href="treats.html">Treats</a>
                             </div>
                         </div>
                     </div>
@@ -126,199 +359,664 @@
 
         <div class="product-section mt-150 mb-150">
             <div class="container">
-                <div class="row product-lists g-4">
-                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="chocchip.html"> <img src="assets/img/products/product-img-1.jpg" alt="Chocolate Chip Cookies" loading="lazy"> </a> </div> <h3>Choc Chip Cookies</h3> <p class="product-price"><span>20mg THC - 10 cookies</span> R250.00</p> <button class="cart-btn" data-product-id="1"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="cookiescocooat.html"> <img src="assets/img/products/product-img-10.jpg" alt="Coconut Oat Cookies" loading="lazy"> </a> </div> <h3>Coconut Oat Cookies</h3> <p class="product-price"><span>20mg THC - 10 cookies</span> R250.00</p> <button class="cart-btn" data-product-id="2"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="dcookies.html"> <img src="assets/img/products/product-img-13.jpg" alt="Double Chocolate Cookies" loading="lazy"> </a> </div> <h3>Chocolate Cookies</h3> <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="3"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="spicycookies.html"> <img src="assets/img/products/product-img-9.jpg" alt="Spicy Pecan Nut Cookies" loading="lazy"> </a> </div> <h3>Spicy Pecan Nut Cookies</h3> <p class="product-price"><span>10mg THC - 10 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="4"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="chocookies.html"> <img src="assets/img/products/product-img-11.jpg" alt="Cookie Bites" loading="lazy"> </a> </div> <h3>Choc Cookie Chips</h3> <p class="product-price"><span>20mg THC - 5 cookies</span> R150.00</p> <button class="cart-btn" data-product-id="5"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 cookies"> <div class="single-product-item"> <div class="product-image"> <a href="minicookies.html"> <img src="assets/img/products/product-img-12.jpg" alt="Mini Cookies" loading="lazy"> </a> </div> <h3>Mini Choc Cookies</h3> <p class="product-price"><span>20mg THC - 3 cookies</span> R100.00</p> <button class="cart-btn" data-product-id="6"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="yummygummies.html"> <img src="assets/img/products/product-img-2.jpg" alt="THC Gummies" loading="lazy"> </a> </div> <h3>Yummy Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="7"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="freegummies.html"> <img src="assets/img/products/product-img-8.jpg" alt="Sugar Free Gummies" loading="lazy"> </a> </div> <h3>Sugar Free Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="8"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sodazetropical.html"> <img src="assets/img/products/product-img-14.jpg" alt="Tropical Gummies" loading="lazy"> </a> </div> <h3>Tropical Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="9"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sourgummies.html"> <img src="assets/img/products/product-img-16.jpg" alt="Sour Gummies" loading="lazy"> </a> </div> <h3>Sour Gummies</h3> <p class="product-price"><span>10mg THC - 5 pieces</span> R100.00</p> <button class="cart-btn" data-product-id="10"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="cbdrelaxgummies.html"> <img src="assets/img/products/product-img-19.jpg" alt="CBD Gummies" loading="lazy"> </a> </div> <h3>CBD Relax Gummies</h3> <p class="product-price"><span>20mg CBD - 15 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="11"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sodazegrape.html"> <img src="assets/img/products/product-img-79.jpg" alt="Grape Gummies" loading="lazy"> </a> </div> <h3>Grape Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="12"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="mixedgummies.html"> <img src="assets/img/products/product-img-17.jpg" alt="Mixed Gummies" loading="lazy"> </a> </div> <h3>Mixed Gummies Pack</h3> <p class="product-price"><span>20mg THC - 5 pieces</span> R150.00</p> <button class="cart-btn" data-product-id="13"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="chillaxcbd.html"> <img src="assets/img/products/product-img-20.jpg" alt="Sleep Gummies" loading="lazy"> </a> </div> <h3>Chillax CBD Gummies</h3> <p class="product-price"><span>10mg CBD - 15 pieces</span> R150.00</p> <button class="cart-btn" data-product-id="14"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="sodazeraspberry.html"> <img src="assets/img/products/product-img-15.jpg" alt="Raspberry Gummies" loading="lazy"> </a> </div> <h3>Raspberry Gummies</h3> <p class="product-price"><span>20mg THC - 10 pieces</span> R250.00</p> <button class="cart-btn" data-product-id="15"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="classicgummies.html"> <img src="assets/img/products/product-img-7.jpg" alt="THC Gummies" loading="lazy"> </a> </div> <h3>Yummy Gummies</h3> <p class="product-price"><span>10mg THC - 10 pieces</span> R150.00</p> <button class="cart-btn" data-product-id="16"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 gummies"> <div class="single-product-item"> <div class="product-image"> <a href="Fudge.html"> <img src="assets/img/products/product-img-18.jpg" alt="Chocolate Fudge" loading="lazy"> </a> </div> <h3>Chocolate Fudge</h3> <p class="product-price"><span>20mg THC - 2 pieces</span> R120.00</p> <button class="cart-btn" data-product-id="17"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="durbansativa.html"> <img src="assets/img/products/product-img-3.jpg" alt="Durban Poison Vape" loading="lazy"> </a> </div> <h3>Durban Poison Sativa</h3> <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p> <button class="cart-btn" data-product-id="18"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="northernlights.html"> <img src="assets/img/products/product-img-53.jpg" alt="Northern Lights Vape" loading="lazy"> </a> </div> <h3>Northern Lights Indica</h3> <p class="product-price"><span>1ml THC Disposable</span> R1000.00</p> <button class="cart-btn" data-product-id="19"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="liveresin.html"> <img src="assets/img/products/product-img-56.jpg" alt="Live Resin Vape" loading="lazy"> </a> </div> <h3>Live Resin Vape</h3> <p class="product-price"><span>1ml Premium Extract</span> R1200.00</p> <button class="cart-btn" data-product-id="20"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="gelatohybrid.html"> <img src="assets/img/products/product-img-33.jpg" alt="Gelato Cartridge" loading="lazy"> </a> </div> <h3>Gelato Hybrid Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="21"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="jack.html"> <img src="assets/img/products/product-img-38.jpg" alt="Jack Herrer Cartridge" loading="lazy"> </a> </div> <h3>Jack Herrer Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="22"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="durbancartridge.html"> <img src="assets/img/products/product-img-30.jpg" alt="Durban Poison Cartridge" loading="lazy"> </a> </div> <h3>Durban Poison Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="23"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="mimosasativa.html"> <img src="assets/img/products/product-img-42.jpg" alt="Mimosa Cartridge" loading="lazy"> </a> </div> <h3>Mimosa Sativa Cartridge</h3> <p class="product-price"><span>0.5ml THC</span> R500.00</p> <button class="cart-btn" data-product-id="24"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="sativa.html"> <img src="assets/img/products/product-img-45.jpg" alt="Sativa Cartridge" loading="lazy"> </a> </div> <h3>Sativa Cartridge</h3> <p class="product-price"><span>1ml THC</span> R800.00</p> <button class="cart-btn" data-product-id="25"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="paincartridge.html"> <img src="assets/img/products/product-img-6.jpg" alt="CBD Cartridge" loading="lazy"> </a> </div> <h3>Pain CBD Cartridge</h3> <p class="product-price"><span>300mg CBD - 0.5ml</span> R400.00</p> <button class="cart-btn" data-product-id="26"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="sleepcartridge.html"> <img src="assets/img/products/product-img-71.jpg" alt="Sleep CBD Cartridge" loading="lazy"> </a> </div> <h3>Sleep CBD Cartridge</h3> <p class="product-price"><span>300mg CBD - 0.5ml</span> R400.00</p> <button class="cart-btn" data-product-id="27"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="relaxcartridge.html"> <img src="assets/img/products/product-img-70.jpg" alt="Relax CBD Cartridge" loading="lazy"> </a> </div> <h3>Relax CBD Cartridge</h3> <p class="product-price"><span>300mg CBD - 0.5ml</span> R400.00</p> <button class="cart-btn" data-product-id="28"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 vapes"> <div class="single-product-item"> <div class="product-image"> <a href="vapbatterypen.html"> <img src="assets/img/products/product-img-23.jpg" alt="Vape Pen" loading="lazy"> </a> </div> <h3>Vape Battery Pen</h3> <p class="product-price"><span>270mAh Battery</span> R300.00</p> <button class="cart-btn" data-product-id="29"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-
-                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="cbdoil.html"> <img src="assets/img/products/product-img-5.jpg" alt="CBD Oil" loading="lazy"> </a> </div> <h3>Full Spectrum CBD Oil</h3> <p class="product-price"><span>100mg CBD - 15ml</span> R290.00</p> <button class="cart-btn" data-product-id="30"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="sleepoil.html"> <img src="assets/img/products/product-img-58.jpg" alt="Deep Sleep CBD Oil" loading="lazy"> </a> </div> <h3>Deep Sleep CBD Oil</h3> <p class="product-price"><span>300mg CBD/CBN - 30ml</span> R1200.00</p> <button class="cart-btn" data-product-id="31"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="painoil.html"> <img src="assets/img/products/product-img-60.jpg" alt="Pain Relief CBD Oil" loading="lazy"> </a> </div> <h3>Pain Relief CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="32"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="petoil.html"> <img src="assets/img/products/product-img-61.jpg" alt="Pet CBD Oil" loading="lazy"> </a> </div> <h3>Pet CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="33"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="relaxoil.html"> <img src="assets/img/products/product-img-62.jpg" alt="Relax CBD Oil" loading="lazy"> </a> </div> <h3>Relax CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="34"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="sleepaidoil.html"> <img src="assets/img/products/product-img-63.jpg" alt="Sleep Aid CBD Oil" loading="lazy"> </a> </div> <h3>Sleep Aid CBD Oil</h3> <p class="product-price"><span>300mg CBD - 30ml</span> R590.00</p> <button class="cart-btn" data-product-id="35"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="painrelief.html"> <img src="assets/img/products/product-img-60.jpg" alt="Pain Relief CBD Oil 600mg" loading="lazy"> </a> </div> <h3>Pain Relief CBD Oil</h3> <p class="product-price"><span>600mg CBD - 30ml</span> R790.00</p> <button class="cart-btn" data-product-id="36"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="CBD Oils5-600mg.html"> <img src="assets/img/products/product-img-62.jpg" alt="Relax CBD Oil 600mg" loading="lazy"> </a> </div> <h3>Relax CBD Oil</h3> <p class="product-price"><span>600mg CBD - 30ml</span> R790.00</p> <button class="cart-btn" data-product-id="37"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 oil"> <div class="single-product-item"> <div class="product-image"> <a href="CBD Oils6-600mg.html"> <img src="assets/img/products/product-img-63.jpg" alt="Sleep Aid CBD Oil 600mg" loading="lazy"> </a> </div> <h3>Sleep Aid CBD Oil</h3> <p class="product-price"><span>600mg CBD - 30ml</span> R790.00</p> <button class="cart-btn" data-product-id="38"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-
-                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="minttea.html"> <img src="assets/img/products/product-img-64.jpg" alt="CBD Mint Tea" loading="lazy"> </a> </div> <h3>CBD Mint Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="39"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="cinnamontea.html"> <img src="assets/img/products/product-img-65.jpg" alt="CBD Cinnamon Tea" loading="lazy"> </a> </div> <h3>CBD Cinnamon Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="40"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="CBD Rooibos Tea2.html"> <img src="assets/img/products/product-img-66.jpg" alt="CBD Ginger Tea" loading="lazy"> </a> </div> <h3>CBD Ginger Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="41"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="pomegranatetea.html"> <img src="assets/img/products/product-img-67.jpg" alt="CBD Pomegranate Tea" loading="lazy"> </a> </div> <h3>CBD Pomegranate Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="42"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="lemongrasstea.html"> <img src="assets/img/products/product-img-68.jpg" alt="CBD Lemongrass Tea" loading="lazy"> </a> </div> <h3>CBD Lemongrass Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="43"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="vanillatea.html"> <img src="assets/img/products/product-img-vanilla.jpg" alt="CBD Vanilla Tea" loading="lazy"> </a> </div> <h3>CBD Vanilla Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="44"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="originaltea.html"> <img src="assets/img/products/product-img-original.jpg" alt="CBD Original Tea" loading="lazy"> </a> </div> <h3>CBD Original Rooibos Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="45"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="honeybushtea.html"> <img src="assets/img/products/product-img-honeybush.jpg" alt="CBD Honeybush Tea" loading="lazy"> </a> </div> <h3>CBD Honeybush Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="46"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 tea"> <div class="single-product-item"> <div class="product-image"> <a href="chamomiletea.html"> <img src="assets/img/products/product-img-chamomile.jpg" alt="CBD Chamomile Tea" loading="lazy"> </a> </div> <h3>CBD Chamomile Tea</h3> <p class="product-price"><span>5mg CBD - 20 bags</span> R100.00</p> <button class="cart-btn" data-product-id="47"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-
-                    <div class="col-lg-3 col-md-4 soda"> <div class="single-product-item"> <div class="product-image"> <a href="berrysoda.html"> <img src="assets/img/products/product-img-82.jpg" alt="Berry Haze Soda" loading="lazy"> </a> </div> <h3>Berry Haze CBD Soda</h3> <p class="product-price"><span>30mg CBD per can</span> R70.00</p> <button class="cart-btn" data-product-id="48"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 soda"> <div class="single-product-item"> <div class="product-image"> <a href="cherrysoda.html"> <img src="assets/img/products/product-img-81.jpg" alt="Cherry Pop Soda" loading="lazy"> </a> </div> <h3>Cherry Pop THC Soda</h3> <p class="product-price"><span>30mg THC per can</span> R70.00</p> <button class="cart-btn" data-product-id="49"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 soda"> <div class="single-product-item"> <div class="product-image"> <a href="lemonadesoda.html"> <img src="assets/img/products/product-img-80.jpg" alt="Lemonade Soda" loading="lazy"> </a> </div> <h3>Blueberry Lemonade Soda</h3> <p class="product-price"><span>30mg THC per can</span> R70.00</p> <button class="cart-btn" data-product-id="50"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-
-                    <div class="col-lg-3 col-md-4 treats"> <div class="single-product-item"> <div class="product-image"> <a href="dogtreats.html"> <img src="assets/img/products/product-img-4.jpg" alt="CBD Dog Treats" loading="lazy"> </a> </div> <h3>CBD Dog Treats</h3> <p class="product-price"><span>5mg CBD - 10 pieces</span> R200.00</p> <button class="cart-btn" data-product-id="51"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 treats"> <div class="single-product-item"> <div class="product-image"> <a href="lollipops.html"> <img src="assets/img/products/product-img-75.jpg" alt="THC Lollipops" loading="lazy"> </a> </div> <h3>THC Lollipops</h3> <p class="product-price"><span>20mg THC each</span> R80.00</p> <button class="cart-btn" data-product-id="52"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
-                    <div class="col-lg-3 col-md-4 treats"> <div class="single-product-item"> <div class="product-image"> <a href="sexshot.html"> <img src="assets/img/products/product-img-83.jpeg" alt="CBD Shot" loading="lazy"> </a> </div> <h3>Sex Shot</h3> <p class="product-price"><span>5mg CBD each</span> R35.00</p> <button class="cart-btn" data-product-id="53"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                <div class="row product-lists g-4" id="productContainer">
+                    </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pagination" id="pagination">
+                            </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="footer-area"> <div class="container"> <div class="row"> <div class="col-lg-3 col-md-6"> <div class="footer-box about-widget"> <h2 class="widget-title">About us</h2> <p>Discover high-quality, curated cannabis products at Canapa Delights.</p> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box get-in-touch"> <h2 class="widget-title">Get in Touch</h2> <ul> <li>22 Karee Street, Southdowns Shopping Centre, Irene</li> <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li> <li><a href="tel:+27710314435">+27 71 031 4435</a></li> </ul> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box"> <h2 class="widget-title">Follow Us</h2> <div class="social-icons"> <a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a> <a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a> </div> </div> </div> </div> </div> </footer>
+    <footer class="footer-area"> <div class="container"> <div class="row"> <div class="col-lg-3 col-md-6"> <div class="footer-box about-widget"> <h2 class="widget-title">About us</h2> <p>Discover high-quality, curated cannabis products at Canapa Delights.</p> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box get-in-touch"> <h2 class="widget-title">Get in Touch</h2> <ul> <li>22 Karee Street, Southdowns Shopping Centre, Irene</li> <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li> <li><a href="tel:+27710314435">+27 71 031 4435</a></li> </ul> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box"> <h2 class="widget-title">Follow Us</h2> <div class="social-icons"> <a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a> <a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a> </div> </div> </div> </div> </footer>
     <div class="copyright"> <div class="container"> <div class="row"> <div class="col-lg-6 col-md-12"><p>Copyright &copy; 2025 - All Rights Reserved.</p></div> <div class="col-lg-6 text-right col-md-12"><div class="social-icons"><ul><li><a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a></li><li><a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a></li></ul></div></div> </div> </div> </div>
 
     <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank"> <i class="fab fa-whatsapp"></i> <span class="whatsapp-text">Chat with us</span> </a>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
-        import { getDatabase, ref, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/js/jquery.countdown.js" defer></script>
+    <script src="assets/js/jquery.isotope-3.0.6.min.js" defer></script>
+    <script src="assets/js/waypoints.js" defer></script>
+    <script src="assets/js/owl.carousel.min.js" defer></script>
+    <script src="assets/js/jquery.magnific-popup.min.js" defer></script>
+    <script src="assets/js/sticker.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyCiJnj-Z9TXTeMelX_CTw8KM28_BaQW6bo",
-            authDomain: "canapa-delight.firebaseapp.com",
-            databaseURL: "https://canapa-delight-default-rtdb.firebaseio.com",
-            projectId: "canapa-delight",
-            storageBucket: "canapa-delight.appspot.com",
-            messagingSenderId: "35385881641",
-            appId: "1:35385881641:web:846ac0863099c5c64c1838",
-            measurementId: "G-6GMPH5C04L"
-        };
+    <script>
+        // Product data array
+        const products = [
+            { id: 1, category: "cookies", name: "Choc Chip Cookies", image: "assets/img/products/product-img-1.jpg", link: "chocchip.html", desc: "20mg THC - 10 cookies", price: "R250.00" },
+            { id: 2, category: "cookies", name: "Coconut Oat Cookies", image: "assets/img/products/product-img-10.jpg", link: "cookiescocooat.html", desc: "20mg THC - 10 cookies", price: "R250.00" },
+            { id: 3, category: "cookies", name: "Chocolate Cookies", image: "assets/img/products/product-img-13.jpg", link: "dcookies.html", desc: "10mg THC - 10 cookies", price: "R150.00" },
+            { id: 4, category: "cookies", name: "Spicy Pecan Nut Cookies", image: "assets/img/products/product-img-9.jpg", link: "spicycookies.html", desc: "10mg THC - 10 cookies", price: "R150.00" },
+            { id: 5, category: "cookies", name: "Choc Cookie Chips", image: "assets/img/products/product-img-11.jpg", link: "chocookies.html", desc: "20mg THC - 5 cookies", price: "R150.00" },
+            { id: 6, category: "cookies", name: "Mini Choc Cookies", image: "assets/img/products/product-img-12.jpg", link: "minicookies.html", desc: "20mg THC - 3 cookies", price: "R100.00" },
+            { id: 7, category: "gummies", name: "Yummy Gummies", image: "assets/img/products/product-img-2.jpg", link: "yummygummies.html", desc: "20mg THC - 10 pieces", price: "R250.00" },
+            { id: 8, category: "gummies", name: "Sugar Free Gummies", image: "assets/img/products/product-img-8.jpg", link: "freegummies.html", desc: "20mg THC - 10 pieces", price: "R250.00" },
+            { id: 9, category: "gummies", name: "Tropical Gummies", image: "assets/img/products/product-img-14.jpg", link: "sodazetropical.html", desc: "20mg THC - 10 pieces", price: "R250.00" },
+            { id: 10, category: "gummies", name: "Sour Gummies", image: "assets/img/products/product-img-16.jpg", link: "sourgummies.html", desc: "10mg THC - 5 pieces", price: "R100.00" },
+            { id: 11, category: "gummies", name: "CBD Relax Gummies", image: "assets/img/products/product-img-19.jpg", link: "cbdrelaxgummies.html", desc: "20mg CBD - 15 pieces", price: "R250.00" },
+            { id: 12, category: "gummies", name: "Grape Gummies", image: "assets/img/products/product-img-79.jpg", link: "sodazegrape.html", desc: "20mg THC - 10 pieces", price: "R250.00" },
+            { id: 13, category: "gummies", name: "Mixed Gummies Pack", image: "assets/img/products/product-img-17.jpg", link: "mixedgummies.html", desc: "20mg THC - 5 pieces", price: "R150.00" },
+            { id: 14, category: "gummies", name: "Chillax CBD Gummies", image: "assets/img/products/product-img-20.jpg", link: "chillaxcbd.html", desc: "10mg CBD - 15 pieces", price: "R150.00" },
+            { id: 15, category: "gummies", name: "Raspberry Gummies", image: "assets/img/products/product-img-15.jpg", link: "sodazeraspberry.html", desc: "20mg THC - 10 pieces", price: "R250.00" },
+            { id: 16, category: "gummies", name: "Yummy Gummies", image: "assets/img/products/product-img-7.jpg", link: "classicgummies.html", desc: "10mg THC - 10 pieces", price: "R150.00" },
+            { id: 17, category: "gummies", name: "Chocolate Fudge", image: "assets/img/products/product-img-18.jpg", link: "Fudge.html", desc: "20mg THC - 2 pieces", price: "R120.00" },
+            { id: 18, category: "vapes", name: "Durban Poison Sativa", image: "assets/img/products/product-img-3.jpg", link: "durbansativa.html", desc: "1ml THC Disposable", price: "R1000.00" },
+            { id: 19, category: "vapes", name: "Northern Lights Indica", image: "assets/img/products/product-img-53.jpg", link: "northernlights.html", desc: "1ml THC Disposable", price: "R1000.00" },
+            { id: 20, category: "vapes", name: "Live Resin Vape", image: "assets/img/products/product-img-56.jpg", link: "liveresin.html", desc: "1ml Premium Extract", price: "R1200.00" },
+            { id: 21, category: "vapes", name: "Gelato Hybrid Cartridge", image: "assets/img/products/product-img-33.jpg", link: "gelatohybrid.html", desc: "0.5ml THC", price: "R500.00" },
+            { id: 22, category: "vapes", name: "Jack Herrer Cartridge", image: "assets/img/products/product-img-38.jpg", link: "jack.html", desc: "0.5ml THC", price: "R500.00" },
+            { id: 23, category: "vapes", name: "Durban Poison Cartridge", image: "assets/img/products/product-img-30.jpg", link: "durbancartridge.html", desc: "0.5ml THC", price: "R500.00" },
+            { id: 24, category: "vapes", name: "Mimosa Sativa Cartridge", image: "assets/img/products/product-img-42.jpg", link: "mimosasativa.html", desc: "0.5ml THC", price: "R500.00" },
+            { id: 25, category: "vapes", name: "Sativa Cartridge", image: "assets/img/products/product-img-45.jpg", link: "sativa.html", desc: "1ml THC", price: "R800.00" },
+            { id: 26, category: "vapes", name: "Pain CBD Cartridge", image: "assets/img/products/product-img-6.jpg", link: "paincartridge.html", desc: "300mg CBD - 0.5ml", price: "R400.00" },
+            { id: 27, category: "vapes", name: "Sleep CBD Cartridge", image: "assets/img/products/product-img-71.jpg", link: "sleepcartridge.html", desc: "300mg CBD - 0.5ml", price: "R400.00" },
+            { id: 28, category: "vapes", name: "Relax CBD Cartridge", image: "assets/img/products/product-img-70.jpg", link: "relaxcartridge.html", desc: "300mg CBD - 0.5ml", price: "R400.00" },
+            { id: 29, category: "vapes", name: "Vape Battery Pen", image: "assets/img/products/product-img-23.jpg", link: "vapbatterypen.html", desc: "270mAh Battery", price: "R300.00" },
+            { id: 30, category: "oil", name: "Full Spectrum CBD Oil", image: "assets/img/products/product-img-5.jpg", link: "cbdoil.html", desc: "100mg CBD - 15ml", price: "R290.00" },
+            { id: 31, category: "oil", name: "Deep Sleep CBD Oil", image: "assets/img/products/product-img-58.jpg", link: "sleepoil.html", desc: "300mg CBD/CBN - 30ml", price: "R1200.00" },
+            { id: 32, category: "oil", name: "Pain Relief CBD Oil", image: "assets/img/products/product-img-60.jpg", link: "painoil.html", desc: "300mg CBD - 30ml", price: "R590.00" },
+            { id: 33, category: "oil", name: "Pet CBD Oil", image: "assets/img/products/product-img-61.jpg", link: "petoil.html", desc: "300mg CBD - 30ml", price: "R590.00" },
+            { id: 34, category: "oil", name: "Relax CBD Oil", image: "assets/img/products/product-img-62.jpg", link: "relaxoil.html", desc: "300mg CBD - 30ml", price: "R590.00" },
+            { id: 35, category: "oil", name: "Sleep Aid CBD Oil", image: "assets/img/products/product-img-63.jpg", link: "sleepaidoil.html", desc: "300mg CBD - 30ml", price: "R590.00" },
+            { id: 36, category: "oil", name: "Pain Relief CBD Oil", image: "assets/img/products/product-img-60.jpg", link: "painrelief.html", desc: "600mg CBD - 30ml", price: "R790.00" },
+            { id: 37, category: "oil", name: "Relax CBD Oil", image: "assets/img/products/product-img-62.jpg", link: "CBD Oils5-600mg.html", desc: "600mg CBD - 30ml", price: "R790.00" },
+            { id: 38, category: "oil", name: "Sleep Aid CBD Oil", image: "assets/img/products/product-img-63.jpg", link: "CBD Oils6-600mg.html", desc: "600mg CBD - 30ml", price: "R790.00" },
+            { id: 39, category: "tea", name: "CBD Mint Rooibos Tea", image: "assets/img/products/product-img-64.jpg", link: "minttea.html", desc: "5mg CBD - 20 bags", price: "R100.00" },
+            { id: 40, category: "tea", name: "CBD Cinnamon Rooibos Tea", image: "assets/img/products/product-img-65.jpg", link: "cinnamontea.html", desc: "5mg CBD - 20 bags", price: "R100.00" },
+            { id: 41, category: "tea", name: "CBD Ginger Rooibos Tea", image: "assets/img/products/product-img-66.jpg", link: "CBD Rooibos Tea2.html", desc: "5mg CBD - 20 bags", price: "R100.00" },
+            { id: 42, category: "tea", name: "CBD Pomegranate Rooibos Tea", image: "assets/img/products/product-img-67.jpg", link: "pomegranatetea.html", desc: "5mg CBD - 20 bags", price: "R100.00" },
+            { id: 43, category: "tea", name: "CBD Lemongrass Rooibos Tea", image: "assets/img/products/product-img-68.jpg", link: "lemongrasstea.html", desc: "5mg CBD - 20 bags", price: "R100.00" },
+            { id: 44, category: "tea", name: "CBD Vanilla Rooibos Tea", image: "assets/img/products/product-img-vanilla.jpg", link: "vanillatea.html", desc: "5mg CBD - 20 bags", price: "R100.00" },
+            { id: 45, category: "tea", name: "CBD Original Rooibos Tea", image: "assets/img/products/product-img-original.jpg", link: "originaltea.html", desc: "5mg CBD - 20 bags", price: "R100.00" },
+            { id: 46, category: "tea", name: "CBD Honeybush Tea", image: "assets/img/products/product-img-honeybush.jpg", link: "honeybushtea.html", desc: "5mg CBD - 20 bags", price: "R100.00" },
+            { id: 47, category: "tea", name: "CBD Chamomile Tea", image: "assets/img/products/product-img-chamomile.jpg", link: "chamomiletea.html", desc: "5mg CBD - 20 bags", price: "R100.00" },
+            { id: 48, category: "soda", name: "Berry Haze CBD Soda", image: "assets/img/products/product-img-82.jpg", link: "berrysoda.html", desc: "30mg CBD per can", price: "R70.00" },
+            { id: 49, category: "soda", name: "Cherry Pop THC Soda", image: "assets/img/products/product-img-81.jpg", link: "cherrysoda.html", desc: "30mg THC per can", price: "R70.00" },
+            { id: 50, category: "soda", name: "Blueberry Lemonade Soda", image: "assets/img/products/product-img-80.jpg", link: "lemonadesoda.html", desc: "30mg THC per can", price: "R70.00" },
+            { id: 51, category: "treats", name: "CBD Dog Treats", image: "assets/img/products/product-img-4.jpg", link: "dogtreats.html", desc: "5mg CBD - 10 pieces", price: "R200.00" },
+            { id: 52, category: "treats", name: "THC Lollipops", image: "assets/img/products/product-img-75.jpg", link: "lollipops.html", desc: "20mg THC each", price: "R80.00" },
+            { id: 53, category: "treats", name: "Sex Shot", image: "assets/img/products/product-img-83.jpeg", link: "sexshot.html", desc: "5mg CBD each", price: "R35.00" }
+        ];
 
-        let auth, database;
-        try { const app = initializeApp(firebaseConfig); auth = getAuth(app); database = getDatabase(app); console.log("Firebase initialized successfully for Shop Page");
-        } catch (error) { console.error("Firebase initialization error:", error); }
+        // Immediately initialize age verification
+        (function() {
+            const agePopup = document.getElementById('ageVerificationPopup');
+            const overlay = document.getElementById('overlay');
+            
+            if (!sessionStorage.getItem('ageVerified') && !localStorage.getItem('ageVerified')) {
+                if (agePopup) agePopup.style.display = 'block';
+                if (overlay) overlay.style.display = 'block';
+            }
+            
+            const confirmBtn = agePopup?.querySelector('.confirmButton');
+            const declineBtn = agePopup?.querySelector('.declineButton');
+            
+            if (confirmBtn) {
+                confirmBtn.addEventListener('click', () => {
+                    localStorage.setItem('ageVerified', 'true');
+                    sessionStorage.setItem('ageVerified', 'true');
+                    if (agePopup) agePopup.style.display = 'none';
+                    if (overlay) overlay.style.display = 'none';
+                });
+            }
+            
+            if (declineBtn) {
+                declineBtn.addEventListener('click', () => {
+                    alert("You must be 18 or older to enter.");
+                    window.location.href = 'https://www.google.com';
+                });
+            }
+        })();
 
-        const agePopup = document.getElementById('ageVerificationPopup');
-        const overlay = document.getElementById('overlay');
-        const loginModal = document.getElementById('loginModal');
-        const signupModal = document.getElementById('signupModal');
-        const loginForm = document.getElementById('loginForm');
-        const signupForm = document.getElementById('signupForm');
-        const loginError = document.getElementById('loginError');
-        const signupError = document.getElementById('signupError');
-        const passwordToggles = document.querySelectorAll('.password-toggle');
-        const signupPasswordInput = document.getElementById('signupPassword');
-        const passwordStrengthDiv = document.getElementById('passwordStrength');
-        const loginNav = document.getElementById('loginNav');
-        const signupNav = document.getElementById('signupNav');
-        const accountNav = document.getElementById('accountNav');
-        const logoutNav = document.getElementById('logoutNav');
-        const logoutButton = document.getElementById('logoutButton');
-        const mainMenu = document.querySelector('.main-menu');
-        const categorySelect = document.getElementById('categorySelect');
+        // Pagination and product loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const productsPerPage = 12;
+            const productContainer = document.getElementById('productContainer');
+            const paginationContainer = document.getElementById('pagination');
+            let currentPage = 1;
+            
+            // Get current page from URL or default to 1
+            const urlParams = new URLSearchParams(window.location.search);
+            const pageParam = urlParams.get('page');
+            if (pageParam && !isNaN(pageParam) && pageParam > 0) {
+                currentPage = parseInt(pageParam);
+            }
+            
+            // Display products for current page
+            function displayProducts(page) {
+                productContainer.innerHTML = '';
+                const startIndex = (page - 1) * productsPerPage;
+                const endIndex = Math.min(startIndex + productsPerPage, products.length);
+                
+                for (let i = startIndex; i < endIndex; i++) {
+                    const product = products[i];
+                    const productHTML = `
+                        <div class="col-lg-3 col-md-4 col-sm-6 ${product.category}">
+                            <div class="single-product-item">
+                                <div class="product-image">
+                                    <a href="${product.link}">
+                                        <img src="${product.image}" alt="${product.name}" loading="lazy" class="lazy-load">
+                                    </a>
+                                </div>
+                                <h3>${product.name}</h3>
+                                <p class="product-price"><span>${product.desc}</span> ${product.price}</p>
+                                <button class="cart-btn" data-product-id="${product.id}">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    productContainer.innerHTML += productHTML;
+                }
+                
+                // Initialize lazy loading for images
+                initLazyLoading();
+                
+                // Update pagination
+                updatePagination(page);
+                
+                // Initialize cart system
+                new CartSystem();
+            }
+            
+            // Initialize lazy loading for images
+            function initLazyLoading() {
+                const lazyImages = document.querySelectorAll('img.lazy-load');
+                
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.getAttribute('src');
+                            img.classList.add('loaded');
+                            
+                            // Mark the parent product as loaded
+                            const productItem = img.closest('.single-product-item');
+                            if (productItem) {
+                                productItem.classList.add('loaded');
+                            }
+                            
+                            observer.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '100px 0px',
+                    threshold: 0.1
+                });
+                
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
+            
+            // Update pagination controls
+            function updatePagination(currentPage) {
+                paginationContainer.innerHTML = '';
+                const totalPages = Math.ceil(products.length / productsPerPage);
+                
+                // Previous button
+                const prevDisabled = currentPage <= 1 ? 'disabled' : '';
+                paginationContainer.innerHTML += `
+                    <a href="?page=${currentPage - 1}" class="${prevDisabled}" ${prevDisabled ? 'tabindex="-1"' : ''}>
+                        &laquo; Previous
+                    </a>
+                `;
+                
+                // Page numbers
+                const maxVisiblePages = 5;
+                let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+                let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+                
+                if (endPage - startPage + 1 < maxVisiblePages) {
+                    startPage = Math.max(1, endPage - maxVisiblePages + 1);
+                }
+                
+                if (startPage > 1) {
+                    paginationContainer.innerHTML += `<a href="?page=1">1</a>`;
+                    if (startPage > 2) {
+                        paginationContainer.innerHTML += `<span>...</span>`;
+                    }
+                }
+                
+                for (let i = startPage; i <= endPage; i++) {
+                    const activeClass = i === currentPage ? 'active' : '';
+                    paginationContainer.innerHTML += `
+                        <a href="?page=${i}" class="${activeClass}">${i}</a>
+                    `;
+                }
+                
+                if (endPage < totalPages) {
+                    if (endPage < totalPages - 1) {
+                        paginationContainer.innerHTML += `<span>...</span>`;
+                    }
+                    paginationContainer.innerHTML += `<a href="?page=${totalPages}">${totalPages}</a>`;
+                }
+                
+                // Next button
+                const nextDisabled = currentPage >= totalPages ? 'disabled' : '';
+                paginationContainer.innerHTML += `
+                    <a href="?page=${currentPage + 1}" class="${nextDisabled}" ${nextDisabled ? 'tabindex="-1"' : ''}>
+                        Next &raquo;
+                    </a>
+                `;
+                
+                // Add click handlers to prevent full page reload
+                document.querySelectorAll('#pagination a:not(.disabled)').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const page = this.getAttribute('href').split('=')[1];
+                        window.history.pushState({}, '', `?page=${page}`);
+                        currentPage = parseInt(page);
+                        displayProducts(currentPage);
+                    });
+                });
+            }
+            
+            // Initial display
+            displayProducts(currentPage);
+            
+            // Handle browser back/forward
+            window.addEventListener('popstate', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const pageParam = urlParams.get('page');
+                currentPage = pageParam ? parseInt(pageParam) : 1;
+                displayProducts(currentPage);
+            });
+        });
 
-        const showModal = (modal) => { if(modal) { modal.style.display = 'block'; overlay.style.display = 'block'; modal.querySelector('input, button')?.focus(); }};
-        const hideModal = (modal) => { if(modal) modal.style.display = 'none'; };
-        const closeAllModals = () => { hideModal(loginModal); hideModal(signupModal); if(overlay) overlay.style.display = 'none'; };
-        const displayError = (element, error) => { if(element) element.textContent = "Error: " + error.message.replace('Firebase: ', ''); console.error(error); };
-        const setLoading = (button, isLoading, originalText) => { if(button) { button.disabled = isLoading; button.textContent = isLoading ? 'Processing...' : originalText; }};
-        const checkPasswordStrength = (password) => {
-            if (!passwordStrengthDiv) return; let strength = 0;
-            if (password.length >= 8) strength++; if (password.match(/[a-z]/)) strength++; if (password.match(/[A-Z]/)) strength++;
-            if (password.match(/[0-9]/)) strength++; if (password.match(/[^a-zA-Z0-9]/)) strength++;
-            switch (strength) { case 0: case 1: case 2: passwordStrengthDiv.textContent = 'Weak'; passwordStrengthDiv.style.color = 'red'; break;
-                case 3: passwordStrengthDiv.textContent = 'Medium'; passwordStrengthDiv.style.color = 'orange'; break;
-                case 4: case 5: passwordStrengthDiv.textContent = 'Strong'; passwordStrengthDiv.style.color = 'green'; break;
-                default: passwordStrengthDiv.textContent = ''; break; }
-             if (!password) passwordStrengthDiv.textContent = '';
-        };
-        const handleAgeVerification = () => {
-            if (!agePopup) return;
-             if (!sessionStorage.getItem('ageVerified') && !localStorage.getItem('ageVerified')) {
-                agePopup.style.display = 'block'; if(overlay) overlay.style.display = 'block'; }
-            const confirmBtn = agePopup.querySelector('.confirmButton'); const declineBtn = agePopup.querySelector('.declineButton');
-            if (confirmBtn) { confirmBtn.addEventListener('click', () => { localStorage.setItem('ageVerified', 'true'); sessionStorage.setItem('ageVerified', 'true'); agePopup.style.display = 'none'; if(overlay) overlay.style.display = 'none'; }); }
-            if (declineBtn) { declineBtn.addEventListener('click', () => { alert("You must be 18 or older to enter."); window.location.href = 'https://www.google.com'; }); }
-        };
-        window.showLogin = () => { hideModal(signupModal); showModal(loginModal); if(loginError) loginError.textContent = ''; };
-        window.showSignup = () => { hideModal(loginModal); showModal(signupModal); if(signupError) signupError.textContent = ''; };
-        window.toggleMenu = () => { if(mainMenu) mainMenu.classList.toggle('active'); };
-
+        // Cart System
         class CartSystem {
-            constructor() { this.cart = JSON.parse(localStorage.getItem('cart')) || []; this.initShopPage(); }
-            initShopPage() { this.updateHeaderCartCount(); this.setupAddToCartListeners(); }
+            constructor() { 
+                this.cart = JSON.parse(localStorage.getItem('cart')) || []; 
+                this.initShopPage(); 
+            }
+            
+            initShopPage() { 
+                this.updateHeaderCartCount(); 
+                this.setupAddToCartListeners(); 
+            }
+            
             setupAddToCartListeners() {
-                document.querySelectorAll('.cart-btn').forEach(btn => {
-                    const newBtn = btn.cloneNode(true); btn.parentNode.replaceChild(newBtn, btn);
-                    newBtn.addEventListener('click', (e) => this.addToCart(e)); });
+                document.addEventListener('click', (e) => {
+                    if (e.target.closest('.cart-btn')) {
+                        this.addToCart(e);
+                    }
+                });
             }
+            
             addToCart(e) {
-                const button = e.target.closest('.cart-btn'); if (!button) return;
-                const productCard = button.closest('.single-product-item'); if (!productCard) return;
-                const priceTextElement = productCard.querySelector('.product-price'); let price = 0;
-                if (priceTextElement) { const priceMatch = priceTextElement.textContent.match(/R([\d.]+)/); price = priceMatch ? parseFloat(priceMatch[1]) : 0; }
-                const nameElement = productCard.querySelector('h3'); const imageElement = productCard.querySelector('img');
-                const product = { id: button.dataset.productId, name: nameElement ? nameElement.textContent : 'Unknown Product', price: price, image: imageElement ? imageElement.src : 'assets/img/default-product.png', quantity: 1 };
+                const button = e.target.closest('.cart-btn'); 
+                if (!button) return;
+                
+                const productCard = button.closest('.single-product-item'); 
+                if (!productCard) return;
+                
+                const priceTextElement = productCard.querySelector('.product-price'); 
+                let price = 0;
+                if (priceTextElement) { 
+                    const priceMatch = priceTextElement.textContent.match(/R([\d.]+)/); 
+                    price = priceMatch ? parseFloat(priceMatch[1]) : 0; 
+                }
+                
+                const nameElement = productCard.querySelector('h3'); 
+                const imageElement = productCard.querySelector('img');
+                const product = { 
+                    id: button.dataset.productId, 
+                    name: nameElement ? nameElement.textContent : 'Unknown Product', 
+                    price: price, 
+                    image: imageElement ? imageElement.src : 'assets/img/default-product.png', 
+                    quantity: 1 
+                };
+                
                 const existingItem = this.cart.find(item => item.id === product.id);
-                if (existingItem) { existingItem.quantity++; } else { this.cart.push(product); }
-                localStorage.setItem('cart', JSON.stringify(this.cart)); this.updateHeaderCartCount(); this.showAddedNotification(button);
+                if (existingItem) { 
+                    existingItem.quantity++; 
+                } else { 
+                    this.cart.push(product); 
+                }
+                
+                localStorage.setItem('cart', JSON.stringify(this.cart)); 
+                this.updateHeaderCartCount(); 
+                this.showAddedNotification(button);
             }
-            updateHeaderCartCount() { const count = this.cart.reduce((sum, item) => sum + item.quantity, 0); const cartCountSpan = document.querySelector('.cart-count'); if(cartCountSpan) { cartCountSpan.textContent = count; }}
+            
+            updateHeaderCartCount() { 
+                const count = this.cart.reduce((sum, item) => sum + item.quantity, 0); 
+                const cartCountSpan = document.querySelector('.cart-count'); 
+                if(cartCountSpan) { 
+                    cartCountSpan.textContent = count; 
+                }
+            }
+            
             showAddedNotification(button) {
-                const parentNode = button.parentNode; if (!parentNode) return;
-                const existingNotif = parentNode.querySelector('.cart-notification'); if (existingNotif) existingNotif.remove();
-                const notification = document.createElement('div'); notification.className = 'cart-notification'; notification.textContent = 'Added to cart!';
-                parentNode.appendChild(notification); setTimeout(() => notification.remove(), 2000);
+                const parentNode = button.parentNode; 
+                if (!parentNode) return;
+                
+                const existingNotif = parentNode.querySelector('.cart-notification'); 
+                if (existingNotif) existingNotif.remove();
+                
+                const notification = document.createElement('div'); 
+                notification.className = 'cart-notification'; 
+                notification.textContent = 'Added to cart!';
+                parentNode.appendChild(notification); 
+                setTimeout(() => notification.remove(), 2000);
             }
         }
 
+        // Firebase and other functionality
         document.addEventListener('DOMContentLoaded', () => {
-            if(agePopup) handleAgeVerification();
-            const showSignupLink = document.getElementById('showSignupLink'); const showLoginLink = document.getElementById('showLoginLink');
-            if(showSignupLink) showSignupLink.addEventListener('click', (e) => { e.preventDefault(); showSignup(); });
-            if(showLoginLink) showLoginLink.addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
-            document.querySelectorAll('.closeButton').forEach(btn => btn.addEventListener('click', closeAllModals));
-            if(overlay) overlay.addEventListener('click', closeAllModals);
-            document.querySelectorAll('.modal').forEach(modal => modal.addEventListener('click', (e) => e.stopPropagation()));
-            document.addEventListener('keydown', (e) => { if (e.key === "Escape" && overlay && overlay.style.display === 'block') { closeAllModals(); } });
-            passwordToggles.forEach(toggle => { toggle.addEventListener('click', () => { const passwordInput = toggle.previousElementSibling; if(passwordInput) { const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password'; passwordInput.setAttribute('type', type); toggle.classList.toggle('fa-eye'); toggle.classList.toggle('fa-eye-slash'); }}); });
-            if (signupPasswordInput) { signupPasswordInput.addEventListener('input', () => checkPasswordStrength(signupPasswordInput.value)); }
-            if (loginForm) { loginForm.addEventListener('submit', async (e) => { e.preventDefault(); const email = document.getElementById('loginEmail').value; const password = document.getElementById('loginPassword').value; const button = e.target.querySelector('button[type="submit"]'); setLoading(button, true, 'Login'); if(loginError) loginError.textContent = ''; try { await signInWithEmailAndPassword(auth, email, password); closeAllModals(); alert("Logged in successfully!"); } catch (error) { if(loginError) displayError(loginError, error); } finally { setLoading(button, false, 'Login'); }}); }
-            if (signupForm) { signupForm.addEventListener('submit', async (e) => { e.preventDefault(); const name = document.getElementById('signupName').value; const email = document.getElementById('signupEmail').value; const password = document.getElementById('signupPassword').value; const button = e.target.querySelector('button[type="submit"]'); if (password.length < 6) { if(signupError) signupError.textContent = "Password must be at least 6 characters long."; return; } setLoading(button, true, 'Sign Up'); if(signupError) signupError.textContent = ''; try { const userCredential = await createUserWithEmailAndPassword(auth, email, password); const user = userCredential.user; await set(ref(database, 'users/' + user.uid), { name: name, email: email, createdAt: serverTimestamp() }); closeAllModals(); alert("Account created successfully!"); } catch (error) { if(signupError) displayError(signupError, error); } finally { setLoading(button, false, 'Sign Up'); }}); }
-            if (logoutButton) { logoutButton.addEventListener('click', async (e) => { e.preventDefault(); try { await signOut(auth); alert("Logged out successfully!"); } catch (error) { console.error("Logout Error:", error); alert("Failed to log out."); }}); }
-            if (categorySelect) { categorySelect.addEventListener('change', function() { const category = this.value; document.querySelectorAll('.product-lists > div[class*="col-"]').forEach(product => { product.style.display = (category === 'all' || product.classList.contains(category)) ? 'block' : 'none'; }); });}
-            new CartSystem();
-            document.querySelectorAll('.safe-email').forEach(element => { const user = element.dataset.user; const domain = element.dataset.domain; element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`; });
+            // Initialize modals and event listeners
+            const showSignupLink = document.getElementById('showSignupLink'); 
+            const showLoginLink = document.getElementById('showLoginLink');
+            
+            if(showSignupLink) showSignupLink.addEventListener('click', (e) => { 
+                e.preventDefault(); 
+                showSignup(); 
+            });
+            
+            if(showLoginLink) showLoginLink.addEventListener('click', (e) => { 
+                e.preventDefault(); 
+                showLogin(); 
+            });
+            
+            document.querySelectorAll('.closeButton').forEach(btn => 
+                btn.addEventListener('click', closeAllModals));
+            
+            document.getElementById('overlay').addEventListener('click', closeAllModals);
+            
+            document.querySelectorAll('.modal').forEach(modal => 
+                modal.addEventListener('click', (e) => e.stopPropagation()));
+            
+            document.addEventListener('keydown', (e) => { 
+                if (e.key === "Escape" && document.getElementById('overlay').style.display === 'block') { 
+                    closeAllModals(); 
+                } 
+            });
+            
+            // Password toggles
+            document.querySelectorAll('.password-toggle').forEach(toggle => { 
+                toggle.addEventListener('click', () => { 
+                    const passwordInput = toggle.previousElementSibling; 
+                    if(passwordInput) { 
+                        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password'; 
+                        passwordInput.setAttribute('type', type); 
+                        toggle.classList.toggle('fa-eye'); 
+                        toggle.classList.toggle('fa-eye-slash'); 
+                    }
+                }); 
+            });
+            
+            // Password strength
+            const signupPasswordInput = document.getElementById('signupPassword');
+            if (signupPasswordInput) { 
+                signupPasswordInput.addEventListener('input', () => 
+                    checkPasswordStrength(signupPasswordInput.value)); 
+            }
+            
+            // Safe email display
+            document.querySelectorAll('.safe-email').forEach(element => { 
+                const user = element.dataset.user; 
+                const domain = element.dataset.domain; 
+                element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`; 
+            });
         });
-        if (auth) { onAuthStateChanged(auth, (user) => { if (user) { if(loginNav) loginNav.style.display = 'none'; if(signupNav) signupNav.style.display = 'none'; if(accountNav) accountNav.style.display = 'inline-block'; if(logoutNav) logoutNav.style.display = 'inline-block'; } else { if(loginNav) loginNav.style.display = 'inline-block'; if(signupNav) signupNav.style.display = 'inline-block'; if(accountNav) accountNav.style.display = 'none'; if(logoutNav) logoutNav.style.display = 'none'; }}); }
-    </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jquery.countdown.js"></script>
-    <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
-    <script src="assets/js/waypoints.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/sticker.js"></script>
-    <script src="assets/js/main.js"></script>
+        // Utility functions
+        const showModal = (modal) => { 
+            if(modal) { 
+                modal.style.display = 'block'; 
+                document.getElementById('overlay').style.display = 'block'; 
+                modal.querySelector('input, button')?.focus(); 
+            }
+        };
+        
+        const hideModal = (modal) => { 
+            if(modal) modal.style.display = 'none'; 
+        };
+        
+        const closeAllModals = () => { 
+            hideModal(document.getElementById('loginModal')); 
+            hideModal(document.getElementById('signupModal')); 
+            document.getElementById('overlay').style.display = 'none'; 
+        };
+        
+        const displayError = (element, error) => { 
+            if(element) element.textContent = "Error: " + error.message.replace('Firebase: ', ''); 
+            console.error(error); 
+        };
+        
+        const setLoading = (button, isLoading, originalText) => { 
+            if(button) { 
+                button.disabled = isLoading; 
+                button.textContent = isLoading ? 'Processing...' : originalText; 
+            }
+        };
+        
+        const checkPasswordStrength = (password) => {
+            const passwordStrengthDiv = document.getElementById('passwordStrength');
+            if (!passwordStrengthDiv) return; 
+            
+            let strength = 0;
+            if (password.length >= 8) strength++; 
+            if (password.match(/[a-z]/)) strength++; 
+            if (password.match(/[A-Z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++; 
+            if (password.match(/[^a-zA-Z0-9]/)) strength++;
+            
+            switch (strength) { 
+                case 0: case 1: case 2: 
+                    passwordStrengthDiv.textContent = 'Weak'; 
+                    passwordStrengthDiv.style.color = 'red'; 
+                    break;
+                case 3: 
+                    passwordStrengthDiv.textContent = 'Medium'; 
+                    passwordStrengthDiv.style.color = 'orange'; 
+                    break;
+                case 4: case 5: 
+                    passwordStrengthDiv.textContent = 'Strong'; 
+                    passwordStrengthDiv.style.color = 'green'; 
+                    break;
+                default: 
+                    passwordStrengthDiv.textContent = ''; 
+                    break; 
+            }
+            
+            if (!password) passwordStrengthDiv.textContent = '';
+
+
+        };
+
+        // Global functions
+        window.showLogin = () => { 
+            hideModal(document.getElementById('signupModal')); 
+            showModal(document.getElementById('loginModal')); 
+            const loginError = document.getElementById('loginError');
+            if(loginError) loginError.textContent = ''; 
+        };
+        
+        window.showSignup = () => { 
+            hideModal(document.getElementById('loginModal')); 
+            showModal(document.getElementById('signupModal')); 
+            const signupError = document.getElementById('signupError');
+            if(signupError) signupError.textContent = ''; 
+        };
+        
+        window.toggleMenu = () => { 
+            const mainMenu = document.querySelector('.main-menu');
+            if(mainMenu) mainMenu.classList.toggle('active'); 
+        };
+
+        // Firebase initialization
+        let auth, database;
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const firebaseConfig = {
+                    apiKey: "AIzaSyCiJnj-Z9TXTeMelX_CTw8KM28_BaQW6bo",
+                    authDomain: "canapa-delight.firebaseapp.com",
+                    databaseURL: "https://canapa-delight-default-rtdb.firebaseio.com",
+                    projectId: "canapa-delight",
+                    storageBucket: "canapa-delight.appspot.com",
+                    messagingSenderId: "35385881641",
+                    appId: "1:35385881641:web:846ac0863099c5c64c1838",
+                    measurementId: "G-6GMPH5C04L"
+                };
+
+                const app = initializeApp(firebaseConfig); 
+                auth = getAuth(app); 
+                database = getDatabase(app); 
+                console.log("Firebase initialized successfully for Shop Page");
+                
+                // Auth state change
+                onAuthStateChanged(auth, (user) => { 
+                    const loginNav = document.getElementById('loginNav');
+                    const signupNav = document.getElementById('signupNav');
+                    const accountNav = document.getElementById('accountNav');
+                    const logoutNav = document.getElementById('logoutNav');
+                    
+                    if (user) { 
+                        if(loginNav) loginNav.style.display = 'none'; 
+                        if(signupNav) signupNav.style.display = 'none'; 
+                        if(accountNav) accountNav.style.display = 'inline-block'; 
+                        if(logoutNav) logoutNav.style.display = 'inline-block'; 
+                    } else { 
+                        if(loginNav) loginNav.style.display = 'inline-block'; 
+                        if(signupNav) signupNav.style.display = 'inline-block'; 
+                        if(accountNav) accountNav.style.display = 'none'; 
+                        if(logoutNav) logoutNav.style.display = 'none'; 
+                    }
+                });
+                
+                // Login form
+                const loginForm = document.getElementById('loginForm');
+                if (loginForm) { 
+                    loginForm.addEventListener('submit', async (e) => { 
+                        e.preventDefault(); 
+                        const email = document.getElementById('loginEmail').value; 
+                        const password = document.getElementById('loginPassword').value; 
+                        const button = e.target.querySelector('button[type="submit"]'); 
+                        
+                        setLoading(button, true, 'Login'); 
+                        
+                        const loginError = document.getElementById('loginError');
+                        if(loginError) loginError.textContent = ''; 
+                        
+                        try { 
+                            await signInWithEmailAndPassword(auth, email, password); 
+                            closeAllModals(); 
+                            alert("Logged in successfully!"); 
+                        } catch (error) { 
+                            if(loginError) displayError(loginError, error); 
+                        } finally { 
+                            setLoading(button, false, 'Login'); 
+                        }
+                    }); 
+                }
+                
+                // Signup form
+                const signupForm = document.getElementById('signupForm');
+                if (signupForm) { 
+                    signupForm.addEventListener('submit', async (e) => { 
+                        e.preventDefault(); 
+                        const name = document.getElementById('signupName').value; 
+                        const email = document.getElementById('signupEmail').value; 
+                        const password = document.getElementById('signupPassword').value; 
+                        const button = e.target.querySelector('button[type="submit"]'); 
+                        
+                        if (password.length < 6) { 
+                            const signupError = document.getElementById('signupError');
+                            if(signupError) signupError.textContent = "Password must be at least 6 characters long."; 
+                            return; 
+                        } 
+                        
+                        setLoading(button, true, 'Sign Up'); 
+                        
+                        const signupError = document.getElementById('signupError');
+                        if(signupError) signupError.textContent = ''; 
+                        
+                        try { 
+                            const userCredential = await createUserWithEmailAndPassword(auth, email, password); 
+                            const user = userCredential.user; 
+                            await set(ref(database, 'users/' + user.uid), { 
+                                name: name, 
+                                email: email, 
+                                createdAt: serverTimestamp() 
+                            }); 
+                            closeAllModals(); 
+                            alert("Account created successfully!"); 
+                        } catch (error) { 
+                            if(signupError) displayError(signupError, error); 
+                        } finally { 
+                            setLoading(button, false, 'Sign Up'); 
+                        }
+                    }); 
+                }
+                
+                // Logout
+                const logoutButton = document.getElementById('logoutButton');
+                if (logoutButton) { 
+                    logoutButton.addEventListener('click', async (e) => { 
+                        e.preventDefault(); 
+                        try { 
+                            await signOut(auth); 
+                            alert("Logged out successfully!"); 
+                        } catch (error) { 
+                            console.error("Logout Error:", error); 
+                            alert("Failed to log out."); 
+                        }
+                    }); 
+                }
+            } catch (error) { 
+                console.error("Firebase initialization error:", error); 
+            }
+        });
+    </script>
+    <script>
+        // Hide preloader when everything is loaded
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                // Fade out the preloader
+                preloader.style.opacity = '0';
+                
+                // Remove it from the DOM after fade out completes
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+    
+    <script>
+        // Show preloader when navigating away from the page
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="javascript"])');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Don't intercept if it's a hash link or external link
+                    if (this.href.includes('#') || this.href.includes('javascript')) return;
+                    
+                    // Show preloader
+                    const preloader = document.getElementById('preloader');
+                    if (preloader) {
+                        preloader.style.opacity = '1';
+                        preloader.style.display = 'flex';
+                    }
+                    
+                    // Allow the navigation to proceed
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 300);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

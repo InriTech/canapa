@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Cannabis Infused Sodas - Canapa Delights</title>
+    <meta name="description" content="Quench your thirst with our refreshing THC and CBD infused sodas. Unique flavours available for online order in South Africa.">
+    <meta name="keywords" content="cannabis soda, THC drink, CBD soda, infused beverage, canapa delights, South Africa">
+    <link rel="canonical" href="https://canapadelights.co.za/sodas.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://canapadelights.co.za/sodas.html">
+    <meta property="og:title" content="Shop Cannabis Infused Sodas | Canapa Delights">
+    <meta property="og:description" content="Refreshing THC and CBD infused sodas in unique flavours.">
+    <meta property="og:image" content="https://canapadelights.co.za/assets/img/products/product-img-82.jpg">
+    <meta property="og:site_name" content="Canapa Delights">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://canapadelights.co.za/sodas.html">
+    <meta property="twitter:title" content="Shop Cannabis Infused Sodas | Canapa Delights">
+    <meta property="twitter:description" content="Refreshing THC and CBD infused sodas in unique flavours.">
+    <meta property="twitter:image" content="https://canapadelights.co.za/assets/img/products/product-img-82.jpg">
+
+    <meta name="theme-color" content="#F28123">
+
+    <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="https://code.jquery.com/jquery-3.6.4.min.js" as="script">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.gstatic.com">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/shop.css">
+
+    <style>
+        .single-product-item {
+            display: block;
+            opacity: 1; /* All items visible by default on category pages */
+            transition: opacity 0.3s ease;
+            margin-bottom: 30px;
+            position: relative;
+            height: 100%;
+        }
+        
+        /* Improved product grid layout */
+        .product-lists {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+        }
+        
+        .product-lists > div[class*="col-"] {
+            padding: 15px;
+            width: 100%;
+        }
+        
+        /* Ensure proper column sizing */
+        @media (min-width: 576px) {
+            .product-lists > .col-sm-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .product-lists > .col-md-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .product-lists > .col-lg-3 {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+        
+        /* Cart notification */
+        .cart-notification {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #F28123;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            animation: fadeInOut 2s ease;
+            z-index: 10;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        /* Force products to take full height */
+        .single-product-item > div {
+            height: 100%;
+        }
+        
+        /* Fix for product image containers */
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            max-height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        /* Updated Category Filter Links */
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .category-filter a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            margin: 0;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s;
+            font-size: 1rem;
+            border: 1px solid transparent;
+        }
+        .category-filter a:hover, .category-filter a.active {
+            background-color: #F28123;
+            border-color: #F28123;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Canapa Delights Shop - Sodas",
+        "description": "Online store for premium cannabis infused sodas.",
+        "url": "https://canapadelights.co.za/sodas.html",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://canapadelights.co.za/index.html"},
+                {"@type": "ListItem", "position": 2, "name": "Shop", "item": "https://canapadelights.co.za/shop.html"},
+                {"@type": "ListItem", "position": 3, "name": "Sodas"}
+            ]
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Cannabis Infused Sodas",
+            "description": "A selection of Canapa Delights cannabis infused sodas.",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Berry Haze CBD Soda", "offers": {"@type": "Offer","price": "70.00","priceCurrency": "ZAR"} } },
+                { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Cherry Pop THC Soda", "offers": {"@type": "Offer","price": "70.00","priceCurrency": "ZAR"} } },
+                { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Blueberry Lemonade Soda", "offers": {"@type": "Offer","price": "70.00","priceCurrency": "ZAR"} } }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="ageVerificationPopup" role="dialog" aria-modal="true" aria-labelledby="ageHeading">
+        <p id="ageHeading" class="ageHeading">Age Verification</p>
+        <p class="ageDescription">You must be 18 years or older to access this site. Please confirm your age.</p>
+        <div class="buttonContainer"> <button class="confirmButton">I am 18+</button> <button class="declineButton">I am under 18</button> </div>
+    </div>
+
+    <div id="overlay"></div>
+
+    <div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="loginHeading">
+        <h2 id="loginHeading">Login</h2> <form id="loginForm"> <input type="email" id="loginEmail" placeholder="Email" required aria-label="Email"> <div class="password-container"> <input type="password" id="loginPassword" placeholder="Password" required aria-label="Password"> <i class="fas fa-eye password-toggle"></i> </div> <button type="submit">Login</button> <button type="button" class="closeButton" aria-label="Close Login Modal">Close</button> </form> <p>Don't have an account? <a href="#" id="showSignupLink">Sign Up</a></p> <div id="loginError" class="error-message"></div>
+    </div>
+
+    <div id="signupModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="signupHeading">
+        <h2 id="signupHeading">Sign Up</h2> <form id="signupForm"> <input type="text" id="signupName" placeholder="Full Name" required aria-label="Full Name"> <input type="email" id="signupEmail" placeholder="Email" required aria-label="Email"> <div class="password-container"> <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required aria-label="Password" pattern=".{6,}"> <i class="fas fa-eye password-toggle"></i> </div> <div id="passwordStrength" class="password-strength"></div> <button type="submit">Sign Up</button> <button type="button" class="closeButton" aria-label="Close Signup Modal">Close</button> </form> <p>Already have an account? <a href="#" id="showLoginLink">Login</a></p> <div id="signupError" class="error-message"></div>
+    </div>
+
+    <div class="top-header-area" id="sticker">
+        <div class="container"> <div class="row"> <div class="col-lg-12 col-sm-12 text-center"> <div class="main-menu-wrap">
+            <div class="site-logo"> <a href="index.html"> <img src="assets/img/logo.png" alt="Canapa Delight Logo" width="180" height="60"> </a> </div>
+            <div class="hamburger-menu" onclick="toggleMenu()"> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> </div>
+            <nav class="main-menu"> <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="current-list-item"><a href="shop.html">Shop</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li id="loginNav"><a href="#" onclick="showLogin()">Login</a></li>
+                <li id="signupNav"><a href="#" onclick="showSignup()">Sign Up</a></li>
+                <li id="accountNav" style="display: none;"><a href="account.html">My Account</a></li>
+                <li id="logoutNav" style="display: none;"><a href="#" id="logoutButton">Logout</a></li>
+                <li> <div class="header-icons"> <a class="shopping-cart" href="cart.html" aria-label="View Shopping Cart"> <i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span> </a> </div> </li>
+            </ul> </nav>
+        </div> </div> </div> </div>
+    </div>
+
+    <main>
+        <div class="breadcrumb-section breadcrumb-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 text-center">
+                        <div class="breadcrumb-text">
+                            <h1>Sodas</h1>
+                            <div class="category-filter mt-4">
+                                <a href="shop.html">All</a>
+                                <a href="cookies.html">Cookies</a>
+                                <a href="gummies.html">Gummies</a>
+                                <a href="vapes.html">Vapes</a>
+                                <a href="oils.html">Oils</a>
+                                <a href="tea.html">Tea</a>
+                                <a href="sodas.html" class="active">Sodas</a>
+                                <a href="treats.html">Treats</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-section mt-150 mb-150">
+            <div class="container">
+                <div class="row product-lists g-4">
+                    <div class="col-lg-3 col-md-4 col-sm-6 soda"> <div class="single-product-item"> <div class="product-image"> <a href="berrysoda.html"> <img src="assets/img/products/product-img-82.jpg" alt="Berry Haze Soda" loading="lazy"> </a> </div> <h3>Berry Haze CBD Soda</h3> <p class="product-price"><span>30mg CBD per can</span> R70.00</p> <button class="cart-btn" data-product-id="48"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 soda"> <div class="single-product-item"> <div class="product-image"> <a href="cherrysoda.html"> <img src="assets/img/products/product-img-81.jpg" alt="Cherry Pop Soda" loading="lazy"> </a> </div> <h3>Cherry Pop THC Soda</h3> <p class="product-price"><span>30mg THC per can</span> R70.00</p> <button class="cart-btn" data-product-id="49"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 soda"> <div class="single-product-item"> <div class="product-image"> <a href="lemonadesoda.html"> <img src="assets/img/products/product-img-80.jpg" alt="Lemonade Soda" loading="lazy"> </a> </div> <h3>Blueberry Lemonade Soda</h3> <p class="product-price"><span>30mg THC per can</span> R70.00</p> <button class="cart-btn" data-product-id="50"> <i class="fas fa-shopping-cart"></i> Add to Cart </button> </div> </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-area"> <div class="container"> <div class="row"> <div class="col-lg-3 col-md-6"> <div class="footer-box about-widget"> <h2 class="widget-title">About us</h2> <p>Discover high-quality, curated cannabis products at Canapa Delights.</p> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box get-in-touch"> <h2 class="widget-title">Get in Touch</h2> <ul> <li>22 Karee Street, Southdowns Shopping Centre, Irene</li> <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li> <li><a href="tel:+27710314435">+27 71 031 4435</a></li> </ul> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box"> <h2 class="widget-title">Follow Us</h2> <div class="social-icons"> <a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a> <a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a> </div> </div> </div> </div> </div> </footer>
+    <div class="copyright"> <div class="container"> <div class="row"> <div class="col-lg-6 col-md-12"><p>Copyright &copy; 2025 - All Rights Reserved.</p></div> <div class="col-lg-6 text-right col-md-12"><div class="social-icons"><ul><li><a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a></li><li><a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a></li></ul></div></div> </div> </div> </div>
+
+    <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank"> <i class="fab fa-whatsapp"></i> <span class="whatsapp-text">Chat with us</span> </a>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" defer></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/js/jquery.countdown.js" defer></script>
+    <script src="assets/js/jquery.isotope-3.0.6.min.js" defer></script>
+    <script src="assets/js/waypoints.js" defer></script>
+    <script src="assets/js/owl.carousel.min.js" defer></script>
+    <script src="assets/js/jquery.magnific-popup.min.js" defer></script>
+    <script src="assets/js/sticker.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+
+    <script>
+        // Immediately initialize age verification
+        (function() {
+            const agePopup = document.getElementById('ageVerificationPopup');
+            const overlay = document.getElementById('overlay');
+            
+            if (!sessionStorage.getItem('ageVerified') && !localStorage.getItem('ageVerified')) {
+                if (agePopup) agePopup.style.display = 'block';
+                if (overlay) overlay.style.display = 'block';
+            }
+            
+            const confirmBtn = agePopup?.querySelector('.confirmButton');
+            const declineBtn = agePopup?.querySelector('.declineButton');
+            
+            if (confirmBtn) {
+                confirmBtn.addEventListener('click', () => {
+                    localStorage.setItem('ageVerified', 'true');
+                    sessionStorage.setItem('ageVerified', 'true');
+                    if (agePopup) agePopup.style.display = 'none';
+                    if (overlay) overlay.style.display = 'none';
+                });
+            }
+            
+            if (declineBtn) {
+                declineBtn.addEventListener('click', () => {
+                    alert("You must be 18 or older to enter.");
+                    window.location.href = 'https://www.google.com';
+                });
+            }
+        })();
+    </script>
+
+    <script type="module" defer>
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { getDatabase, ref, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCiJnj-Z9TXTeMelX_CTw8KM28_BaQW6bo",
+            authDomain: "canapa-delight.firebaseapp.com",
+            databaseURL: "https://canapa-delight-default-rtdb.firebaseio.com",
+            projectId: "canapa-delight",
+            storageBucket: "canapa-delight.appspot.com",
+            messagingSenderId: "35385881641",
+            appId: "1:35385881641:web:846ac0863099c5c64c1838",
+            measurementId: "G-6GMPH5C04L"
+        };
+
+        let auth, database;
+        try { 
+            const app = initializeApp(firebaseConfig); 
+            auth = getAuth(app); 
+            database = getDatabase(app); 
+        } catch (error) { 
+            console.error("Firebase initialization error:", error); 
+        }
+
+        // Utility functions
+        const showModal = (modal) => { 
+            if(modal) { 
+                modal.style.display = 'block'; 
+                document.getElementById('overlay').style.display = 'block'; 
+            }
+        };
+        const hideModal = (modal) => { 
+            if(modal) modal.style.display = 'none'; 
+        };
+        const closeAllModals = () => { 
+            hideModal(document.getElementById('loginModal')); 
+            hideModal(document.getElementById('signupModal')); 
+            document.getElementById('overlay').style.display = 'none'; 
+        };
+
+        // Global functions
+        window.showLogin = () => { closeAllModals(); showModal(document.getElementById('loginModal')); };
+        window.showSignup = () => { closeAllModals(); showModal(document.getElementById('signupModal')); };
+        window.toggleMenu = () => { document.querySelector('.main-menu')?.classList.toggle('active'); };
+
+        // Cart System
+        class CartSystem {
+            constructor() { 
+                this.cart = JSON.parse(localStorage.getItem('cart')) || []; 
+                this.updateHeaderCartCount(); 
+                this.setupAddToCartListeners(); 
+            }
+            
+            setupAddToCartListeners() {
+                document.querySelectorAll('.cart-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => this.addToCart(e)); 
+                });
+            }
+            
+            addToCart(e) {
+                const button = e.target.closest('.cart-btn');
+                const productCard = button.closest('.single-product-item');
+                const priceMatch = productCard.querySelector('.product-price').textContent.match(/R([\d.]+)/);
+                
+                const product = { 
+                    id: button.dataset.productId, 
+                    name: productCard.querySelector('h3').textContent, 
+                    price: priceMatch ? parseFloat(priceMatch[1]) : 0, 
+                    image: productCard.querySelector('img').src, 
+                    quantity: 1 
+                };
+                
+                const existingItem = this.cart.find(item => item.id === product.id);
+                if (existingItem) { 
+                    existingItem.quantity++; 
+                } else { 
+                    this.cart.push(product); 
+                }
+                
+                localStorage.setItem('cart', JSON.stringify(this.cart)); 
+                this.updateHeaderCartCount(); 
+                this.showAddedNotification(button);
+            }
+            
+            updateHeaderCartCount() { 
+                const count = this.cart.reduce((sum, item) => sum + item.quantity, 0); 
+                document.querySelector('.cart-count').textContent = count; 
+            }
+            
+            showAddedNotification(button) {
+                const parentNode = button.parentNode;
+                const existingNotif = parentNode.querySelector('.cart-notification'); 
+                if (existingNotif) existingNotif.remove();
+                
+                const notification = document.createElement('div'); 
+                notification.className = 'cart-notification'; 
+                notification.textContent = 'Added to cart!';
+                parentNode.appendChild(notification); 
+                setTimeout(() => notification.remove(), 2000);
+            }
+        }
+
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('showSignupLink')?.addEventListener('click', (e) => { e.preventDefault(); showSignup(); });
+            document.getElementById('showLoginLink')?.addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
+            document.querySelectorAll('.closeButton').forEach(btn => btn.addEventListener('click', closeAllModals));
+            document.getElementById('overlay').addEventListener('click', closeAllModals);
+            document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeAllModals(); });
+            
+            new CartSystem();
+            
+            document.querySelectorAll('.safe-email').forEach(el => { 
+                el.innerHTML = `<a href="mailto:${el.dataset.user}@${el.dataset.domain}">${el.dataset.user}@${el.dataset.domain}</a>`; 
+            });
+        });
+        
+        // Auth state change
+        if (auth) { 
+            onAuthStateChanged(auth, (user) => { 
+                const loginNav = document.getElementById('loginNav');
+                const signupNav = document.getElementById('signupNav');
+                const accountNav = document.getElementById('accountNav');
+                const logoutNav = document.getElementById('logoutNav');
+                
+                const isLoggedIn = !!user;
+                loginNav.style.display = isLoggedIn ? 'none' : 'inline-block';
+                signupNav.style.display = isLoggedIn ? 'none' : 'inline-block';
+                accountNav.style.display = isLoggedIn ? 'inline-block' : 'none';
+                logoutNav.style.display = isLoggedIn ? 'inline-block' : 'none';
+            }); 
+        }
+    </script>
+</body>
+</html>
