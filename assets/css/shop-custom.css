@@ -1,0 +1,172 @@
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+.progress-loader {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    background: rgba(236, 236, 238, 0.253);
+    height: 3px;
+    border-radius: 7px;
+}
+.progress {
+    width: 1px;
+    height: 3px;
+    border-radius: 7px;
+    background: #F28123; /* Theme color for shop page */
+    transition: 0.5s;
+    animation: loading1274 2s ease infinite;
+}
+@keyframes loading1274 {
+    0% { width: 0%; }
+    10% { width: 10%; }
+    50% { width: 40%; }
+    60% { width: 60%; }
+    100% { width: 100%; }
+}
+
+/* --- Main Shop Styles --- */
+
+/* === START: NEW AND IMPROVED PRODUCT GRID STYLES === */
+
+/* This rule ensures all product cards in a single row will be the same height.
+   It works with the .row class from Bootstrap. */
+.product-lists {
+    align-items: stretch;
+}
+
+/* This makes the product card a vertical flex container,
+   allowing us to perfectly align the content inside. */
+.single-product-item {
+    height: 100%; /* Makes the card fill the entire height of its column */
+    display: flex;
+    flex-direction: column; /* Stacks content (image, title, price, button) vertically */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.single-product-item.loaded {
+    opacity: 1;
+}
+
+/* This ensures the image container is flexible and doesn't have a fixed height. */
+.product-image {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* This new rule allows the text area to grow,
+   which pushes the "Add to Cart" button to the bottom. */
+.single-product-item h3,
+.single-product-item .product-price {
+    flex-grow: 1;
+    /* Adding some padding for better spacing */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* This ensures the button always stays perfectly at the bottom of the card. */
+.single-product-item .cart-btn {
+    margin-top: auto;
+}
+
+/* === END: NEW AND IMPROVED PRODUCT GRID STYLES === */
+
+.cart-notification {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #F28123;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    animation: fadeInOut 2s ease;
+    z-index: 10;
+}
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.product-image img {
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.product-image img[loading="lazy"] {
+    opacity: 0;
+}
+
+.product-image img.loaded {
+    opacity: 1;
+}
+
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.category-filter a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    margin: 0;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    border: 1px solid transparent;
+}
+.category-filter a:hover, .category-filter a.active {
+    background-color: #F28123;
+    border-color: #F28123;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.pagination a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.pagination a.active {
+    background-color: #F28123;
+    color: white;
+    border: 1px solid #F28123;
+}
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+.pagination a.disabled {
+    pointer-events: none;
+    color: #aaa;
+    border-color: #ddd;
+}
