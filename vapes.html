@@ -46,50 +46,48 @@
     <link rel="stylesheet" href="assets/css/shop.css">
 
     <style>
-        .single-product-item {
-            display: block;
-            opacity: 1; /* All items visible by default on category pages */
-            transition: opacity 0.3s ease;
-            margin-bottom: 30px;
-            position: relative;
-            height: 100%;
-        }
-        
-        /* Improved product grid layout */
+        /* === START: CORRECTED PRODUCT GRID STYLES === */
+
+        /* This rule ensures all product cards in a single row will have the same height. */
         .product-lists {
+            align-items: stretch;
+        }
+
+        /* This makes the product card a vertical flex container,
+           allowing us to perfectly align the content inside. */
+        .single-product-item {
+            height: 100%; /* Makes the card fill the entire height of its column */
             display: flex;
-            flex-wrap: wrap;
-            margin: -15px;
+            flex-direction: column; /* Stacks content (image, title, price, button) vertically */
+            position: relative; /* Needed for cart notification positioning */
+            margin-bottom: 30px;
+        }
+
+        /* This ensures the image container is flexible and doesn't have a fixed height. */
+        .product-image {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* This allows the text area to grow, pushing the button down. */
+        .single-product-item h3,
+        .single-product-item .product-price {
+            flex-grow: 1;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        /* This ensures the button always stays perfectly at the bottom of the card. */
+        .single-product-item .cart-btn {
+            margin-top: auto;
         }
         
-        .product-lists > div[class*="col-"] {
-            padding: 15px;
-            width: 100%;
-        }
-        
-        /* Ensure proper column sizing */
-        @media (min-width: 576px) {
-            .product-lists > .col-sm-6 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .product-lists > .col-md-4 {
-                flex: 0 0 33.333333%;
-                max-width: 33.333333%;
-            }
-        }
-        
-        @media (min-width: 992px) {
-            .product-lists > .col-lg-3 {
-                flex: 0 0 25%;
-                max-width: 25%;
-            }
-        }
-        
-        /* Cart notification */
+        /* === END: CORRECTED PRODUCT GRID STYLES === */
+
+        /* --- Other Necessary Styles for this page --- */
+
         .cart-notification {
             position: absolute;
             bottom: 10px;
@@ -103,7 +101,6 @@
             animation: fadeInOut 2s ease;
             z-index: 10;
         }
-        
         @keyframes fadeInOut {
             0% { opacity: 0; }
             20% { opacity: 1; }
@@ -111,28 +108,6 @@
             100% { opacity: 0; }
         }
         
-        /* Force products to take full height */
-        .single-product-item > div {
-            height: 100%;
-        }
-        
-        /* Fix for product image containers */
-        .product-image {
-            height: 200px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .product-image img {
-            max-height: 100%;
-            width: auto;
-            max-width: 100%;
-            object-fit: contain;
-        }
-        
-        /* Updated Category Filter Links */
         .category-filter {
             display: flex;
             flex-wrap: wrap;
@@ -311,9 +286,8 @@
 
     <script type="module" defer>
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
-        import { getDatabase, ref, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
-
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        
         const firebaseConfig = {
             apiKey: "AIzaSyCiJnj-Z9TXTeMelX_CTw8KM28_BaQW6bo",
             authDomain: "canapa-delight.firebaseapp.com",
@@ -325,16 +299,15 @@
             measurementId: "G-6GMPH5C04L"
         };
 
-        let auth, database;
+        let auth;
         try { 
             const app = initializeApp(firebaseConfig); 
             auth = getAuth(app); 
-            database = getDatabase(app); 
         } catch (error) { 
             console.error("Firebase initialization error:", error); 
         }
 
-        // Utility functions
+        // --- Utility functions for modals ---
         const showModal = (modal) => { 
             if(modal) { 
                 modal.style.display = 'block'; 
@@ -350,12 +323,12 @@
             document.getElementById('overlay').style.display = 'none'; 
         };
 
-        // Global functions
+        // --- Make key functions globally accessible ---
         window.showLogin = () => { closeAllModals(); showModal(document.getElementById('loginModal')); };
         window.showSignup = () => { closeAllModals(); showModal(document.getElementById('signupModal')); };
         window.toggleMenu = () => { document.querySelector('.main-menu')?.classList.toggle('active'); };
 
-        // Cart System
+        // --- Cart System for Static Products ---
         class CartSystem {
             constructor() { 
                 this.cart = JSON.parse(localStorage.getItem('cart')) || []; 
@@ -364,6 +337,7 @@
             }
             
             setupAddToCartListeners() {
+                // This is a safe way to add listeners to all cart buttons on the page.
                 document.querySelectorAll('.cart-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => this.addToCart(e)); 
                 });
@@ -401,6 +375,7 @@
             
             showAddedNotification(button) {
                 const parentNode = button.parentNode;
+                if (!parentNode) return;
                 const existingNotif = parentNode.querySelector('.cart-notification'); 
                 if (existingNotif) existingNotif.remove();
                 
@@ -412,22 +387,25 @@
             }
         }
 
-        // DOM Content Loaded
+        // --- Main execution block after DOM is ready ---
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize modals
             document.getElementById('showSignupLink')?.addEventListener('click', (e) => { e.preventDefault(); showSignup(); });
             document.getElementById('showLoginLink')?.addEventListener('click', (e) => { e.preventDefault(); showLogin(); });
             document.querySelectorAll('.closeButton').forEach(btn => btn.addEventListener('click', closeAllModals));
             document.getElementById('overlay').addEventListener('click', closeAllModals);
             document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeAllModals(); });
             
+            // Initialize cart
             new CartSystem();
             
+            // Initialize safe-email links
             document.querySelectorAll('.safe-email').forEach(el => { 
                 el.innerHTML = `<a href="mailto:${el.dataset.user}@${el.dataset.domain}">${el.dataset.user}@${el.dataset.domain}</a>`; 
             });
         });
         
-        // Auth state change
+        // --- Firebase Auth State Listener ---
         if (auth) { 
             onAuthStateChanged(auth, (user) => { 
                 const loginNav = document.getElementById('loginNav');
