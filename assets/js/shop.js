@@ -128,13 +128,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayProducts(page) {
         if (!productContainer) return;
 
-        let allProductsHTML = ''; // 1. Create an empty string to hold all the HTML
+        let allProductsHTML = '';
         const startIndex = (page - 1) * productsPerPage;
         const endIndex = Math.min(startIndex + productsPerPage, products.length);
 
         for (let i = startIndex; i < endIndex; i++) {
             const product = products[i];
-            // 2. Add the mb-4 class for vertical spacing
             const productHTML = `
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4 ${product.category}">
                     <div class="single-product-item">
@@ -151,14 +150,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             `;
-            allProductsHTML += productHTML; // 3. Append this product's HTML to the string
+            allProductsHTML += productHTML;
         }
 
-        productContainer.innerHTML = allProductsHTML; // 4. Set the innerHTML only once
+        productContainer.innerHTML = allProductsHTML;
 
         initLazyLoading();
         updatePagination(page);
         new CartSystem();
+
+        // --- NEW CODE ---
+        // Find the top of the product section and scroll to it smoothly.
+        const productSection = document.querySelector('.product-section');
+        if (productSection) {
+            productSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }
 
     function initLazyLoading() {
