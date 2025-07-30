@@ -9,6 +9,7 @@
     <meta name="keywords" content="shop, cannabis, canapa delights, edibles, vapes, THC, CBD, cookies, gummies, oils, tea, South Africa, online store, buy cannabis online">
     <link rel="canonical" href="https://canapadelights.co.za/shop.html">
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://canapadelights.co.za/shop.html">
     <meta property="og:title" content="Shop Premium Cannabis Products | Canapa Delights">
@@ -16,25 +17,27 @@
     <meta property="og:image" content="https://canapadelights.co.za/assets/img/logo-social.png">
     <meta property="og:site_name" content="Canapa Delights">
 
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://canapadelights.co.za/shop.html">
     <meta property="twitter:title" content="Shop Premium Cannabis Products | Canapa Delights">
     <meta property="twitter:description" content="Browse and buy from our exclusive collection of cannabis edibles, vapes, oils, and more.">
     <meta property="twitter:image" content="https://canapadelights.co.za/assets/img/logo-social.png">
 
-    <meta name="theme-color" content="#F28123">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
 
+    <!-- Preloads -->
     <link rel="preload" href="assets/css/main.css" as="style">
     <link rel="preload" href="https://code.jquery.com/jquery-3.6.4.min.js" as="script">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
-
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
@@ -43,78 +46,211 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/shop.css">
-    
     <link rel="stylesheet" href="assets/css/shop-custom.css">
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Canapa Delights Shop - All Products",
-        "description": "Online store for premium cannabis products including cookies, gummies, vapes, oils, teas, sodas, and treats.",
-        "url": "https://canapadelights.co.za/shop.html",
-        "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://canapadelights.co.za/index.html"},
-                {"@type": "ListItem", "position": 2, "name": "Shop"}
-            ]
-        },
-        "mainEntity": {
-            "@type": "ItemList",
-            "name": "Products",
-            "description": "A selection of Canapa Delights cannabis products.",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Choc Chip Cookies", "image": "https://canapadelights.co.za/assets/img/products/product-img-1.jpg", "description": "10mg THC - 10 cookies", "offers": {"@type": "Offer","price": "150.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } },
-                { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Coconut Oat Cookies", "image": "https://canapadelights.co.za/assets/img/products/product-img-10.jpg", "description": "20mg THC - 10 cookies", "offers": {"@type": "Offer","price": "250.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } },
-                { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Yummy Gummies", "image": "https://canapadelights.co.za/assets/img/products/product-img-2.jpg", "description": "20mg THC - 10 pieces", "offers": {"@type": "Offer","price": "250.00","priceCurrency": "ZAR", "availability": "https://schema.org/InStock"} } }
-            ]
+    <style>
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
-    }
-    </script>
+        
+        .progress-loader {
+            width: 150px;
+            background: rgba(236, 236, 238, 0.253);
+            height: 3px;
+            border-radius: 7px;
+        }
+        
+        .progress {
+            content: '';
+            width: 1px;
+            height: 3px;
+            border-radius: 7px;
+            background: #F28123;
+            transition: 0.5s;
+            animation: loading 2s ease infinite;
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 100%; }
+            100% { width: 0%; }
+        }
+        
+        /* Cart Notification */
+        .cart-notification {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #F28123;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Product Visibility Overrides */
+        .product-lists {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        .single-product-item {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Age Verification Popup */
+        #ageVerificationPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            z-index: 99999;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 99998;
+        }
+    </style>
 </head>
 <body>
+    <!-- Preloader -->
     <div id="preloader">
         <div class="progress-loader">
             <div class="progress"></div>
         </div>
     </div>
 
+    <!-- Age Verification Popup -->
     <div id="ageVerificationPopup" role="dialog" aria-modal="true" aria-labelledby="ageHeading">
         <p id="ageHeading" class="ageHeading">Age Verification</p>
         <p class="ageDescription">You must be 18 years or older to access this site. Please confirm your age.</p>
-        <div class="buttonContainer"> <button class="confirmButton">I am 18+</button> <button class="declineButton">I am under 18</button> </div>
+        <div class="buttonContainer"> 
+            <button class="confirmButton">I am 18+</button> 
+            <button class="declineButton">I am under 18</button> 
+        </div>
     </div>
 
     <div id="overlay"></div>
 
+    <!-- Login Modal -->
     <div id="loginModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="loginHeading">
-        <h2 id="loginHeading">Login</h2> <form id="loginForm"> <input type="email" id="loginEmail" placeholder="Email" required aria-label="Email"> <div class="password-container"> <input type="password" id="loginPassword" placeholder="Password" required aria-label="Password"> <i class="fas fa-eye password-toggle"></i> </div> <button type="submit">Login</button> <button type="button" class="closeButton" aria-label="Close Login Modal">Close</button> </form> <p>Don't have an account? <a href="#" id="showSignupLink">Sign Up</a></p> <div id="loginError" class="error-message"></div>
+        <h2 id="loginHeading">Login</h2> 
+        <form id="loginForm"> 
+            <input type="email" id="loginEmail" placeholder="Email" required aria-label="Email"> 
+            <div class="password-container"> 
+                <input type="password" id="loginPassword" placeholder="Password" required aria-label="Password"> 
+                <i class="fas fa-eye password-toggle"></i> 
+            </div> 
+            <button type="submit">Login</button> 
+            <button type="button" class="closeButton" aria-label="Close Login Modal">Close</button> 
+        </form> 
+        <p>Don't have an account? <a href="#" id="showSignupLink">Sign Up</a></p> 
+        <div id="loginError" class="error-message"></div>
     </div>
 
+    <!-- Signup Modal -->
     <div id="signupModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="signupHeading">
-        <h2 id="signupHeading">Sign Up</h2> <form id="signupForm"> <input type="text" id="signupName" placeholder="Full Name" required aria-label="Full Name"> <input type="email" id="signupEmail" placeholder="Email" required aria-label="Email"> <div class="password-container"> <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required aria-label="Password" pattern=".{6,}"> <i class="fas fa-eye password-toggle"></i> </div> <div id="passwordStrength" class="password-strength"></div> <button type="submit">Sign Up</button> <button type="button" class="closeButton" aria-label="Close Signup Modal">Close</button> </form> <p>Already have an account? <a href="#" id="showLoginLink">Login</a></p> <div id="signupError" class="error-message"></div>
+        <h2 id="signupHeading">Sign Up</h2> 
+        <form id="signupForm"> 
+            <input type="text" id="signupName" placeholder="Full Name" required aria-label="Full Name"> 
+            <input type="email" id="signupEmail" placeholder="Email" required aria-label="Email"> 
+            <div class="password-container"> 
+                <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required aria-label="Password" pattern=".{6,}"> 
+                <i class="fas fa-eye password-toggle"></i> 
+            </div> 
+            <div id="passwordStrength" class="password-strength"></div> 
+            <button type="submit">Sign Up</button> 
+            <button type="button" class="closeButton" aria-label="Close Signup Modal">Close</button> 
+        </form> 
+        <p>Already have an account? <a href="#" id="showLoginLink">Login</a></p> 
+        <div id="signupError" class="error-message"></div>
     </div>
 
+    <!-- Header -->
     <div class="top-header-area" id="sticker">
-        <div class="container"> <div class="row"> <div class="col-lg-12 col-sm-12 text-center"> <div class="main-menu-wrap">
-            <div class="site-logo"> <a href="index.html"> <img src="assets/img/logo.png" alt="Canapa Delight Logo" width="180" height="60"> </a> </div>
-            <div class="hamburger-menu" onclick="toggleMenu()"> <div class="bar"></div> <div class="bar"></div> <div class="bar"></div> </div>
-            <nav class="main-menu"> <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li class="current-list-item"><a href="shop.html">Shop</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li id="loginNav"><a href="#" onclick="showLogin()">Login</a></li>
-                <li id="signupNav"><a href="#" onclick="showSignup()">Sign Up</a></li>
-                <li id="accountNav" style="display: none;"><a href="account.html">My Account</a></li>
-                <li id="logoutNav" style="display: none;"><a href="#" id="logoutButton">Logout</a></li>
-                <li> <div class="header-icons"> <a class="shopping-cart" href="cart.html" aria-label="View Shopping Cart"> <i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span> </a> </div> </li>
-            </ul> </nav>
-        </div> </div> </div> </div>
+        <div class="container"> 
+            <div class="row"> 
+                <div class="col-lg-12 col-sm-12 text-center"> 
+                    <div class="main-menu-wrap">
+                        <!-- Logo -->
+                        <div class="site-logo"> 
+                            <a href="index.html"> 
+                                <img src="assets/img/logo.png" alt="Canapa Delight Logo" width="180" height="60" loading="lazy"> 
+                            </a> 
+                        </div>
+                        
+                        <!-- Mobile Menu Toggle -->
+                        <div class="hamburger-menu" onclick="toggleMenu()"> 
+                            <div class="bar"></div> 
+                            <div class="bar"></div> 
+                            <div class="bar"></div> 
+                        </div>
+                        
+                        <!-- Main Navigation -->
+                        <nav class="main-menu"> 
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li class="current-list-item"><a href="shop.html">Shop</a></li>
+                                <li><a href="cart.html">Cart</a></li>
+                                <li id="loginNav"><a href="#" onclick="showLogin()">Login</a></li>
+                                <li id="signupNav"><a href="#" onclick="showSignup()">Sign Up</a></li>
+                                <li id="accountNav" style="display: none;"><a href="account.html">My Account</a></li>
+                                <li id="logoutNav" style="display: none;"><a href="#" id="logoutButton">Logout</a></li>
+                                <li> 
+                                    <div class="header-icons"> 
+                                        <a class="shopping-cart" href="cart.html" aria-label="View Shopping Cart"> 
+                                            <i class="fas fa-shopping-cart"></i> 
+                                            <span class="cart-count">0</span> 
+                                        </a> 
+                                    </div> 
+                                </li>
+                            </ul> 
+                        </nav>
+                    </div> 
+                </div> 
+            </div> 
+        </div>
     </div>
 
+    <!-- Main Content -->
     <main>
+        <!-- Breadcrumb Section -->
         <div class="breadcrumb-section breadcrumb-bg">
             <div class="container">
                 <div class="row">
@@ -137,26 +273,82 @@
             </div>
         </div>
 
+        <!-- Product Section -->
         <div class="product-section mt-150 mb-150">
             <div class="container">
                 <div class="row product-lists g-4" id="productContainer">
-                    </div>
+                    <!-- Products will be loaded here dynamically -->
+                </div>
                 
+                <!-- Pagination -->
                 <div class="row">
                     <div class="col-12">
                         <div class="pagination" id="pagination">
-                            </div>
+                            <!-- Pagination will be loaded here dynamically -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="footer-area"> <div class="container"> <div class="row"> <div class="col-lg-3 col-md-6"> <div class="footer-box about-widget"> <h2 class="widget-title">About us</h2> <p>Discover high-quality, curated cannabis products at Canapa Delights.</p> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box get-in-touch"> <h2 class="widget-title">Get in Touch</h2> <ul> <li>22 Karee Street, Southdowns Shopping Centre, Irene</li> <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li> <li><a href="tel:+27710314435">+27 71 031 4435</a></li> </ul> </div> </div> <div class="col-lg-3 col-md-6"> <div class="footer-box"> <h2 class="widget-title">Follow Us</h2> <div class="social-icons"> <a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a> <a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a> </div> </div> </div> </div> </footer>
-    <div class="copyright"> <div class="container"> <div class="row"> <div class="col-lg-6 col-md-12"><p>Copyright &copy; 2025 - All Rights Reserved.</p></div> <div class="col-lg-6 text-right col-md-12"><div class="social-icons"><ul><li><a href="https://facebook.com/yourpage" target="_blank" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a></li><li><a href="https://instagram.com/yourpage" target="_blank" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a></li></ul></div></div> </div> </div> </div>
+    <!-- Footer -->
+    <footer class="footer-area"> 
+        <div class="container"> 
+            <div class="row"> 
+                <div class="col-lg-3 col-md-6"> 
+                    <div class="footer-box about-widget"> 
+                        <h2 class="widget-title">About us</h2> 
+                        <p>Discover high-quality, curated cannabis products at Canapa Delights.</p> 
+                    </div> 
+                </div> 
+                <div class="col-lg-3 col-md-6"> 
+                    <div class="footer-box get-in-touch"> 
+                        <h2 class="widget-title">Get in Touch</h2> 
+                        <ul> 
+                            <li>22 Karee Street, Southdowns Shopping Centre, Irene</li> 
+                            <li>Email: <span class="safe-email" data-user="canapadelight" data-domain="gmail.com">Loading...</span></li> 
+                            <li><a href="tel:+27710314435">+27 71 031 4435</a></li> 
+                        </ul> 
+                    </div> 
+                </div> 
+                <div class="col-lg-3 col-md-6"> 
+                    <div class="footer-box"> 
+                        <h2 class="widget-title">Follow Us</h2> 
+                        <div class="social-icons"> 
+                            <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a> 
+                            <a href="https://instagram.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div>
+    </footer>
+    
+    <!-- Copyright -->
+    <div class="copyright"> 
+        <div class="container"> 
+            <div class="row"> 
+                <div class="col-lg-6 col-md-12"><p>Copyright &copy; 2025 - All Rights Reserved.</p></div> 
+                <div class="col-lg-6 text-right col-md-12">
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://instagram.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div> 
+            </div> 
+        </div> 
+    </div>
 
-    <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank"> <i class="fab fa-whatsapp"></i> <span class="whatsapp-text">Chat with us</span> </a>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/27710314435" class="float-whatsapp" target="_blank" rel="noopener noreferrer"> 
+        <i class="fab fa-whatsapp"></i> 
+        <span class="whatsapp-text">Chat with us</span> 
+    </a>
 
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.countdown.js"></script>
@@ -165,12 +357,14 @@
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/sticker.js"></script>
+	<script src="assets/js/shop.js"></script>
     
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
 
-    <script defer src="assets/js/shop.js"></script>
-
+    <!-- Main Shop JavaScript -->
+    <script src="shop.js"></script>
 </body>
 </html>
