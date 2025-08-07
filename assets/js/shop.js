@@ -38,15 +38,19 @@ const products = [
     
     // Gummies Category
     { id: 7, category: "gummies", name: "Yummy Gummies", image: "assets/img/products/product-img-2.jpg", link: "yummygummies.html", desc: "20mg THC - 10 pieces", price: "R250.00" },
+	{ id: 16, category: "gummies", name: "Yummy Gummies", image: "assets/img/products/product-img-7.jpg", link: "classicgummies.html", desc: "10mg THC - 10 pieces", price: "R150.00" },
     { id: 8, category: "gummies", name: "Sugar Free Gummies", image: "assets/img/products/product-img-8.jpg", link: "freegummies.html", desc: "20mg THC - 10 pieces", price: "R250.00" },
+	{ id: 10, category: "gummies", name: "Yummy Gummies 3's", image: "assets/img/products/product-img-16.jpg", link: "sourgummies.html", desc: "20mg THC - 3 pieces", price: "R100.00" },
+	{ id: 13, category: "gummies", name: "Yummy Gummies 5's", image: "assets/img/products/product-img-17.jpg", link: "mixedgummies.html", desc: "20mg THC - 5 pieces", price: "R150.00" },
     { id: 9, category: "gummies", name: "Tropical Gummies", image: "assets/img/products/product-img-14.jpg", link: "sodazetropical.html", desc: "25mg THC - 10 pieces", price: "R250.00" },
-    { id: 10, category: "gummies", name: "Yummy Gummies 3's", image: "assets/img/products/product-img-16.jpg", link: "sourgummies.html", desc: "20mg THC - 3 pieces", price: "R100.00" },
-    { id: 11, category: "gummies", name: "CBD Relax Gummies", image: "assets/img/products/product-img-19.jpg", link: "cbdrelaxgummies.html", desc: "20mg CBD - 15 pieces", price: "R250.00" },
     { id: 12, category: "gummies", name: "Grape Gummies", image: "assets/img/products/product-img-79.jpg", link: "sodazegrape.html", desc: "25mg THC - 10 pieces", price: "R250.00" },
-    { id: 13, category: "gummies", name: "Yummy Gummies 5's", image: "assets/img/products/product-img-17.jpg", link: "mixedgummies.html", desc: "20mg THC - 5 pieces", price: "R150.00" },
+	{ id: 15, category: "gummies", name: "Raspberry Gummies", image: "assets/img/products/product-img-15.jpg", link: "sodazeraspberry.html", desc: "25mg THC - 10 pieces", price: "R250.00" },
+    { id: 11, category: "gummies", name: "CBD Relax Gummies", image: "assets/img/products/product-img-19.jpg", link: "cbdrelaxgummies.html", desc: "20mg CBD - 15 pieces", price: "R250.00" },
+    
+    
     { id: 14, category: "gummies", name: "Chillax CBD Gummies", image: "assets/img/products/product-img-20.jpg", link: "chillaxcbd.html", desc: "10mg CBD - 15 pieces", price: "R150.00" },
-    { id: 15, category: "gummies", name: "Raspberry Gummies", image: "assets/img/products/product-img-15.jpg", link: "sodazeraspberry.html", desc: "25mg THC - 10 pieces", price: "R250.00" },
-    { id: 16, category: "gummies", name: "Yummy Gummies", image: "assets/img/products/product-img-7.jpg", link: "classicgummies.html", desc: "10mg THC - 10 pieces", price: "R150.00" },
+    
+    
     { id: 54, category: "gummies", name: "Rainbow Stripz 200mg", image: "assets/img/products/product-img-84.jpg", link: "rainbowstripz.html", desc: "20mg THC - 10 gummies", price: "R250.00" },
    
     { id: 56, category: "gummies", name: "Wacky Worms 300mg", image: "assets/img/products/product-img-86.jpg", link: "wackyworms300.html", desc: "30mg THC - 10 gummies", price: "R350.00" },
